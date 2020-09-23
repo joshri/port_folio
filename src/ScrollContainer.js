@@ -244,8 +244,8 @@ function ScrollContainer(props) {
 						</h4>
 						<a
 							style={{ fontSize: projectLink }}
-							href='https://is-it-hot.herokuapp.com'>
-							is-it-hot.herokuapp.com
+							href='https://is-it-hot-daily.herokuapp.com'>
+							is-it-hot-daily.herokuapp.com
 						</a>
 						<a
 							style={{ fontSize: projectLink, marginBottom: '3px' }}
