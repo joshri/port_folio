@@ -1,6 +1,5 @@
 import React from 'react';
 import thumbnailPic from './images/ResumeThumbnail.png';
-import head from './images/JoshuaIsrael1.jpg';
 
 function ScrollContainer(props) {
 	let pSize = 0;
