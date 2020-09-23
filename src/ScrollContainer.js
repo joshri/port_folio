@@ -68,7 +68,7 @@ function ScrollContainer(props) {
 						mater NYU Tisch. Check out this article I wrote about my latest
 						project for more about how I translated these skills into the
 						universe of CODE -
-						https://www.linkedin.com/pulse/how-i-achieved-my-dreams-keeping-ying-yang-twins-alive-israel/When
+						<a href='https://www.linkedin.com/pulse/how-i-achieved-my-dreams-keeping-ying-yang-twins-alive-israel/'>link</a>
 					</p>
 				</div>
 			</div>
