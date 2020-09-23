@@ -68,7 +68,7 @@ function ScrollContainer(props) {
 						mater NYU Tisch. Check out this article I wrote about my latest
 						project for more about how I translated these skills into the
 						universe of CODE -
-						<a href='https://www.linkedin.com/pulse/how-i-achieved-my-dreams-keeping-ying-yang-twins-alive-israel/'>link</a>
+						<a target='_blank' href='https://www.linkedin.com/pulse/how-i-achieved-my-dreams-keeping-ying-yang-twins-alive-israel/'>link</a>
 					</p>
 				</div>
 			</div>
@@ -96,7 +96,7 @@ function ScrollContainer(props) {
 							d='M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z'
 						/>
 					</svg>
-					<a href='https://www.linkedin.com/in/joshri/detail/overlay-view/urn:li:fsd_profileTreasuryMedia:(ACoAADGa3_8B-PZN9vIg0o1QCAsb7MwnOi1YAbY,1600191288978)/'>
+					<a target='_blank' href='https://www.linkedin.com/in/joshri/detail/overlay-view/urn:li:fsd_profileTreasuryMedia:(ACoAADGa3_8B-PZN9vIg0o1QCAsb7MwnOi1YAbY,1600191288978)/'>
 						<img
 							className='resumeThumb'
 							style={{ height: thumbnail, width: thumbnail }}
@@ -130,12 +130,12 @@ function ScrollContainer(props) {
 							className='scrollTitle2'>
 							FOR ALL SEASONS
 						</h4>
-						<a
+						<a target='_blank'
 							href='https://for-all-seasons.herokuapp.com'
 							style={{ fontSize: projectLink }}>
 							for-all-seasons.herokuapp.com
 						</a>
-						<a
+						<a target='_blank'
 							href='https://github.com/joshri/for-all-seasons'
 							style={{ fontSize: projectLink }}>
 							github repo
@@ -190,11 +190,12 @@ function ScrollContainer(props) {
 							FUNKY SIMON
 						</h4>
 						<a
+							target='_blank'
 							style={{ fontSize: projectLink }}
 							href='https://joshri.github.io/funky-simon'>
 							joshri.github.io/funky-simon
 						</a>
-						<a
+						<a target='_blank'
 							style={{ fontSize: projectLink }}
 							href='https://github.com/joshri/funky-simon'>
 							github repo
@@ -242,12 +243,12 @@ function ScrollContainer(props) {
 						<h4 style={{ fontSize: projectTitle }} className='scrollTitle2'>
 							IS IT HOT?
 						</h4>
-						<a
+						<a target='_blank'
 							style={{ fontSize: projectLink }}
 							href='https://is-it-hot-daily.herokuapp.com'>
 							is-it-hot-daily.herokuapp.com
 						</a>
-						<a
+						<a target='_blank'
 							style={{ fontSize: projectLink, marginBottom: '3px' }}
 							href='https://github.com/joshri/is-it-hot'>
 							github repo
