@@ -1,0 +1,39 @@
+div {
+	&.confirmContainer {
+		@extend %max-size;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	&.partyButtons {
+		opacity: 0;
+		margin-top: 20px;
+		animation: forZoom 1s 8s linear forwards;
+	}
+}
+
+h1 {
+	&.welcome {
+		@extend %title-text;
+		opacity: 0;
+		font-size: 15vw;
+		position: fixed;
+	}
+}
+
+p {
+	opacity: 0;
+	font-family: $body;
+	margin: 3vh;
+	text-align: center;
+	// animation: forZoom 1s 4s linear forwards;
+}
+
+.bigButt {
+	width: 25vw;
+	height: 15vh;
+	margin-right: 10vw;
+	font-size: 4vw;
+	text-align: center;
+}
