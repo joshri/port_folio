@@ -96,11 +96,17 @@ function Home(props) {
 							</h1>
 							<div className='contact'>
 								<div className='socialDiv'>
-									<a href='https://www.linkedin.com/in/joshri'>
+									<a
+										target='_blank'
+										rel='noopener noreferrer'
+										href='https://www.linkedin.com/in/joshri'>
 										<Image className='social' src={liImage} />
 									</a>
 
-									<a href='https://www.instagram.com/sirjoshisrael/?hl=en'>
+									<a
+										target='_blank'
+										rel='noopener noreferrer'
+										href='https://www.instagram.com/sirjoshisrael/?hl=en'>
 										<Image className='social' src={instaImage} />
 									</a>
 								</div>
@@ -118,7 +124,7 @@ function Home(props) {
 										/>
 									</svg>
 									<h6 style={{ marginLeft: '5px', fontSize: navFont }}>
-										joshisrael@joshisrael.com
+										joshisrael93@gmail.com
 									</h6>
 								</div>
 							</div>
