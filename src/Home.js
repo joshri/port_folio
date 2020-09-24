@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useRef } from 'react';
 import instaImage from './images/glyph-logo_May2016.png';
 import liImage from './images/LI-In-Bug.png';
 import ScrollContainer from './ScrollContainer';
@@ -21,7 +21,10 @@ function Home(props) {
 	const scrollRef = useRef(null);
 
 	return (
-		<motion.div style={{opacity: 0}} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
+		<motion.div
+			style={{ opacity: 0 }}
+			animate={{ opacity: 1 }}
+			transition={{ duration: 1 }}>
 			<Container fluid>
 				<Row style={{ minHeight: '100%' }}>
 					<Col

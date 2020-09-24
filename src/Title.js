@@ -52,7 +52,7 @@ function Title(props) {
 							</div>
 						</motion.div>
 						<motion.img
-							animate={{ width: '75%', height: '75%', opacity: [0, 1] }}
+							animate={{ width: '75%', height: '75%', opacity: 1 }}
 							transition={{ delay: 20, duration: 4 }}
 							src={title_photo}
 							className='image'></motion.img>

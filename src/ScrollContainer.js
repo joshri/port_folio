@@ -5,31 +5,26 @@ function ScrollContainer(props) {
 	let pSize = 0;
 	let resume = 0;
 	let thumbnail = 0;
-	let projectDes = 0;
 	let projectTitle = 0;
 	let projectLink = 0;
-	let headSize = 0;
+
 	if (window.screen.width > 812) {
 		pSize = '1.5vw';
 		resume = '600%';
 		thumbnail = '200px';
-		projectDes = '1.5vw';
 		projectTitle = '200%';
 		projectLink = '100%';
-		headSize = '256px';
 	} else {
 		pSize = '2.5vw';
 		resume = '200%';
 		thumbnail = '128px';
-		projectDes = '1.5vw';
 		projectTitle = '100%';
 		projectLink = '50%';
-		headSize = '100px';
 	}
 
 	return (
 		<div style={{ width: '100%', height: '100%', overflow: 'scroll' }}>
-			<div className='scollItem'>
+			<div className='scrollItem'>
 				<div
 					style={{
 						display: 'flex',
@@ -37,10 +32,6 @@ function ScrollContainer(props) {
 						alignItems: 'center',
 						marginTop: '30vh',
 					}}>
-					{/* <img
-							src={head}
-							style={{ maxWidth: headSize, maxHeight: headSize }}
-						/> */}
 					<h1 className='scrollTitle rotate'>ABOUT</h1>
 
 					<p
@@ -68,7 +59,12 @@ function ScrollContainer(props) {
 						mater NYU Tisch. Check out this article I wrote about my latest
 						project for more about how I translated these skills into the
 						universe of CODE -
-						<a target='_blank' href='https://www.linkedin.com/pulse/how-i-achieved-my-dreams-keeping-ying-yang-twins-alive-israel/'>link</a>
+						<a
+							target='_blank'
+							rel='noopener noreferrer'
+							href='https://www.linkedin.com/pulse/how-i-achieved-my-dreams-keeping-ying-yang-twins-alive-israel/'>
+							link
+						</a>
 					</p>
 				</div>
 			</div>
@@ -96,8 +92,12 @@ function ScrollContainer(props) {
 							d='M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z'
 						/>
 					</svg>
-					<a target='_blank' href='https://www.linkedin.com/in/joshri/detail/overlay-view/urn:li:fsd_profileTreasuryMedia:(ACoAADGa3_8B-PZN9vIg0o1QCAsb7MwnOi1YAbY,1600191288978)/'>
+					<a
+						target='_blank'
+						rel='noopener noreferrer'
+						href='https://www.linkedin.com/in/joshri/detail/overlay-view/urn:li:fsd_profileTreasuryMedia:(ACoAADGa3_8B-PZN9vIg0o1QCAsb7MwnOi1YAbY,1600191288978)/'>
 						<img
+							alt='resume thumbnail'
 							className='resumeThumb'
 							style={{ height: thumbnail, width: thumbnail }}
 							src={thumbnailPic}
@@ -130,18 +130,23 @@ function ScrollContainer(props) {
 							className='scrollTitle2'>
 							FOR ALL SEASONS
 						</h4>
-						<a target='_blank'
+						<a
+							target='_blank'
+							rel='noopener noreferrer'
 							href='https://for-all-seasons.herokuapp.com'
 							style={{ fontSize: projectLink }}>
 							for-all-seasons.herokuapp.com
 						</a>
-						<a target='_blank'
+						<a
+							target='_blank'
+							rel='noopener noreferrer'
 							href='https://github.com/joshri/for-all-seasons'
 							style={{ fontSize: projectLink }}>
 							github repo
 						</a>
 
 						<iframe
+							title='For All Seasons'
 							style={{ width: thumbnail, height: thumbnail }}
 							src='https://giphy.com/embed/jV4sm6vP1BKq5xH34H'
 							frameBorder='0'
@@ -151,7 +156,6 @@ function ScrollContainer(props) {
 					<ul
 						className='project'
 						style={{
-							fontSize: projectDes,
 							justifyContent: 'center',
 							alignItems: 'center',
 							fontSize: pSize,
@@ -191,16 +195,20 @@ function ScrollContainer(props) {
 						</h4>
 						<a
 							target='_blank'
+							rel='noopener noreferrer'
 							style={{ fontSize: projectLink }}
 							href='https://joshri.github.io/funky-simon'>
 							joshri.github.io/funky-simon
 						</a>
-						<a target='_blank'
+						<a
+							target='_blank'
+							rel='noopener noreferrer'
 							style={{ fontSize: projectLink }}
 							href='https://github.com/joshri/funky-simon'>
 							github repo
 						</a>
 						<iframe
+							title='Funky Simon'
 							style={{ width: thumbnail, height: thumbnail }}
 							src='https://giphy.com/embed/MF0zPdjBcQQqKUbnnn'
 							frameBorder='0'
@@ -209,7 +217,6 @@ function ScrollContainer(props) {
 					</div>
 					<ul
 						style={{
-							fontSize: projectDes,
 							justifyContent: 'center',
 							alignItems: 'center',
 							fontSize: pSize,
@@ -243,17 +250,22 @@ function ScrollContainer(props) {
 						<h4 style={{ fontSize: projectTitle }} className='scrollTitle2'>
 							IS IT HOT?
 						</h4>
-						<a target='_blank'
+						<a
+							target='_blank'
+							rel='noopener noreferrer'
 							style={{ fontSize: projectLink }}
 							href='https://is-it-hot-daily.herokuapp.com'>
 							is-it-hot-daily.herokuapp.com
 						</a>
-						<a target='_blank'
+						<a
+							target='_blank'
+							rel='noopener noreferrer'
 							style={{ fontSize: projectLink, marginBottom: '3px' }}
 							href='https://github.com/joshri/is-it-hot'>
 							github repo
 						</a>
 						<iframe
+							title='Is It Hot'
 							style={{ width: thumbnail, height: thumbnail }}
 							src='https://giphy.com/embed/p8tjjUM7AMJeph1syh'
 							frameBorder='0'
@@ -262,7 +274,6 @@ function ScrollContainer(props) {
 					</div>
 					<ul
 						style={{
-							fontSize: projectDes,
 							justifyContent: 'center',
 							alignItems: 'center',
 							fontSize: pSize,
