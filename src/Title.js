@@ -8,17 +8,20 @@ function Title(props) {
 	let [loaded, setLoaded] = useState(false);
 	let [finished, setFinished] = useState('none');
 	setTimeout(() => setFinished('flex'), 24000);
+	const noMobileCutoff = window.innerHeight
 	return (
-		<div className='titleContainer'>
+		<div className='titleContainer' style={{height: noMobileCutoff}}>
 			<audio
 				id='audio'
-				onCanPlay={() => setLoaded(true)}
+				onPlay={() => setLoaded(true)}
 				src={portfolio_theme}
-				autoPlay={true}
+				autoplay
 			/>
 			{!loaded ? (
 				<div
 					style={{
+						width: '100%',
+						height: '100%',
 						justifyContent: 'center',
 						alignItems: 'center',
 						marginTop: '50%',
