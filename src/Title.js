@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 
 function Title(props) {
 	let [loaded, setLoaded] = useState(false);
+	let [finished, setFinished] = useState('none');
+	setTimeout(() => setFinished('flex'), 24000);
 	return (
 		<div className='titleContainer'>
 			<audio
@@ -15,7 +17,14 @@ function Title(props) {
 				autoPlay={true}
 			/>
 			{!loaded ? (
-				<div style={{justifyContent: 'center', alignItems: 'center', marginTop: '50%'}}>LOADING</div>
+				<div
+					style={{
+						justifyContent: 'center',
+						alignItems: 'center',
+						marginTop: '50%',
+					}}>
+					LOADING
+				</div>
 			) : (
 				<div>
 					<motion.div
@@ -58,8 +67,10 @@ function Title(props) {
 							className='image'></motion.img>
 						<Link className='link' to='/home'>
 							<motion.Button
+								style={{display: finished}}
 								className='link'
-								animate={{ opacity: [0, 1] }}
+			
+								animate={{ opacity: [0, 1], display: 'flex' }}
 								transition={{ duration: 2, delay: 24 }}
 								variant='danger'>
 								ENTER

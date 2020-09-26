@@ -144,18 +144,14 @@ h1 {
 }
 
 .link {
-	width: 20%;
-	height: 15%;
+	min-width: 20%;
+	min-height: 15%;
 	position: fixed;
 	justify-content: center;
 	align-items: center;
 	border-radius: 20px;
 	z-index: 2;
 	font-family: $title;
-}
-.link:hover {
-	background: $yurple;
+	background: transparent;
 	color: white;
-	transition: .5s;
-	
 }

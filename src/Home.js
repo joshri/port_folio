@@ -85,15 +85,18 @@ function Home(props) {
 							overflow: 'scroll',
 						}}>
 						<div className='topContainer'>
-							<h1
-								style={{
-									fontSize: `${scalePercent}%`,
-									textAlign: 'center',
-									zIndex: 70,
-								}}
-								className='name'>
-								JOSHUA ISRAEL
-							</h1>
+							<div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
+								<h1
+									style={{
+										fontSize: `${scalePercent}%`,
+										textAlign: 'center',
+										zIndex: 70,
+									}}
+									className='name'>
+									JOSHUA ISRAEL
+								</h1>
+								<h6 style={{fontSize: navFont, textAlign: 'center'}}>FRONT-END / FULL-STACK DEVELOPER</h6>
+							</div>
 							<div className='contact'>
 								<div className='socialDiv'>
 									<a

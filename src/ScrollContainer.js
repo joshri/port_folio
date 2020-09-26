@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import thumbnailPic from './images/ResumeThumbnail.png';
+import res from './images/Resume.png';
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
+import Row from 'react-bootstrap/Row';
 
 function ScrollContainer(props) {
+	let [resFull, setResFull] = useState(false);
+
 	let pSize = 0;
 	let resume = 0;
 	let thumbnail = 0;
@@ -24,6 +30,19 @@ function ScrollContainer(props) {
 
 	return (
 		<div style={{ width: '100%', height: '100%', overflow: 'scroll' }}>
+			<Modal size='lg' centered show={resFull}>
+				<Row style={{ padding: '10px' }}>
+					<Modal.Body style={{ justifyContent: 'center' }}>
+						<img
+							alt='Full Resume'
+							src={res}
+							style={{ height: '100%', width: '75%', zIndex: -10 }}></img>
+					</Modal.Body>
+				</Row>
+				<Modal.Footer style={{justifyContent: 'center'}}>
+					<Button variant='outline-dark' onClick={() => setResFull(false)}>CLOSE</Button>
+				</Modal.Footer>
+			</Modal>
 			<div className='scrollItem'>
 				<div
 					style={{
@@ -38,33 +57,27 @@ function ScrollContainer(props) {
 						style={{
 							opacity: 1,
 							fontSize: pSize,
-							width: '40%',
+							width: '50%',
 							padding: '15px',
 							border: '2px solid black',
 						}}>
-						An artist/educator turned engineer - AKA an entirely self-motivated
-						professional collaborator and idea-generator with the confidence to
-						present a product in front of strangers who still believes they can
-						make the world a better place, plus Javascript.<br></br>
+						Welcome to my Internet House! You've got everything you could ever
+						want right here at your fingertips. The Res. The Projects. The email
+						and social links. The only thing that's missing is another look at
+						that photo from the intro, which I am happy to send on request.
 						<br></br>
-						I've always wanted to just "put the puzzle pieces together" if that
-						makes sense, but now I get to not only put them together, but create
-						all the pieces myself! Yes, the 'but now' indicates that I wasn't
-						always a software engineer - before learning how to use a computer,
-						I performed at the top regional theaters in the country (Ford's
-						Theater, Paper Mill Playhouse), at Broadway's Town Hall, and with
-						the Phoenix Symphony, Cincinnati Pops, Tulsa Symphony, and many
-						more, and taught dance and theater for MTCA
-						(mtcollegeauditions.com), Spot-On Arts Academy, and even my alma
-						mater NYU Tisch. Check out this article I wrote about my latest
-						project for more about how I translated these skills into the
-						universe of CODE -
-						<a
-							target='_blank'
-							rel='noopener noreferrer'
-							href='https://www.linkedin.com/pulse/how-i-achieved-my-dreams-keeping-ying-yang-twins-alive-israel/'>
-							link
-						</a>
+						<br></br>Seriously though - I love creating, I love learning, and I
+						used to be paid to sing and dance in front of thousands of people
+						eight times a week - or as I like to call it now, "giving
+						presentations".<br></br>
+						<br></br>Yes, I actually like talking to people and giving
+						presentations. So if you need that, Or:<br></br>
+						<br></br>
+						React (Bootstrap, Hooks, Framer+Motion, NPM), Javascript, CSS (SASS,
+						Styled Components), HTML, Python, PostgreSQL, MongoDB, Express,
+						Django, Postman, or Git,<br></br>
+						<br></br>Let's make something together!<br></br>
+						<br></br>
 					</p>
 				</div>
 			</div>
@@ -92,17 +105,13 @@ function ScrollContainer(props) {
 							d='M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z'
 						/>
 					</svg>
-					<a
-						target='_blank'
-						rel='noopener noreferrer'
-						href='https://www.linkedin.com/in/joshri/detail/overlay-view/urn:li:fsd_profileTreasuryMedia:(ACoAADGa3_8B-PZN9vIg0o1QCAsb7MwnOi1YAbY,1600191288978)/'>
-						<img
-							alt='resume thumbnail'
-							className='resumeThumb'
-							style={{ height: thumbnail, width: thumbnail }}
-							src={thumbnailPic}
-						/>
-					</a>
+					<img
+						alt='resume thumbnail'
+						className='resumeThumb'
+						style={{ height: thumbnail, width: thumbnail }}
+						src={thumbnailPic}
+						onClick={() => setResFull(true)}
+					/>
 				</div>
 			</div>
 			<div id='projects'></div>
