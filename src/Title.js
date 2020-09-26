@@ -10,7 +10,7 @@ function Title(props) {
 	setTimeout(() => setFinished('flex'), 24000);
 	const noMobileCutoff = window.innerHeight
 	return (
-		<div className='titleContainer' style={{ height: noMobileCutoff, position: 'fixed' }}>
+		<div className='titleContainer' style={{ height: '100%', position: 'fixed' }}>
 			<audio
 				id='audio'
 				onPlay={() => setLoaded(true)}
