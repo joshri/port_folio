@@ -10,12 +10,12 @@ function Title(props) {
 	setTimeout(() => setFinished('flex'), 24000);
 	const noMobileCutoff = window.innerHeight
 	return (
-		<div className='titleContainer' style={{height: noMobileCutoff}}>
+		<div className='titleContainer' style={{ height: noMobileCutoff }}>
 			<audio
 				id='audio'
 				onPlay={() => setLoaded(true)}
 				src={portfolio_theme}
-				autoplay
+				autoPlay
 			/>
 			{!loaded ? (
 				<div
@@ -26,7 +26,7 @@ function Title(props) {
 						alignItems: 'center',
 						marginTop: '50%',
 					}}>
-					LOADING
+					<h1>LOADING</h1>
 				</div>
 			) : (
 				<div>
@@ -70,9 +70,8 @@ function Title(props) {
 							className='image'></motion.img>
 						<Link className='link' to='/home'>
 							<motion.Button
-								style={{display: finished}}
+								style={{ display: finished }}
 								className='link'
-			
 								animate={{ opacity: [0, 1], display: 'flex' }}
 								transition={{ duration: 2, delay: 24 }}
 								variant='danger'>
