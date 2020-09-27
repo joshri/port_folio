@@ -8,9 +8,11 @@ function Title(props) {
 	let [loaded, setLoaded] = useState(false);
 	let [finished, setFinished] = useState('none');
 	setTimeout(() => setFinished('flex'), 24000);
-	const noMobileCutoff = window.innerHeight
+
+	//has not fixed the issue unfortunately -
+
 	return (
-		<div className='titleContainer' style={{ height: '100%', position: 'fixed' }}>
+		<div onLoad={window.scrollTo(0, 1)} className='titleContainer'>
 			<audio
 				id='audio'
 				onPlay={() => setLoaded(true)}
@@ -21,12 +23,20 @@ function Title(props) {
 				<div
 					style={{
 						width: '100%',
-						height: '100%',
+						height: '100vh',
+						display: 'flex',
+						flexDirection: 'column',
 						justifyContent: 'center',
 						alignItems: 'center',
-						marginTop: '50%',
+						textAlign: 'center',
+						margin: 0,
 					}}>
 					<h1>LOADING</h1>
+					<h6>Stuck? Give it a second.</h6>
+					<h6> Then ask yourself if you came here from the party button.</h6>
+					<h6 style={{ textDecoration: 'underline' }}>
+						<Link to='/'>back to the start</Link>
+					</h6>
 				</div>
 			) : (
 				<div>

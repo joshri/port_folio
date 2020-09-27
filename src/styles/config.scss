@@ -76,34 +76,6 @@ $orange: #d66b2e;
 	}
 }
 
-@keyframes colorChangeMid {
-	0% {
-		color: black;
-		border-left: 2px solid black;
-		border-right: 2px solid black;
-	}
-	25% {
-		color: $yurple;
-		border-left: 2px solid $yurple;
-		border-right: 2px solid $yurple;
-	}
-	50% {
-		color: $turquaz;
-		border-left: 2px solid $turquaz;
-		border-right: 2px solid $turquaz;
-	}
-	75% {
-		color: $orange;
-		border-left: 2px solid $orange;
-		border-right: 2px solid $orange;
-	}
-	100% {
-		color: black;
-		border-left: 2px solid black;
-		border-right: 2px solid black;
-	}
-}
-
 @keyframes colorChange {
 	0% {
 		color: black;
@@ -136,6 +108,7 @@ $orange: #d66b2e;
 
 @keyframes titleScroll {
 	0% {
+		height: auto;
     opacity: 1;
 		transform: translateX(100%);
 	}
