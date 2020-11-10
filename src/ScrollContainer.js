@@ -171,7 +171,7 @@ function ScrollContainer(props) {
 							listStylePosition: 'inside',
 						}}>
 						<li>
-							Filters an artists 50 most popular songs on Spotify using their
+							Filters an artist's 50 most popular songs on Spotify using their
 							API to create four playlists representing the four seasons that
 							you can save to your Spotify account!
 						</li>
