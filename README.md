@@ -1,3 +1,14 @@
-## port_folio
+## Welcome to the number one destination for all things Joshua Israel!
 
-## this is my portfolio
+# This is deployed at https://joshisrael.herokuapp.com
+
+# running npm install should set you up otherwise. 
+
+## Made with:
+# React
+# Javascript
+# HTML
+# CSS
+# SASS
+# Bootstrap
+# Framer Motion
