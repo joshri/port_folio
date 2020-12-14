@@ -76,7 +76,7 @@ function Title(props) {
 							<div className='row skillsRow'>
 								<h3 className='col skillsItem e'>EXPRESS</h3>
 								<h3 className='col skillsItem i'>PYTHON</h3>
-								<h3 className='col skillsItem f'>DJANGO</h3>
+								<h3 className='col skillsItem f'>AWS</h3>
 							</div>
 						</motion.div>
 						<motion.img
