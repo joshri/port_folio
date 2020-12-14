@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import portfolio_theme from './audio/PortfolioTheme.mp3';
 import title_photo from './images/TitlePhoto.jpeg';
 import { motion } from 'framer-motion';
@@ -9,15 +9,19 @@ function Title(props) {
 	let [finished, setFinished] = useState('none');
 	setTimeout(() => setFinished('flex'), 24000);
 
-	//has not fixed the issue unfortunately -
+	const audioTag = useRef(null);
 
 	return (
 		<div onLoad={window.scrollTo(0, 1)} className='titleContainer'>
 			<audio
 				id='audio'
-				onPlay={() => setLoaded(true)}
+				ref={audioTag}
+				preload
+				onCanPlay={() => {
+					setLoaded(true);
+					audioTag.current.play();
+				}}
 				src={portfolio_theme}
-				autoPlay
 			/>
 			{!loaded ? (
 				<div
@@ -33,9 +37,11 @@ function Title(props) {
 					}}>
 					<h1>LOADING</h1>
 					<h6>Stuck? Give it a second.</h6>
-					<h6> Then ask yourself if you came here from the party button.</h6>
 					<h6 style={{ textDecoration: 'underline' }}>
 						<Link to='/'>back to the start</Link>
+					</h6>
+					<h6 style={{ textDecoration: 'underline' }}>
+						<Link to='/home'>onward to the portfolio</Link>
 					</h6>
 				</div>
 			) : (
@@ -80,7 +86,7 @@ function Title(props) {
 							className='image'></motion.img>
 						<Link className='link' to='/home'>
 							<motion.Button
-								style={{ display: finished }}
+								style={{ display: finished, fontSize: '175%' }}
 								className='link'
 								animate={{ opacity: [0, 1], display: 'flex' }}
 								transition={{ duration: 2, delay: 24 }}

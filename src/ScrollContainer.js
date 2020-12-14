@@ -75,7 +75,7 @@ function ScrollContainer(props) {
 						presentations. So if you need that, Or:<br></br>
 						<br></br>
 						React (Bootstrap, Hooks, Framer+Motion, NPM), Javascript, CSS (SASS,
-						Styled Components), HTML, Python, PostgreSQL, MongoDB, Express,
+						Styled Components), HTML, Python, AWS (where this is deployed!), PostgreSQL, MongoDB, Express,
 						Django, Postman, or Git,<br></br>
 						<br></br>Let's make something together!<br></br>
 						<br></br>
