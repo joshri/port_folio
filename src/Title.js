@@ -10,6 +10,7 @@ function Title(props) {
 	setTimeout(() => setFinished('flex'), 24000);
 
 	const audioTag = useRef(null);
+	console.log(portfolio_theme)
 
 	useEffect(() => audioTag.current.load(), [])
 
@@ -19,6 +20,7 @@ function Title(props) {
 				id='audio'
 				ref={audioTag}
 				preload
+				controls
 				onCanPlay={() => {
 					setLoaded(true);
 					audioTag.current.play();
