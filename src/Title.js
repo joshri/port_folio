@@ -12,6 +12,7 @@ function Title(props) {
 	const audioTag = useRef(null);
 	console.log(portfolio_theme)
 
+
 	useEffect(() => audioTag.current.load(), [])
 
 	return (
@@ -24,7 +25,7 @@ function Title(props) {
 					setLoaded(true);
 					audioTag.current.play();
 				}}
-				src={portfolio_theme}
+				src={'https://raw.githubusercontent.com/joshri/port_folio/dev/src/audio/PortfolioTheme2.mp3'}
 			/>
 			{!loaded ? (
 				<div
