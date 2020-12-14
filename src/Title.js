@@ -10,10 +10,6 @@ function Title(props) {
 	setTimeout(() => setFinished('flex'), 24000);
 
 	const audioTag = useRef(null);
-	console.log(portfolio_theme)
-
-
-	useEffect(() => audioTag.current.load(), [])
 
 	return (
 		<div onLoad={window.scrollTo(0, 1)} className='titleContainer'>
