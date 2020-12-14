@@ -20,9 +20,7 @@ function Title(props) {
 					setLoaded(true);
 					audioTag.current.play();
 				}}
-				src={
-					'https://raw.githubusercontent.com/joshri/port_folio/dev/src/audio/PortfolioTheme2.mp3'
-				}
+				src={'https://raw.githubusercontent.com/joshri/port_folio/dev/src/audio/PortfolioTheme2.mp3'}
 			/>
 			{!loaded ? (
 				<div
@@ -83,9 +81,7 @@ function Title(props) {
 						<motion.img
 							animate={{ width: '75%', height: '75%', opacity: 1 }}
 							transition={{ delay: 20, duration: 4 }}
-							src={
-								'https://github.com/joshri/port_folio/blob/master/src/images/TitlePhoto.jpeg'
-							}
+							src={title_photo}
 							className='image'></motion.img>
 						<Link className='link' to='/home'>
 							<motion.Button
