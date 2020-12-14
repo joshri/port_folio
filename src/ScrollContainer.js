@@ -31,16 +31,17 @@ function ScrollContainer(props) {
 	return (
 		<div style={{ width: '100%', height: '100%', overflow: 'scroll' }}>
 			<Modal size='xl' centered show={resFull}>
-				<Row style={{ padding: '10px' }}>
-					<Modal.Body style={{ justifyContent: 'center', alignItems: 'center' }}>
-						<img
-							alt='Full Resume'
-							src={res}
-							style={{ height: '100%', width: '75%', zIndex: -10 }}></img>
-					</Modal.Body>
-				</Row>
-				<Modal.Footer style={{justifyContent: 'center'}}>
-					<Button variant='outline-dark' onClick={() => setResFull(false)}>CLOSE</Button>
+				<Modal.Body style={{ justifyContent: 'center', alignItems: 'center' }}>
+					<img
+						alt='Full Resume'
+						src={res}
+						style={{ height: '100%', width: '100%', zIndex: -10 }}></img>
+				</Modal.Body>
+
+				<Modal.Footer style={{ justifyContent: 'center' }}>
+					<Button variant='outline-dark' onClick={() => setResFull(false)}>
+						CLOSE
+					</Button>
 				</Modal.Footer>
 			</Modal>
 			<div className='scrollItem'>
