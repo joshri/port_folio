@@ -1,5 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
-import portfolio_theme from './audio/PortfolioTheme2.mp3';
+import React, { useState, useRef } from 'react';
 import title_photo from './images/TitlePhoto.jpeg';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
