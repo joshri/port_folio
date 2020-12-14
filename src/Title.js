@@ -20,7 +20,6 @@ function Title(props) {
 				id='audio'
 				ref={audioTag}
 				preload
-				controls
 				onCanPlay={() => {
 					setLoaded(true);
 					audioTag.current.play();
