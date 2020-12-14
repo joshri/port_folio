@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import portfolio_theme from './audio/PortfolioTheme.mp3';
 import title_photo from './images/TitlePhoto.jpeg';
 import { motion } from 'framer-motion';
@@ -10,6 +10,8 @@ function Title(props) {
 	setTimeout(() => setFinished('flex'), 24000);
 
 	const audioTag = useRef(null);
+
+	useEffect(() => audioTag.current.load(), [])
 
 	return (
 		<div onLoad={window.scrollTo(0, 1)} className='titleContainer'>
