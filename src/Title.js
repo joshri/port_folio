@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import title_photo from './images/TitlePhoto2.jpg';
+import theme from './audio/PortfolioThemeLowest.mp3';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
@@ -20,7 +21,7 @@ function Title(props) {
 					setLoaded(true);
 					audioTag.current.play();
 				}}
-				src={'https://raw.githubusercontent.com/joshri/port_folio/dev/src/audio/PortfolioTheme2.mp3'}
+				src={theme}
 			/>
 			{!loaded ? (
 				<div
