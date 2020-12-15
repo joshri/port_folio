@@ -3,6 +3,7 @@ import title_photo from './images/TitlePhoto2.jpg';
 import theme from './audio/PortfolioThemeLowest.mp3';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
 
 function Title(props) {
 	let [loaded, setLoaded] = useState(false);
@@ -39,6 +40,16 @@ function Title(props) {
 					}}>
 					<h1>LOADING</h1>
 					<h6>Stuck? Give it a second.</h6>
+					<h6>
+						On mobile? Try this?{' '}
+						<Button variant='outline-dark' size='sm'
+							onClick={() => {
+								setLoaded(true);
+								audioTag.current.play();
+							}}>
+							play?
+						</Button>
+					</h6>
 					<h6 style={{ textDecoration: 'underline' }}>
 						<Link to='/'>back to the start</Link>
 					</h6>
