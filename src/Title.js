@@ -21,7 +21,9 @@ function Title(props) {
 					setLoaded(true);
 					audioTag.current.play();
 				}}
-				src={'https://github.com/joshri/port_folio/blob/master/src/audio/PortfolioThemeLowest.mp3'}
+				src={
+					'https://raw.githubusercontent.com/joshri/port_folio/master/src/audio/PortfolioThemeLowest.mp3'
+				}
 			/>
 			{!loaded ? (
 				<div
