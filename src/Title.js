@@ -64,13 +64,13 @@ function Title(props) {
 						animate={{ borderColor: 'black', opacity: 1 }}
 						transition={{ duration: 2 }}
 						className='row titleEdge'
-						style={{ borderBottom: '5px solid #ffcf3d', opacity: 0 }}>
+						style={{ borderBottom: '5px solid #ffcf3d', opacity: 0, height: props.adjustVh * 12.5 }}>
 						<h1 className='col zoom'>MEET</h1>
 						<h1 className='col zoom forYour'>YOUR</h1>
 						<h1 className='col zoom forNew'>NEW</h1>
 					</motion.div>
 
-					<div className='nameContainer'>
+					<div className='nameContainer' style={{height: props.adjustVh * 75}}>
 						<motion.div
 							animate={{ scale: 3, opacity: 0 }}
 							transition={{ delay: 17.5, duration: 0.5 }}
@@ -117,7 +117,7 @@ function Title(props) {
 					<motion.div
 						animate={{ borderColor: 'black', opacity: 1 }}
 						transition={{ duration: 2 }}
-						style={{ borderTop: '5px solid #ffcf3d', opacity: 0 }}
+						style={{ borderTop: '5px solid #ffcf3d', opacity: 0, height: props.adjustVh * 12.5 }}
 						className='row titleEdge'>
 						<h1 className='col zoom forBot'>SOFTWARE</h1>
 						<h1 className='col zoom forBot'> ENGINEER</h1>
