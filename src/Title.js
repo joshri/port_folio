@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 
 function Title(props) {
+
 	let [loaded, setLoaded] = useState(false);
 	let [finished, setFinished] = useState('none');
 	setTimeout(() => setFinished('flex'), 24000);
@@ -13,7 +14,7 @@ function Title(props) {
 	const audioTag = useRef(null);
 
 	return (
-		<div onLoad={window.scrollTo(0, 1)} className='titleContainer'>
+		<div onLoad={window.scrollTo(0, 1)} className='titleContainer' style={{height: props.adjustVh * 100}}>
 			<audio
 				id='audio'
 				ref={audioTag}
@@ -30,7 +31,7 @@ function Title(props) {
 				<div
 					style={{
 						width: '100%',
-						height: '100vh',
+						height: props.adjustVh * 100,
 						display: 'flex',
 						flexDirection: 'column',
 						justifyContent: 'center',
@@ -95,6 +96,7 @@ function Title(props) {
 						<motion.img
 							animate={{ width: '75%', height: '75%', opacity: 1 }}
 							transition={{ delay: 20, duration: 4 }}
+							alt={'a handsome image of Joshua Israel'}
 							src={title_photo}
 							className='image'></motion.img>
 						<Link className='link' to='/home'>

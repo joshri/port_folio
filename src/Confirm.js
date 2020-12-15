@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 function Confirm(props) {
 	return (
-		<div className='confirmContainer'>
+		<div style={{height: props.adjustVh * 100}}className='confirmContainer'>
 			<motion.h1
 				animate={{ fontSize: ['1vw', '15vw', '30vw'], opacity: [0, 1, 0] }}
 				transition={{ duration: 5 }}
