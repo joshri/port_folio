@@ -3,7 +3,7 @@ import thumbnailPic from './images/ResumeThumbnail.png';
 import res from './images/Resume.png';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
-import Row from 'react-bootstrap/Row';
+import Project from './Project';
 
 function ScrollContainer(props) {
 	let [resFull, setResFull] = useState(false);
@@ -11,21 +11,15 @@ function ScrollContainer(props) {
 	let pSize = 0;
 	let resume = 0;
 	let thumbnail = 0;
-	let projectTitle = 0;
-	let projectLink = 0;
 
 	if (window.screen.width > 812) {
 		pSize = '1.5vw';
 		resume = '600%';
 		thumbnail = '200px';
-		projectTitle = '200%';
-		projectLink = '100%';
 	} else {
 		pSize = '2.5vw';
 		resume = '200%';
 		thumbnail = '128px';
-		projectTitle = '100%';
-		projectLink = '50%';
 	}
 
 	return (
@@ -75,8 +69,8 @@ function ScrollContainer(props) {
 						presentations. So if you need that, Or:<br></br>
 						<br></br>
 						React (Bootstrap, Hooks, Framer+Motion, NPM), Javascript, CSS (SASS,
-						Styled Components), HTML, Python, AWS (where this is deployed!), PostgreSQL, MongoDB, Express,
-						Django, Postman, or Git,<br></br>
+						Styled Components), HTML, Python, AWS (where this is deployed!),
+						PostgreSQL, MongoDB, Express, Django, Postman, or Git,<br></br>
 						<br></br>Let's make something together!<br></br>
 						<br></br>
 					</p>
@@ -98,11 +92,11 @@ function ScrollContainer(props) {
 						width='30%'
 						height='30%'
 						viewBox='0 0 16 16'
-						class='bi bi-arrow-right'
+						className='bi bi-arrow-right'
 						fill='currentColor'
 						xmlns='http://www.w3.org/2000/svg'>
 						<path
-							fill-rule='evenodd'
+							fillRule='evenodd'
 							d='M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z'
 						/>
 					</svg>
@@ -127,179 +121,45 @@ function ScrollContainer(props) {
 					PROJECTS{' '}
 				</h1>
 				<div id='forallseasons'></div>
-				<div className='scrollItem projectContainer'>
-					<div
-						style={{
-							display: 'flex',
-							flexDirection: 'column',
-							justifyContent: 'center',
-							alignItems: 'center',
-						}}>
-						<h4
-							style={{ fontSize: projectTitle, marginBottom: '10px' }}
-							className='scrollTitle2'>
-							FOR ALL SEASONS
-						</h4>
-						<a
-							target='_blank'
-							rel='noopener noreferrer'
-							href='https://for-all-seasons.herokuapp.com'
-							style={{ fontSize: projectLink }}>
-							for-all-seasons.herokuapp.com
-						</a>
-						<a
-							target='_blank'
-							rel='noopener noreferrer'
-							href='https://github.com/joshri/for-all-seasons'
-							style={{ fontSize: projectLink }}>
-							github repo
-						</a>
-
-						<iframe
-							title='For All Seasons'
-							style={{ width: thumbnail, height: thumbnail }}
-							src='https://giphy.com/embed/jV4sm6vP1BKq5xH34H'
-							frameBorder='0'
-							class='giphy-embed'
-							allowFullScreen></iframe>
-					</div>
-					<ul
-						className='project'
-						style={{
-							justifyContent: 'center',
-							alignItems: 'center',
-							fontSize: pSize,
-							listStylePosition: 'inside',
-						}}>
-						<li>
-							Filters an artist's 50 most popular songs on Spotify using their
-							API to create four playlists representing the four seasons that
-							you can save to your Spotify account!
-						</li>
-						<li>
-							Functional use of a billion Spotify API endpoints, from
-							authentication to changing user data
-						</li>
-						<li>
-							Built-in audio player in your browser using the Spotify Web Player
-							SDK
-						</li>
-						<li>
-							Layered API calls with useEffect allow for any artist to be typed
-							in - changing all the data
-						</li>
-					</ul>
-				</div>
+				<Project
+					title='FOR ALL SEASONS'
+					deployed='https://for-all-seasons.herokuapp.com'
+					github='https://github.com/joshri/for-all-seasons'
+					gif='https://giphy.com/embed/jV4sm6vP1BKq5xH34H'
+					bullets={[
+						"Filters an artist's 50 most popular songs on Spotify using their API to create four playlists representing the four seasons that you can save to your Spotify account!",
+						'Functional use of a billion Spotify API endpoints, from authentication to changing user data',
+						'Built-in audio player in your browser using the Spotify Web Player SDK',
+						'Layered API calls with useEffect allow for any artist to be typed in - changing all the data',
+					]}
+				/>
 				<div id='funkysimon'></div>
 				<div className='between'></div>
-				<div className='scrollItem projectContainer'>
-					<div
-						style={{
-							display: 'flex',
-							flexDirection: 'column',
-							justifyContent: 'center',
-							alignItems: 'center',
-						}}>
-						<h4 style={{ fontSize: projectTitle }} className='scrollTitle2 '>
-							FUNKY SIMON
-						</h4>
-						<a
-							target='_blank'
-							rel='noopener noreferrer'
-							style={{ fontSize: projectLink }}
-							href='https://joshri.github.io/funky-simon'>
-							joshri.github.io/funky-simon
-						</a>
-						<a
-							target='_blank'
-							rel='noopener noreferrer'
-							style={{ fontSize: projectLink }}
-							href='https://github.com/joshri/funky-simon'>
-							github repo
-						</a>
-						<iframe
-							title='Funky Simon'
-							style={{ width: thumbnail, height: thumbnail }}
-							src='https://giphy.com/embed/MF0zPdjBcQQqKUbnnn'
-							frameBorder='0'
-							class='giphy-embed'
-							allowFullScreen></iframe>
-					</div>
-					<ul
-						style={{
-							justifyContent: 'center',
-							alignItems: 'center',
-							fontSize: pSize,
-						}}
-						className='project'>
-						<li>
-							Fully functional Simon game website - Increasing difficulty with
-							round number and high score
-						</li>
-						<li>
-							setTimeouts galore to add bonus rhythm element indicated by CSS
-							along with funky animation
-						</li>
-						<li>
-							HTML audio element uses my stunning GarageBand work in game, along
-							with a soundboard!
-						</li>
-						<li>Hardcoded HTML and CSS animated background!</li>
-					</ul>
-				</div>
+				<Project
+					title='FUNKY SIMON'
+					deployed='https://joshri.github.io/funky-simon'
+					github='https://github.com/joshri/funky-simon'
+					gif='https://giphy.com/embed/MF0zPdjBcQQqKUbnnn'
+					bullets={[
+						'Fully functional Simon game website - Increasing difficulty with round number and high score',
+						'setTimeouts galore to add bonus rhythm element indicated by CSS along with funky animation',
+						'HTML audio element uses my stunning GarageBand work in game, along with a soundboard!',
+						'Hardcoded HTML and CSS animated background!',
+					]}
+				/>
 				<div className='between'></div>
 				<div id='isithot'></div>
-				<div className='scrollItem projectContainer'>
-					<div
-						style={{
-							display: 'flex',
-							flexDirection: 'column',
-							justifyContent: 'space-evenly',
-							alignItems: 'center',
-						}}>
-						<h4 style={{ fontSize: projectTitle }} className='scrollTitle2'>
-							IS IT HOT?
-						</h4>
-						<a
-							target='_blank'
-							rel='noopener noreferrer'
-							style={{ fontSize: projectLink }}
-							href='https://is-it-hot-daily.herokuapp.com'>
-							is-it-hot-daily.herokuapp.com
-						</a>
-						<a
-							target='_blank'
-							rel='noopener noreferrer'
-							style={{ fontSize: projectLink, marginBottom: '3px' }}
-							href='https://github.com/joshri/is-it-hot'>
-							github repo
-						</a>
-						<iframe
-							title='Is It Hot'
-							style={{ width: thumbnail, height: thumbnail }}
-							src='https://giphy.com/embed/p8tjjUM7AMJeph1syh'
-							frameBorder='0'
-							class='giphy-embed'
-							allowFullScreen></iframe>
-					</div>
-					<ul
-						style={{
-							justifyContent: 'center',
-							alignItems: 'center',
-							fontSize: pSize,
-						}}
-						className='project'>
-						<li>
-							7 free APIs provide the data for my weather app/endless source of
-							joy
-						</li>
-						<li>Function and Class Components with State and React Hooks</li>
-						<li>
-							Styled Components for a reusable button that refreshes the API
-							call.
-						</li>
-					</ul>
-				</div>
+				<Project
+					title='IS IT HOT'
+					deployed='https://is-it-hot-daily.herokuapp.com'
+					github='https://github.com/joshri/is-it-hot'
+					gif='https://giphy.com/embed/p8tjjUM7AMJeph1syh'
+					bullets={[
+						'7 free APIs provide the data for my weather app/endless source of joy',
+						'Function and Class Components with State and React Hooks',
+						'Styled Components for a reusable button that refreshes the API call.',
+					]}
+				/>
 			</div>
 			<div style={{ height: '20vh' }}></div>
 		</div>

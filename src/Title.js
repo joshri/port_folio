@@ -1,6 +1,5 @@
 import React, { useState, useRef } from 'react';
 import title_photo from './images/TitlePhoto2.jpg';
-import theme from './audio/PortfolioThemeLowest.mp3';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
