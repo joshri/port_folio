@@ -13,11 +13,11 @@ function ScrollContainer(props) {
   let thumbnail = 0;
 
   if (window.screen.width > 812) {
-    pSize = "1.5vw";
+    pSize = "1vw";
     resume = "400%";
     thumbnail = "200px";
   } else {
-    pSize = "2.5vw";
+    pSize = "2vw";
     resume = "200%";
     thumbnail = "128px";
   }
@@ -82,10 +82,7 @@ function ScrollContainer(props) {
       </div>
       <div id="resume" style={{ height: "200px" }}></div>
       <div className="scrollItem">
-        <h1
-          className="scrollTitle"
-          style={{ fontSize: resume, marginTop: "200px" }}
-        >
+        <h1 className="scrollTitle" style={{ fontSize: resume }}>
           RESUME
         </h1>
         <div
@@ -118,7 +115,7 @@ function ScrollContainer(props) {
           />
         </div>
       </div>
-      <div id="projects"></div>
+      <div id="projects" style={{ height: "200px" }}></div>
       <div style={{ justifyContent: "center", alignItems: "center" }}>
         <h1
           style={{
@@ -128,7 +125,7 @@ function ScrollContainer(props) {
           }}
           className="scrollTitle"
         >
-          PROJECTS{" "}
+          PROJECTS
         </h1>
         <div id="forallseasons"></div>
         <Project
