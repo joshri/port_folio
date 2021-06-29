@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
-import instaImage from "./images/glyph-logo_May2016.png";
-import liImage from "./images/LI-In-Bug.png";
+import instaImage from "./assets/images/glyph-logo_May2016.png";
+import liImage from "./assets/images/LI-In-Bug.png";
 import ScrollContainer from "./ScrollContainer";
 import ScrollIntoView from "react-scroll-into-view";
 import { motion } from "framer-motion";
@@ -39,7 +39,7 @@ function Home(props) {
             }}
           >
             <div style={{ height: "15vh" }}></div>
-            <Nav
+            {/* <Nav
               style={{ height: "85vh" }}
               variant="pills"
               className="flex-column"
@@ -76,7 +76,7 @@ function Home(props) {
               <NavItem style={{ fontSize: navFont }} className="navItem2">
                 - Is It Hot?
               </NavItem>
-            </Nav>
+            </Nav> */}
           </Col>
 
           <div

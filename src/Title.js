@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import title_photo from "./images/TitlePhoto2.jpg";
+import title_photo from "./assets/images/TitlePhoto2.jpg";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";

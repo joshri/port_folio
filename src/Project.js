@@ -37,7 +37,7 @@ function Project(props) {
           style={{ fontSize: projectLink }}
           href={props.deployed}
         >
-          joshri.github.io/funky-simon
+          {props.deployed}
         </a>
         <a
           target="_blank"
@@ -47,14 +47,17 @@ function Project(props) {
         >
           github repo
         </a>
-        <iframe
+        <video
           title={props.title}
           style={{ width: thumbnail, height: thumbnail }}
           src={props.gif}
-          frameBorder="0"
+          type="video/mp4"
+          autoPlay
+          loop
           className="giphy-embed"
           allowFullScreen
-        ></iframe>
+          muted
+        ></video>
       </div>
       <ul
         style={{

@@ -1,9 +1,15 @@
 import React, { useState } from "react";
-import thumbnailPic from "./images/ResumeThumbnail.png";
-import res from "./images/Resume.jpg";
+import thumbnailPic from "./assets/images/ResumeThumbnail.png";
+import res from "./assets/images/Resume.jpg";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Project from "./Project";
+import ForAllSeasons from "./assets/video/ForAllSeasonsGif.mp4";
+import FunkySimon from "./assets/video/FunkySimonGif.mp4";
+import IsItHot from "./assets/video/IsItHotGif.mp4";
+import Sidecar from "./assets/video/SidecarDemoMovie.mp4";
+import BartabOpen from "./assets/video/BartabOpenFinal3.mov";
+import BartabUpdate from "./assets/video/BartabUpdateGif.mp4";
 
 function ScrollContainer(props) {
   let [resFull, setResFull] = useState(false);
@@ -39,17 +45,16 @@ function ScrollContainer(props) {
           </Button>
         </Modal.Footer>
       </Modal>
-      <div className="scrollItem" style={{ marginBottom: "200px" }}>
+      <div className="scrollItem">
         <div
           style={{
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            marginTop: "30vh",
+            marginTop: "20vh",
           }}
         >
           <h1 className="scrollTitle rotate">ABOUT</h1>
-
           <p
             style={{
               opacity: 1,
@@ -80,7 +85,7 @@ function ScrollContainer(props) {
           </p>
         </div>
       </div>
-      <div id="resume" style={{ height: "200px" }}></div>
+
       <div className="scrollItem">
         <h1 className="scrollTitle" style={{ fontSize: resume }}>
           RESUME
@@ -115,12 +120,74 @@ function ScrollContainer(props) {
           />
         </div>
       </div>
-      <div id="projects" style={{ height: "200px" }}></div>
+
+      <div className="scrollItem">
+        <h1
+          style={{
+            fontSize: resume,
+            marginBottom: "100px",
+          }}
+          className="scrollTitle"
+        >
+          BARTAB
+        </h1>
+        <div
+          style={{
+            display: "flex",
+            width: "100%",
+            justifyContent: "space-evenly",
+          }}
+        >
+          {" "}
+          <video
+            title={props.title}
+            src={BartabOpen}
+            type="video/mov"
+            autoPlay
+            loop
+            className="giphy-embed"
+            allowFullScreen
+            muted
+          ></video>
+          <video
+            title={props.title}
+            src={BartabUpdate}
+            type="video/mp4"
+            autoPlay
+            loop
+            className="giphy-embed"
+            allowFullScreen
+            muted
+          ></video>
+        </div>
+        <div>
+          <video
+            title={props.title}
+            src={Sidecar}
+            type="video/mp4"
+            autoPlay
+            loop
+            className="giphy-embed"
+            allowFullScreen
+            muted
+          ></video>
+        </div>
+        <p
+          style={{
+            opacity: 1,
+            fontSize: pSize,
+            width: "50%",
+            padding: "15px",
+            border: "2px solid black",
+          }}
+        >
+          January 2021 - Present <br></br>
+        </p>
+      </div>
       <div style={{ justifyContent: "center", alignItems: "center" }}>
         <h1
           style={{
             fontSize: resume,
-            marginTop: "200px",
             marginBottom: "100px",
           }}
           className="scrollTitle"
@@ -132,7 +199,7 @@ function ScrollContainer(props) {
           title="FOR ALL SEASONS"
           deployed="https://for-all-seasons.herokuapp.com"
           github="https://github.com/joshri/for-all-seasons"
-          gif="https://giphy.com/embed/jV4sm6vP1BKq5xH34H"
+          gif={ForAllSeasons}
           bullets={[
             "Filters an artist's 50 most popular songs on Spotify using their API to create four playlists representing the four seasons that you can save to your Spotify account!",
             "Functional use of a billion Spotify API endpoints, from authentication to changing user data",
@@ -146,7 +213,7 @@ function ScrollContainer(props) {
           title="FUNKY SIMON"
           deployed="https://joshri.github.io/funky-simon"
           github="https://github.com/joshri/funky-simon"
-          gif="https://giphy.com/embed/MF0zPdjBcQQqKUbnnn"
+          gif={FunkySimon}
           bullets={[
             "Fully functional Simon game website - Increasing difficulty with round number and high score",
             "setTimeouts galore to add bonus rhythm element indicated by CSS along with funky animation",
@@ -160,7 +227,7 @@ function ScrollContainer(props) {
           title="IS IT HOT"
           deployed="https://is-it-hot-daily.herokuapp.com"
           github="https://github.com/joshri/is-it-hot"
-          gif="https://giphy.com/embed/p8tjjUM7AMJeph1syh"
+          gif={IsItHot}
           bullets={[
             "7 free APIs provide the data for my weather app/endless source of joy",
             "Function and Class Components with State and React Hooks",
