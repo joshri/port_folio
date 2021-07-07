@@ -1,0 +1,35 @@
+@import "./_config.scss";
+
+body,
+#root {
+  background: $white;
+  font-family: $body;
+  text-align: center;
+}
+
+main,
+section {
+  @extend %flex-display;
+  @extend %max-size;
+  flex-direction: column;
+}
+
+div {
+  @extend %flex-display;
+  &.column {
+    flex-direction: column;
+  }
+}
+
+button {
+  background: transparent;
+  border: 2px solid black;
+  border-radius: 0.875rem;
+  padding: 5px;
+  transition-property: color, border;
+  transition-duration: 0.25s;
+  &:hover {
+    color: $oneColor;
+    border: 2px solid $oneColor;
+  }
+}

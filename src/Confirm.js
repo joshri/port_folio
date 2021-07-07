@@ -1,50 +1,53 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import Button from 'react-bootstrap/Button';
-import { motion } from 'framer-motion';
+import "./styles/_Confirm.scss";
+import React from "react";
+import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { setDisplay } from "./redux/displaySlice";
 
 function Confirm(props) {
-	return (
-		<div style={{height: props.adjustVh * 100}}className='confirmContainer'>
-			<motion.h1
-				animate={{ fontSize: ['1vw', '15vw', '30vw'], opacity: [0, 1, 0] }}
-				transition={{ duration: 5 }}
-				className='welcome'>
-				WELCOME
-			</motion.h1>
-			<div>
-				<motion.p
-					animate={{ opacity: 1 }}
-					transition={{ delay: 4, duration: 2 }}>
-					the next page has an animated introduction with autoplaying audio and
-					is quite colorful.
-				</motion.p>
-				<motion.p
-					animate={{ opacity: 1 }}
-					transition={{ delay: 5, duration: 2 }}>
-					{' '}
-					If you're scared, press no party.
-				</motion.p>
-				<motion.p
-					animate={{ opacity: 1 }}
-					transition={{ delay: 6, duration: 2 }}>
-					Otherwise, I'll see you in about thirty seconds.
-				</motion.p>
-			</div>
-			<div className='partyButtons'>
-				<Link to='/party'>
-					<Button className='bigButt' variant='outline-dark' size='lg'>
-						PARTY!
-					</Button>
-				</Link>
-				<Link to='/home'>
-					<Button variant='outline-dark' size='sm'>
-						no party.
-					</Button>
-				</Link>
-			</div>
-		</div>
-	);
+  const dispatch = useDispatch();
+  return (
+    <section>
+      <motion.h1
+        animate={{ fontSize: ["1vw", "15vw", "30vw"], opacity: [0, 1, 0] }}
+        transition={{ duration: 3 }}
+        className="welcome"
+      >
+        WELCOME
+      </motion.h1>
+      <div className="confirmText column">
+        <motion.h6
+          animate={{ opacity: 1 }}
+          transition={{ delay: 3.5, duration: 2 }}
+        >
+          the next page has an animated introduction with autoplaying audio and
+          is quite colorful.
+        </motion.h6>
+        <motion.h6
+          animate={{ opacity: 1 }}
+          transition={{ delay: 4.5, duration: 2 }}
+        >
+          If you're scared, press no party.
+        </motion.h6>
+        <motion.h6
+          animate={{ opacity: 1 }}
+          transition={{ delay: 5.5, duration: 2 }}
+        >
+          Otherwise, I'll see you in about thirty seconds.
+        </motion.h6>
+      </div>
+      <div className="partyButtons column">
+        <button
+          className="bigButt"
+          onClick={() => dispatch(setDisplay("party"))}
+        >
+          PARTY!
+        </button>
+        <button onClick={() => dispatch(setDisplay("home"))}>no party.</button>
+      </div>
+    </section>
+  );
 }
 
 export default Confirm;

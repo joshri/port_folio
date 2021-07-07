@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import "./styles/_Title.scss";
 import title_photo from "./assets/images/TitlePhoto2.jpg";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -6,8 +7,6 @@ import Button from "react-bootstrap/Button";
 
 function Title(props) {
   let [loaded, setLoaded] = useState(false);
-  let [finished, setFinished] = useState("none");
-  setTimeout(() => setFinished("flex"), 24000);
 
   const audioTag = useRef(null);
 
@@ -117,7 +116,7 @@ function Title(props) {
             ></motion.img>
             <Link className="link" to="/home">
               <motion.Button
-                style={{ display: finished, fontSize: "175%" }}
+                style={{ display: "none", fontSize: "175%" }}
                 className="link"
                 animate={{ opacity: [0, 1], display: "flex" }}
                 transition={{ duration: 2, delay: 24 }}

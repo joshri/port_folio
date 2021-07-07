@@ -1,3 +1,4 @@
+import "./styles/_Home.scss";
 import React, { useRef } from "react";
 import instaImage from "./assets/images/glyph-logo_May2016.png";
 import liImage from "./assets/images/LI-In-Bug.png";

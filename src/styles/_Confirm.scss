@@ -1,0 +1,30 @@
+@import "./main.scss";
+
+div {
+  &.confirmText {
+  }
+  &.partyButtons {
+    opacity: 0;
+    animation: forZoom 1s 6.5s linear forwards;
+  }
+}
+
+h1 {
+  &.welcome {
+    @extend %title-text;
+    opacity: 0;
+    font-size: 15vw;
+    position: fixed;
+  }
+}
+
+h6 {
+  opacity: 0;
+}
+
+.bigButt {
+  width: 25vw;
+  height: 15vh;
+  font-size: 4vw;
+  text-align: center;
+}
