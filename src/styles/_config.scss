@@ -85,15 +85,6 @@ p {
   font-size: calc(0.25rem + 1vw);
 }
 
-@keyframes forZoom {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 @keyframes comeAndGo {
   0% {
     opacity: 0;
@@ -136,18 +127,23 @@ p {
 @keyframes colorChange {
   0% {
     color: black;
+    border-color: black;
   }
   25% {
     color: $yurple;
+    border-color: $yurple;
   }
   50% {
     color: $turquaz;
+    border-color: $turquaz;
   }
   75% {
     color: $lime;
+    border-color: $lime;
   }
   100% {
     color: black;
+    border-color: black;
   }
 }
 
