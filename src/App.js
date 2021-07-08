@@ -1,19 +1,24 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { Switch, Route } from "react-router-dom";
 import Title from "./Title.js";
 import Confirm from "./Confirm.js";
 import Home from "./Home.js";
+import "./styles/main.scss";
 
 function App() {
-  const display = useSelector((state) => state.display.display);
-  switch (display) {
-    case "party":
-      return <Title />;
-    case "home":
-      return <Home />;
-    default:
-      return <Confirm />;
-  }
+  return (
+    <Switch>
+      <Route path="/home">
+        <Home />
+      </Route>
+      <Route exact path="/">
+        <Confirm />
+      </Route>
+      <Route path="/party">
+        <Title />
+      </Route>
+    </Switch>
+  );
 }
 
 export default App;

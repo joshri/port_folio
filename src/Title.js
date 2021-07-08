@@ -1,9 +1,7 @@
 import React, { useState, useRef } from "react";
-import "./styles/_Title.scss";
+import { NavLink } from "react-router-dom";
 import title_photo from "./assets/images/TitlePhoto2.jpg";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
-import Button from "react-bootstrap/Button";
 
 function Title(props) {
   let [loaded, setLoaded] = useState(false);
@@ -11,57 +9,36 @@ function Title(props) {
   const audioTag = useRef(null);
 
   return (
-    <div
-      onLoad={window.scrollTo(0, 1)}
-      className="titleContainer"
-      style={{ height: props.adjustVh * 100 }}
-    >
+    <section onLoad={window.scrollTo(0, 1)} className="titleContainer">
       <audio
         id="audio"
         ref={audioTag}
-        preload
+        preload="auto"
         onCanPlay={() => {
-          setLoaded(true);
-          audioTag.current.play();
+          // setLoaded(true);
+          // audioTag.current.play();
         }}
         src={
           "https://raw.githubusercontent.com/joshri/port_folio/master/src/audio/PortfolioThemeLowest.mp3"
         }
       />
       {!loaded ? (
-        <div
-          style={{
-            width: "100%",
-            height: props.adjustVh * 100,
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            textAlign: "center",
-            margin: 0,
-          }}
-        >
+        <div style={{ height: "25%" }} className="column">
           <h1>LOADING</h1>
           <h6>Stuck? Give it a second.</h6>
           <h6>
-            On mobile? Try this?{" "}
-            <Button
-              variant="outline-dark"
-              size="sm"
+            On mobile? Try this:{" "}
+            <button
               onClick={() => {
                 setLoaded(true);
                 audioTag.current.play();
               }}
             >
               play?
-            </Button>
+            </button>
           </h6>
-          <h6 style={{ textDecoration: "underline" }}>
-            <Link to="/">back to the start</Link>
-          </h6>
-          <h6 style={{ textDecoration: "underline" }}>
-            <Link to="/home">onward to the portfolio</Link>
-          </h6>
+          <NavLink to="/"> back to the start</NavLink>
+          <NavLink to="/home">onward to the portfolio</NavLink>
         </div>
       ) : (
         <div>
@@ -72,7 +49,6 @@ function Title(props) {
             style={{
               borderBottom: "5px solid #ffcf3d",
               opacity: 0,
-              height: props.adjustVh * 12.5,
             }}
           >
             <h1 className="col zoom">MEET</h1>
@@ -114,17 +90,16 @@ function Title(props) {
               src={title_photo}
               className="image"
             ></motion.img>
-            <Link className="link" to="/home">
+            <NavLink to="/home">
               <motion.Button
                 style={{ display: "none", fontSize: "175%" }}
                 className="link"
                 animate={{ opacity: [0, 1], display: "flex" }}
                 transition={{ duration: 2, delay: 24 }}
-                variant="danger"
               >
                 ENTER
               </motion.Button>
-            </Link>
+            </NavLink>
             <h1 className="title">JOSHUA</h1>
             <h1 className="title" style={{ animationDelay: "18.5s" }}>
               ISRAEL
@@ -145,7 +120,7 @@ function Title(props) {
           </motion.div>
         </div>
       )}
-    </div>
+    </section>
   );
 }
 

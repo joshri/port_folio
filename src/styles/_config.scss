@@ -3,7 +3,7 @@ $highlight: #ffb7a1;
 $white: #ffe6de;
 $black: #212529;
 $body: "Quicksand", sans-serif;
-$oneColor: #e4b426;
+$oneColor: #b48d18;
 $turquaz: #3daeff;
 $yurple: #bf2ed6;
 $lime: #99d62e;
@@ -32,6 +32,36 @@ $orange: #d66b2e;
   height: 100%;
 }
 
+html,
+body,
+div,
+span,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+img,
+ul,
+li,
+form,
+label,
+footer,
+header,
+menu,
+nav,
+section,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
 h1 {
   font-size: calc(2rem + 1vw);
 }
@@ -49,6 +79,10 @@ h5 {
 }
 h6 {
   font-size: calc(0.5rem + 1vw);
+}
+a,
+p {
+  font-size: calc(0.25rem + 1vw);
 }
 
 @keyframes forZoom {
