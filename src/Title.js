@@ -10,15 +10,17 @@ function Title(props) {
 
   const audioTag = useRef(null);
 
+  const innerWidth = window.innerWidth;
+
   return (
-    <section className="titleContainer">
+    <section style={{ minWidth: innerWidth }}>
       <audio
         id="audio"
         ref={audioTag}
         preload="auto"
         onCanPlay={() => {
           setLoaded(true);
-          // audioTag.current.play();
+          audioTag.current.play();
         }}
         src={
           "https://raw.githubusercontent.com/joshri/port_folio/master/src/audio/PortfolioThemeLowest.mp3"
@@ -45,46 +47,94 @@ function Title(props) {
       ) : (
         <div className="column">
           {/* top */}
-          <div className="titleEdge" style={{ borderTop: "none" }}></div>
-          {/* center */}
-          <div>
-            {/* name layer */}
-            <div
-              style={{
-                top: "12.5vh",
-                height: "75vh",
-                width: "100vw",
-                background: "transparent",
-              }}
+          <div className="titleEdge" style={{ borderTop: "none" }}>
+            <motion.h1
+              className="titleHeaders"
+              animate={{ opacity: [0, 1], scale: [4, 1.5] }}
+              transition={{ delay: 2 }}
             >
-              {createNameLayer().map((style) => {
-                return (
-                  <motion.h1
-                    style={{
-                      position: "absolute",
-                      top: `${style.top}vh`,
-                      left: `${style.left}vh`,
-                      fontSize: style.fontSize,
-                      color: style.color,
-                      opacity: 0,
-                    }}
-                    animate={{ opacity: [0, 1, 0], rotate: style.rotate }}
-                    transition={{
-                      delay: style.animationDelay,
-                      duration: style.animationDuration,
-                    }}
-                  >
-                    JOSHUA ISRAEL
-                  </motion.h1>
-                );
-              })}
+              MEET
+            </motion.h1>
+            <motion.h1
+              className="titleHeaders"
+              animate={{ opacity: [0, 1], scale: [4, 1.5] }}
+              transition={{ delay: 4 }}
+            >
+              YOUR
+            </motion.h1>
+            <motion.h1
+              className="titleHeaders"
+              animate={{ opacity: [0, 1], scale: [4, 1.5] }}
+              transition={{ delay: 6 }}
+            >
+              NEW
+            </motion.h1>
+          </div>
+          {/* center */}
+          <div className="titleCenter">
+            {/* name layer */}
+            {createNameLayer().map((style, index) => {
+              return (
+                <motion.h1
+                  key={index}
+                  style={{
+                    position: "absolute",
+                    top: `${style.top}vh`,
+                    left: `${style.left}vh`,
+                    fontSize: style.fontSize,
+                    color: style.color,
+                    opacity: 0,
+                  }}
+                  animate={{
+                    scale: [0.75, 0.25],
+                    opacity: [0, 1, 0],
+                    rotate: style.rotate,
+                  }}
+                  transition={{
+                    delay: style.animationDelay,
+                    duration: style.animationDuration,
+                  }}
+                >
+                  JOSHUA ISRAEL
+                </motion.h1>
+              );
+            })}
+            {/* skills layer */}
+            <div
+              className="column"
+              style={{ position: "absolute", background: "transparent" }}
+            >
+              <div>
+                <motion.h1>REACT</motion.h1>
+
+                <motion.h1>REACT NATIVE</motion.h1>
+              </div>
+              <div>
+                <motion.h1>HTML</motion.h1>
+                <motion.h1>CSS</motion.h1>
+              </div>
+              <div>
+                <motion.h1>JAVASCRIPT</motion.h1>
+                <motion.h1>REDUX</motion.h1>
+              </div>
+              <motion.h1>SASS</motion.h1>
+              <motion.h1>GIT</motion.h1>
+              <motion.h1></motion.h1>
             </div>
           </div>
           {/* bottom */}
           <div
             className="titleEdge"
             style={{ borderBottom: "none", top: "87.5vh" }}
-          ></div>
+          >
+            <motion.h1
+              className="titleHeaders"
+              animate={{ opacity: [0, 1], scale: [4, 1.5] }}
+              transition={{ delay: 8 }}
+            >
+              FRONTEND ENGINEER
+            </motion.h1>
+          </div>
         </div>
       )}
     </section>

@@ -27,11 +27,7 @@ div {
   //confirm
   &.confirmText {
     height: 25vh;
-  }
-  &.partyButtons {
-    height: 25vh;
-    opacity: 0;
-    animation: forZoom 1s 6.5s linear forwards;
+    z-index: 1;
   }
   //title
   &.titleEdge {
@@ -39,10 +35,15 @@ div {
     min-width: 100vw;
     border-bottom: 4px solid black;
     border-top: 4px solid black;
-    animation: colorChange 4s linear infinite;
+    animation: colorChange 4s 10s linear infinite;
     position: absolute;
     top: 0;
-    z-index: 5;
+  }
+  &.titleCenter {
+    top: 12.5vh;
+    height: 75vh;
+    width: 100vw;
+    background: transparent;
   }
 }
 
@@ -60,7 +61,7 @@ button {
   }
   &.bigButt {
     @extend %title-text;
-    width: 25vw;
+    width: 30vw;
     font-size: 4vw;
     text-align: center;
   }
@@ -70,7 +71,11 @@ button {
 h1 {
   @extend %title-text;
   &.welcome {
+    z-index: 0;
     font-size: 15vw;
     position: fixed;
+  }
+  &.titleHeaders {
+    font-size: 5vw;
   }
 }

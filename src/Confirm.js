@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 function Confirm(props) {
   let [disabled, setDisabled] = useState(true);
   useEffect(() => {
-    setTimeout(() => setDisabled(false), 6000);
+    setTimeout(() => setDisabled(false), 5000);
   });
   return (
     <section style={{ justifyContent: "center" }}>
@@ -37,7 +37,11 @@ function Confirm(props) {
           Otherwise, I'll see you in about thirty seconds.
         </motion.h6>
       </div>
-      <div className="partyButtons column">
+      <motion.div
+        className="confirmText column"
+        animate={{ opacity: [0, 1] }}
+        transition={{ delay: 6.5, duration: 2 }}
+      >
         <Link to="/party">
           <button disabled={disabled} className="bigButt">
             PARTY!
@@ -46,7 +50,7 @@ function Confirm(props) {
         <Link to="/home">
           <button disabled={disabled}>no party.</button>
         </Link>
-      </div>
+      </motion.div>
     </section>
   );
 }
