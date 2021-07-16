@@ -85,27 +85,6 @@ p {
   font-size: calc(0.25rem + 1vw);
 }
 
-@keyframes comeAndGo {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes inToOut {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
 @keyframes bgFadeIn {
   0% {
     background: #ffffff;
@@ -149,23 +128,11 @@ p {
 
 @keyframes pulse {
   0% {
-    transform: initial;
   }
   50% {
-    transform: scale(1.05, 1.05);
+    transform: scale(1.5, 1.5);
   }
   100% {
-    transform: initial;
-  }
-}
-
-@keyframes titleScroll {
-  0% {
-    height: auto;
-    opacity: 1;
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-1000%);
+    transform: scale(1.25, 1.25);
   }
 }

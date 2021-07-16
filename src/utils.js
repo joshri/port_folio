@@ -22,7 +22,7 @@ export const createNameLayer = () => {
     };
     style.fontSize = Math.floor(Math.random() * 90) + 12;
     style.color = colorOptions[Math.floor(Math.random() * 5)];
-    style.animationDuration = Math.floor(Math.random() * 4) + 1;
+    style.animationDuration = Math.floor(Math.random() * 4) + 2;
     style.animationDelay = Math.random() * 4 + 2;
     const rotateNumber = Math.floor(Math.random() * 5);
     if (rotateNumber === 0) {

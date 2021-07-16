@@ -24,6 +24,9 @@ div {
   &.column {
     flex-direction: column;
   }
+  &.space-between {
+    justify-content: space-between;
+  }
   //confirm
   &.confirmText {
     height: 25vh;
@@ -45,6 +48,12 @@ div {
     width: 100vw;
     background: transparent;
   }
+  &.skillsContainer {
+    position: absolute;
+    top: 12.5vh;
+    bottom: 12.5vh;
+    background: transparent;
+  }
 }
 
 button {
@@ -59,23 +68,38 @@ button {
     border: 2px solid $yurple;
     cursor: pointer;
   }
+  //confirm
   &.bigButt {
     @extend %title-text;
     width: 30vw;
     font-size: 4vw;
     text-align: center;
+    //title
+    &.titleButton {
+      background: $white;
+      position: absolute;
+      top: 37.5vh;
+      left: 30vw;
+      animation: colorChange 4s 10s linear infinite;
+    }
   }
 }
 
 //text
 h1 {
   @extend %title-text;
+  //confirm
   &.welcome {
     z-index: 0;
     font-size: 15vw;
     position: fixed;
   }
+  //title
   &.titleHeaders {
     font-size: 5vw;
+    animation: pulse 1s 10s linear infinite;
+  }
+  &.skills {
+    font-size: 3vw;
   }
 }

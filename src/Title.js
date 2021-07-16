@@ -1,5 +1,5 @@
-import React, { useState, useRef } from "react";
-import { NavLink } from "react-router-dom";
+import React, { useState, useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 import title_photo from "./assets/images/TitlePhoto2.jpg";
 import { motion } from "framer-motion";
 
@@ -7,6 +7,11 @@ import { createNameLayer } from "./utils";
 
 function Title(props) {
   let [loaded, setLoaded] = useState(false);
+  let [disabled, setDisabled] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => setDisabled(false), 25000);
+  });
 
   const audioTag = useRef(null);
 
@@ -41,8 +46,8 @@ function Title(props) {
               play?
             </button>
           </h6>
-          <NavLink to="/"> back to the start</NavLink>
-          <NavLink to="/home">onward to the portfolio</NavLink>
+          <Link to="/"> back to the start</Link>
+          <Link to="/home">onward to the portfolio</Link>
         </div>
       ) : (
         <div className="column">
@@ -50,21 +55,21 @@ function Title(props) {
           <div className="titleEdge" style={{ borderTop: "none" }}>
             <motion.h1
               className="titleHeaders"
-              animate={{ opacity: [0, 1], scale: [4, 1.5] }}
+              animate={{ opacity: [0, 1], scale: [4, 1.25] }}
               transition={{ delay: 2 }}
             >
               MEET
             </motion.h1>
             <motion.h1
               className="titleHeaders"
-              animate={{ opacity: [0, 1], scale: [4, 1.5] }}
+              animate={{ opacity: [0, 1], scale: [4, 1.25] }}
               transition={{ delay: 4 }}
             >
               YOUR
             </motion.h1>
             <motion.h1
               className="titleHeaders"
-              animate={{ opacity: [0, 1], scale: [4, 1.5] }}
+              animate={{ opacity: [0, 1], scale: [4, 1.25] }}
               transition={{ delay: 6 }}
             >
               NEW
@@ -99,27 +104,170 @@ function Title(props) {
                 </motion.h1>
               );
             })}
-            {/* skills layer */}
-            <div
-              className="column"
-              style={{ position: "absolute", background: "transparent" }}
-            >
-              <div>
-                <motion.h1>REACT</motion.h1>
 
-                <motion.h1>REACT NATIVE</motion.h1>
-              </div>
-              <div>
-                <motion.h1>HTML</motion.h1>
-                <motion.h1>CSS</motion.h1>
-              </div>
-              <div>
-                <motion.h1>JAVASCRIPT</motion.h1>
-                <motion.h1>REDUX</motion.h1>
-              </div>
-              <motion.h1>SASS</motion.h1>
-              <motion.h1>GIT</motion.h1>
-              <motion.h1></motion.h1>
+            <motion.h1
+              style={{
+                top: "12.5vh",
+                bottom: "12.5vh",
+              }}
+              animate={{
+                scale: [1, 1.25, 1.5, 1.75, 2, 3],
+                opacity: [0, 0.25, 0.5, 1, 0],
+              }}
+              transition={{ duration: 5.5, delay: 5, ease: "linear" }}
+            >
+              JOSHUA ISRAEL
+            </motion.h1>
+            <motion.h1
+              style={{
+                position: "absolute",
+                fontSize: "800px",
+                width: "100vw",
+                zIndex: 0,
+                whiteSpace: "nowrap",
+              }}
+              animate={{ translateX: ["1750px", "-7500px"] }}
+              transition={{ duration: 4, delay: 18 }}
+            >
+              JOSHUA ISRAEL
+            </motion.h1>
+            {/* skills layer */}
+            <div className="column skillsContainer">
+              <motion.h1
+                animate={{ translateX: ["100vw", "0vw", "-100vw"] }}
+                transition={{ duration: 2, delay: 9 }}
+                className="skills"
+              >
+                REACT
+              </motion.h1>
+              <motion.h1
+                animate={{ translateX: ["100vw", "0vw", "-100vw"] }}
+                transition={{ duration: 2, delay: 10 }}
+                className="skills"
+              >
+                REACT NATIVE
+              </motion.h1>
+              <motion.h1
+                animate={{ translateX: ["100vw", "0vw", "-100vw"] }}
+                transition={{ duration: 2, delay: 11 }}
+                className="skills"
+              >
+                REDUX
+              </motion.h1>
+              <motion.h1
+                animate={{ translateX: ["100vw", "0vw", "-100vw"] }}
+                transition={{ duration: 2, delay: 12 }}
+                className="skills"
+              >
+                JAVASCRIPT
+              </motion.h1>
+              <motion.h1
+                animate={{ translateX: ["100vw", "0vw", "-100vw"] }}
+                transition={{ duration: 2, delay: 13 }}
+                className="skills"
+              >
+                HTML
+              </motion.h1>
+              <motion.h1
+                animate={{ translateX: ["100vw", "0vw", "-100vw"] }}
+                transition={{ duration: 2, delay: 13.5 }}
+                className="skills"
+              >
+                CSS
+              </motion.h1>
+              <motion.h1
+                animate={{ translateX: ["100vw", "0vw", "-100vw"] }}
+                transition={{ duration: 2, delay: 14 }}
+                className="skills"
+              >
+                SASS
+              </motion.h1>
+              <motion.h1
+                animate={{ translateX: ["100vw", "0vw", "-100vw"] }}
+                transition={{ duration: 2, delay: 14.5 }}
+                className="skills"
+              >
+                STYLED COMPONENTS
+              </motion.h1>
+              <motion.h1
+                animate={{ translateX: ["100vw", "0vw", "-100vw"] }}
+                transition={{ duration: 2, delay: 15 }}
+                className="skills"
+              >
+                BOOTSTRAP
+              </motion.h1>
+              <motion.h1
+                animate={{ translateX: ["100vw", "0vw", "-100vw"] }}
+                transition={{ duration: 2, delay: 15.25 }}
+                className="skills"
+              >
+                GIT
+              </motion.h1>
+              <motion.h1
+                animate={{ translateX: ["100vw", "0vw", "-100vw"] }}
+                transition={{ duration: 2, delay: 15.75 }}
+                className="skills"
+              >
+                REST API
+              </motion.h1>
+              <motion.h1
+                animate={{ translateX: ["100vw", "0vw", "-100vw"] }}
+                transition={{ duration: 2, delay: 16 }}
+                className="skills"
+              >
+                NODE
+              </motion.h1>
+              <motion.h1
+                animate={{ translateX: ["100vw", "0vw", "-100vw"] }}
+                transition={{ duration: 2, delay: 16.25 }}
+                className="skills"
+              >
+                PYTHON
+              </motion.h1>
+              <motion.h1
+                animate={{ translateX: ["100vw", "0vw", "-100vw"] }}
+                transition={{ duration: 2, delay: 16.5 }}
+                className="skills"
+              >
+                XCODE
+              </motion.h1>
+              <motion.h1
+                animate={{ translateX: ["100vw", "0vw", "-100vw"] }}
+                transition={{ duration: 2, delay: 16.75 }}
+                className="skills"
+              >
+                ANDROID STUDIO
+              </motion.h1>
+              <motion.h1
+                animate={{ translateX: ["100vw", "0vw", "-100vw"] }}
+                transition={{ duration: 2, delay: 17 }}
+                className="skills"
+              >
+                PLUS HE'S COOL, FUN, AND OBJECTIVELY BEAUTIFUL!
+              </motion.h1>
+              <motion.img
+                style={{
+                  position: "absolute",
+                  width: "100%",
+                  height: "75%",
+                  border: "5px solid black",
+                  borderRadius: "10%",
+                  animation: "colorChange 4s 18s linear infinite",
+                }}
+                src={title_photo}
+                animate={{ opacity: [0, 1, 1, 1], scale: [0.25, 0.5, 0.75, 1] }}
+                transition={{ duration: 4, delay: 22, ease: "linear" }}
+              />
+              <Link to="/home">
+                <motion.button
+                  className="bigButt titleButton"
+                  disabled={disabled}
+                  animate={{ opacity: [0, 1] }}
+                  transition={{ duration: 1, delay: 26 }}
+                >
+                  ENTER
+                </motion.button>
+              </Link>
             </div>
           </div>
           {/* bottom */}
@@ -129,7 +277,7 @@ function Title(props) {
           >
             <motion.h1
               className="titleHeaders"
-              animate={{ opacity: [0, 1], scale: [4, 1.5] }}
+              animate={{ opacity: [0, 1], scale: [4, 1.25] }}
               transition={{ delay: 8 }}
             >
               FRONTEND ENGINEER
