@@ -7,10 +7,17 @@ body,
   background: $white;
   font-family: $body;
   text-align: center;
-  animation: bgFadeIn 2s;
   overflow: hidden;
   flex-wrap: nowrap;
   min-width: 450px;
+}
+
+//utils / overrides
+.absolute {
+  position: absolute;
+}
+.has-background {
+  background: $highlight;
 }
 
 main,
@@ -62,18 +69,27 @@ div {
   //home
   &.homeContainer {
     display: block;
+    background: $white;
     max-height: 100vh;
-    max-width: 80vh;
-    overflow: scroll;
+    max-width: 90vw;
+    overflow-y: scroll;
+    overflow-x: hidden;
   }
   &.headerContainer {
     position: absolute;
-    background: $white;
+    top: 0;
+    background: $highlight;
     width: 90%;
     height: 10%;
     padding: 5px;
     z-index: 5;
     border-bottom: 3px solid black;
+  }
+  &.homeSidebar {
+    border-right: 5px solid black;
+    min-height: 100vh;
+    min-width: 10%;
+    background: $highlight;
   }
 }
 
@@ -115,6 +131,15 @@ img {
   &:hover {
     background: $yurple;
   }
+  &.resumeThumb {
+    width: calc(1rem + 40vw);
+    border: 3px solid black;
+    border-radius: 20px;
+    transition: border 0.25s;
+    &:hover {
+      border: 3px solid $yurple;
+    }
+  }
 }
 
 //text
@@ -133,5 +158,27 @@ h1 {
   }
   &.skills {
     font-size: 3vw;
+  }
+  //home {
+  &.about {
+    font-size: calc(5rem + 20vw);
+  }
+  &.resume {
+    font-size: calc(7.5rem + 3vw);
+    letter-spacing: -2rem;
+  }
+}
+
+h6 {
+  //home {
+  &.about {
+    font-size: calc(0.66rem + 1vw);
+  }
+}
+
+p {
+  //home
+  &.about {
+    font-size: calc(0.25rem + 2vw);
   }
 }
