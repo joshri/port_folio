@@ -1,50 +1,58 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import Button from 'react-bootstrap/Button';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 function Confirm(props) {
-	return (
-		<div style={{height: props.adjustVh * 100}}className='confirmContainer'>
-			<motion.h1
-				animate={{ fontSize: ['1vw', '15vw', '30vw'], opacity: [0, 1, 0] }}
-				transition={{ duration: 5 }}
-				className='welcome'>
-				WELCOME
-			</motion.h1>
-			<div>
-				<motion.p
-					animate={{ opacity: 1 }}
-					transition={{ delay: 4, duration: 2 }}>
-					the next page has an animated introduction with autoplaying audio and
-					is quite colorful.
-				</motion.p>
-				<motion.p
-					animate={{ opacity: 1 }}
-					transition={{ delay: 5, duration: 2 }}>
-					{' '}
-					If you're scared, press no party.
-				</motion.p>
-				<motion.p
-					animate={{ opacity: 1 }}
-					transition={{ delay: 6, duration: 2 }}>
-					Otherwise, I'll see you in about thirty seconds.
-				</motion.p>
-			</div>
-			<div className='partyButtons'>
-				<Link to='/party'>
-					<Button className='bigButt' variant='outline-dark' size='lg'>
-						PARTY!
-					</Button>
-				</Link>
-				<Link to='/home'>
-					<Button variant='outline-dark' size='sm'>
-						no party.
-					</Button>
-				</Link>
-			</div>
-		</div>
-	);
+  let [disabled, setDisabled] = useState(true);
+  useEffect(() => {
+    setTimeout(() => setDisabled(false), 5000);
+  });
+  return (
+    <section style={{ justifyContent: "center" }}>
+      <motion.h1
+        animate={{ fontSize: ["1vw", "15vw", "30vw"], opacity: [0, 1, 0] }}
+        transition={{ duration: 3 }}
+        className="welcome"
+      >
+        WELCOME
+      </motion.h1>
+      <div className="confirmText column">
+        <motion.h6
+          animate={{ opacity: [0, 1] }}
+          transition={{ delay: 3.5, duration: 2 }}
+        >
+          the next page has an animated introduction with autoplaying audio and
+          is quite colorful.
+        </motion.h6>
+        <motion.h6
+          animate={{ opacity: [0, 1] }}
+          transition={{ delay: 4.5, duration: 2 }}
+        >
+          If you're scared, press no party.
+        </motion.h6>
+        <motion.h6
+          animate={{ opacity: [0, 1] }}
+          transition={{ delay: 5.5, duration: 2 }}
+        >
+          Otherwise, I'll see you in about thirty seconds.
+        </motion.h6>
+      </div>
+      <motion.div
+        className="confirmText column"
+        animate={{ opacity: [0, 1] }}
+        transition={{ delay: 6.5, duration: 2 }}
+      >
+        <Link to="/party">
+          <button disabled={disabled} className="bigButt">
+            PARTY!
+          </button>
+        </Link>
+        <Link to="/home">
+          <button disabled={disabled}>no party.</button>
+        </Link>
+      </motion.div>
+    </section>
+  );
 }
 
 export default Confirm;

@@ -1,0 +1,222 @@
+@import "./_config.scss";
+
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  background: $white;
+  font-family: $body;
+  text-align: center;
+  overflow: hidden;
+  flex-wrap: nowrap;
+  min-width: 450px;
+}
+
+//utils / overrides
+.absolute {
+  position: absolute;
+}
+.has-background {
+  background: $highlight;
+}
+
+main,
+section {
+  @extend %flex-display;
+  @extend %max-size;
+  flex-direction: column;
+  min-width: 450px;
+}
+
+div {
+  @extend %flex-display;
+  &.column {
+    flex-direction: column;
+  }
+  &.space-between {
+    justify-content: space-between;
+  }
+  &.min-width {
+    min-width: 450px;
+  }
+  //confirm
+  &.confirmText {
+    height: 25vh;
+    z-index: 1;
+  }
+  //title
+  &.titleEdge {
+    min-height: 12.5vh;
+    min-width: 100vw;
+    border-bottom: 4px solid black;
+    border-top: 4px solid black;
+    animation: colorChange 4s 10s linear infinite;
+    position: absolute;
+    top: 0;
+  }
+  &.titleCenter {
+    top: 12.5vh;
+    height: 75vh;
+    width: 100vw;
+    background: transparent;
+  }
+  &.skillsContainer {
+    position: absolute;
+    min-width: 100vw;
+    max-width: 100vw;
+    min-height: 75vh;
+    max-height: 75vh;
+    top: 12.5vh;
+    bottom: 12.5vh;
+    background: transparent;
+  }
+  //home
+  &.homeContainer {
+    display: block;
+    background: $white;
+    max-height: 100vh;
+    max-width: 90vw;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  &.headerContainer {
+    position: absolute;
+    top: 0;
+    background: $highlight;
+    width: 90%;
+    height: 10%;
+    padding: 5px;
+    z-index: 5;
+    border-bottom: 3px solid black;
+  }
+  &.homeSidebar {
+    border-right: 5px solid black;
+    min-height: 100vh;
+    min-width: 10%;
+    background: $highlight;
+  }
+  &.spacer {
+    height: 10vh;
+  }
+  &.homeText {
+    padding: 3%;
+    width: 100%;
+    border: 3px solid black;
+    border-radius: 20px;
+    height: 80vh;
+
+    &.about {
+      min-width: 250px;
+      width: 50%;
+      margin-left: 20vw;
+      position: relative;
+      bottom: 15vh;
+      z-index: 4;
+    }
+  }
+  //project
+  &.projectContainer {
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+    min-width: 100%;
+  }
+}
+
+button {
+  background: transparent;
+  border: 2px solid black;
+  border-radius: 0.875rem;
+  padding: 10px;
+  transition-property: color, border;
+  transition-duration: 0.25s;
+  &:hover {
+    color: $yurple;
+    border: 2px solid $yurple;
+    cursor: pointer;
+  }
+  //confirm
+  &.bigButt {
+    @extend %title-text;
+    width: 30vw;
+    font-size: 4vw;
+    text-align: center;
+    //title
+    &.titleButton {
+      background: $white;
+      position: absolute;
+      top: 37.5vh;
+      left: 35vw;
+      animation: colorChange 4s 10s linear infinite;
+    }
+  }
+  //home
+  &.modal-close {
+    background: $white;
+  }
+}
+
+img {
+  transition: background 0.5s;
+  &:hover {
+    background: $yurple;
+  }
+  &.resumeThumb {
+    width: calc(1rem + 40vw);
+    border: 3px solid black;
+    border-radius: 20px;
+    transition: border 0.25s;
+    &:hover {
+      border: 3px solid $yurple;
+    }
+  }
+}
+
+//text
+h1 {
+  @extend %title-text;
+  //confirm
+  &.welcome {
+    z-index: 0;
+    font-size: 15vw;
+    position: fixed;
+  }
+  //title
+  &.titleHeaders {
+    font-size: 5vw;
+    animation: pulse 1s 10s linear infinite;
+  }
+  &.skills {
+    font-size: calc(1rem + 1vh);
+  }
+  //home {
+  &.about {
+    font-size: calc(5rem + 20vh);
+    transform: rotate(90deg);
+    margin-right: 70vw;
+  }
+  &.resume {
+    font-size: calc(7.5rem + 10vw);
+    letter-spacing: -3rem;
+  }
+  &.bartab {
+    font-size: calc(1rem + 10vw);
+  }
+  &.projects {
+    font-size: calc(1rem + 10vw);
+    transform: rotate(10deg);
+  }
+}
+
+h6 {
+  //home {
+  &.about {
+    font-size: calc(0.66rem + 0.9vh);
+  }
+}
+
+ul {
+  @extend %flex-display;
+  height: 100%;
+  flex-direction: column;
+  text-align: left;
+}
