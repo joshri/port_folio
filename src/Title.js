@@ -28,7 +28,7 @@ function Title(props) {
           audioTag.current.play();
         }}
         src={
-          "https://amplify-amplify467c9d8658174-staging-200829-deployment.s3.amazonaws.com/PortfolioThemeLowest.mp3"
+          "https://portfolio-bucket-7202021.s3.amazonaws.com/assets/audio/PortfolioThemeLowest.mp3"
         }
       />
       {!loaded ? (

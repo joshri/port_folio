@@ -161,7 +161,7 @@ function ScrollContainer(props) {
             style={{ width: "100%", marginTop: "20px" }}
             title={props.title}
             src={
-              "https://amplify-amplify467c9d8658174-staging-200829-deployment.s3.amazonaws.com/SidecarDemoMovie.mp4"
+              "https://portfolio-bucket-7202021.s3.amazonaws.com/assets/video/SidecarDemoMovie.mp4"
             }
             type="video/mp4"
             autoPlay
@@ -183,7 +183,7 @@ function ScrollContainer(props) {
             style={{ width: "90%" }}
             title={props.title}
             src={
-              "https://amplify-amplify467c9d8658174-staging-200829-deployment.s3.amazonaws.com/BartabOpenFinal3.mov"
+              "https://portfolio-bucket-7202021.s3.amazonaws.com/assets/video/BartabOpenFinal3.mov"
             }
             type="video/mov"
             autoPlay
@@ -196,7 +196,7 @@ function ScrollContainer(props) {
             style={{ width: "90%" }}
             title={props.title}
             src={
-              "https://amplify-amplify467c9d8658174-staging-200829-deployment.s3.amazonaws.com/BartabUpdateGif.mp4"
+              "https://portfolio-bucket-7202021.s3.amazonaws.com/assets/video/BartabUpdateGif.mp4"
             }
             type="video/mp4"
             autoPlay
@@ -213,7 +213,7 @@ function ScrollContainer(props) {
           deployed="https://for-all-seasons.herokuapp.com"
           github="https://github.com/joshri/for-all-seasons"
           gif={
-            "https://amplify-amplify467c9d8658174-staging-200829-deployment.s3.amazonaws.com/ForAllSeasonsGif.mp4"
+            "https://portfolio-bucket-7202021.s3.amazonaws.com/assets/video/ForAllSeasonsGif.mp4"
           }
           bullets={[
             "Filters an artist's 50 most popular songs on Spotify using their API to create four playlists representing the four seasons that you can save to your Spotify account!",
@@ -227,7 +227,7 @@ function ScrollContainer(props) {
           deployed="https://joshri.github.io/funky-simon"
           github="https://github.com/joshri/funky-simon"
           gif={
-            "https://amplify-amplify467c9d8658174-staging-200829-deployment.s3.amazonaws.com/FunkySimonGif.mp4"
+            "https://portfolio-bucket-7202021.s3.amazonaws.com/assets/video/FunkySimonGif.mp4"
           }
           bullets={[
             "Fully functional Simon game website - Increasing difficulty with round number and high score",
@@ -241,7 +241,7 @@ function ScrollContainer(props) {
           deployed="https://is-it-hot-daily.herokuapp.com"
           github="https://github.com/joshri/is-it-hot"
           gif={
-            "https://amplify-amplify467c9d8658174-staging-200829-deployment.s3.amazonaws.com/IsItHotGif.mp4"
+            "https://portfolio-bucket-7202021.s3.amazonaws.com/assets/video/IsItHotGif.mp4"
           }
           bullets={[
             "7 free APIs provide the data for my weather app/endless source of joy",
