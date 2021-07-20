@@ -31,7 +31,7 @@ export const createNameLayer = () => {
       style.rotate = Math.floor(Math.random() * 360) + 1;
     }
     style.top = Math.floor(Math.random() * 60) + 13.5;
-    style.left = Math.floor(Math.random() * 40);
+    style.left = Math.floor(Math.random() * 95);
     nameArray.push(style);
   }
   return nameArray;

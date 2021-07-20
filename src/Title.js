@@ -121,13 +121,15 @@ function Title(props) {
             <motion.h1
               style={{
                 position: "absolute",
-                fontSize: "800px",
-                width: "100vw",
+                fontSize: "40vw",
+                width: window.innerWidth,
                 zIndex: 0,
                 whiteSpace: "nowrap",
               }}
-              animate={{ translateX: ["1750px", "-7500px"] }}
-              transition={{ duration: 4, delay: 18 }}
+              animate={{
+                translateX: [window.innerWidth, -(window.innerWidth * 4)],
+              }}
+              transition={{ duration: 4, delay: 18, ease: "linear" }}
             >
               JOSHUA ISRAEL
             </motion.h1>
@@ -249,6 +251,7 @@ function Title(props) {
                 style={{
                   position: "absolute",
                   width: "100%",
+                  maxWidth: "1500px",
                   height: "75%",
                   border: "5px solid black",
                   borderRadius: "10%",
