@@ -6,8 +6,6 @@ import ForAllSeasons from "./assets/video/ForAllSeasonsGif.mp4";
 import FunkySimon from "./assets/video/FunkySimonGif.mp4";
 import IsItHot from "./assets/video/IsItHotGif.mp4";
 import Sidecar from "./assets/video/SidecarDemoMovie.mp4";
-import BartabOpen from "./assets/video/BartabOpenFinal3.mov";
-import BartabUpdate from "./assets/video/BartabUpdateGif.mp4";
 
 function ScrollContainer(props) {
   let [resFull, setResFull] = useState("none");
@@ -166,7 +164,9 @@ function ScrollContainer(props) {
           <video
             style={{ width: "100%", marginTop: "20px" }}
             title={props.title}
-            src={Sidecar}
+            src={
+              "https://amplify-amplify467c9d8658174-staging-200829-deployment.s3.amazonaws.com/SidecarDemoMovie.mp4"
+            }
             type="video/mp4"
             autoPlay
             loop
@@ -186,7 +186,9 @@ function ScrollContainer(props) {
           <video
             style={{ width: "90%" }}
             title={props.title}
-            src={BartabOpen}
+            src={
+              "https://amplify-amplify467c9d8658174-staging-200829-deployment.s3.amazonaws.com/BartabOpenFinal3.mov"
+            }
             type="video/mov"
             autoPlay
             loop
@@ -197,7 +199,9 @@ function ScrollContainer(props) {
           <video
             style={{ width: "90%" }}
             title={props.title}
-            src={BartabUpdate}
+            src={
+              "https://amplify-amplify467c9d8658174-staging-200829-deployment.s3.amazonaws.com/BartabUpdateGif.mp4"
+            }
             type="video/mp4"
             autoPlay
             loop
@@ -212,7 +216,9 @@ function ScrollContainer(props) {
           title="FOR ALL SEASONS"
           deployed="https://for-all-seasons.herokuapp.com"
           github="https://github.com/joshri/for-all-seasons"
-          gif={ForAllSeasons}
+          gif={
+            "https://amplify-amplify467c9d8658174-staging-200829-deployment.s3.amazonaws.com/ForAllSeasonsGif.mp4"
+          }
           bullets={[
             "Filters an artist's 50 most popular songs on Spotify using their API to create four playlists representing the four seasons that you can save to your Spotify account!",
             "Functional use of a billion Spotify API endpoints, from authentication to changing user data",
@@ -224,7 +230,9 @@ function ScrollContainer(props) {
           title="FUNKY SIMON"
           deployed="https://joshri.github.io/funky-simon"
           github="https://github.com/joshri/funky-simon"
-          gif={FunkySimon}
+          gif={
+            "https://amplify-amplify467c9d8658174-staging-200829-deployment.s3.amazonaws.com/FunkySimonGif.mp4"
+          }
           bullets={[
             "Fully functional Simon game website - Increasing difficulty with round number and high score",
             "setTimeouts galore to add bonus rhythm element indicated by CSS along with funky animation",
@@ -236,7 +244,9 @@ function ScrollContainer(props) {
           title="IS IT HOT"
           deployed="https://is-it-hot-daily.herokuapp.com"
           github="https://github.com/joshri/is-it-hot"
-          gif={IsItHot}
+          gif={
+            "https://amplify-amplify467c9d8658174-staging-200829-deployment.s3.amazonaws.com/IsItHotGif.mp4"
+          }
           bullets={[
             "7 free APIs provide the data for my weather app/endless source of joy",
             "Function and Class Components with State and React Hooks",
