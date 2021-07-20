@@ -1,6 +1,3 @@
-import React from "react";
-import { motion } from "framer-motion";
-
 export const createNameLayer = () => {
   let nameArray = [];
   const colorOptions = {

@@ -2,10 +2,6 @@ import React, { useState } from "react";
 import thumbnailPic from "./assets/images/ResumeThumbnail.png";
 import res from "./assets/images/Resume.jpg";
 import Project from "./Project";
-import ForAllSeasons from "./assets/video/ForAllSeasonsGif.mp4";
-import FunkySimon from "./assets/video/FunkySimonGif.mp4";
-import IsItHot from "./assets/video/IsItHotGif.mp4";
-import Sidecar from "./assets/video/SidecarDemoMovie.mp4";
 
 function ScrollContainer(props) {
   let [resFull, setResFull] = useState("none");
