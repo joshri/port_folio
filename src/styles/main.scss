@@ -167,11 +167,16 @@ h1 {
   }
   //home {
   &.about {
-    font-size: calc(5rem + 20vw);
+    font-size: calc(5rem + 20vh);
   }
   &.resume {
     font-size: calc(7.5rem + 10vw);
     letter-spacing: -3rem;
+  }
+  &.bartab {
+    font-size: calc(1rem + 10vw);
+    letter-spacing: 5vw;
+    width: 90vw;
   }
 }
 
@@ -179,13 +184,6 @@ h6 {
   //home {
   &.about {
     font-size: calc(0.66rem + 1vw);
-  }
-}
-
-p {
-  //home
-  &.about {
-    font-size: calc(0.25rem + 2vw);
   }
 }
 
