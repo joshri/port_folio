@@ -80,6 +80,7 @@ function ScrollContainer(props) {
         </h1>
 
         <h1 style={{ letterSpacing: "5vw" }}>BARTAB</h1>
+        <h1 style={{}}>PROJECTS</h1>
       </div>
       {/* foreground layer */}
       <div
@@ -169,94 +170,107 @@ function ScrollContainer(props) {
           />
         </div>
       </div>
-      <div style={{ height: "50vh" }}>
+      <div
+        className="has-background column"
+        style={{
+          height: "90vh",
+          borderTop: "3px solid black",
+          borderBottom: "3px solid black",
+        }}
+      >
+        <div style={{ height: "75%", width: "100%" }}>
+          <video
+            style={{ width: "25%", height: "100%" }}
+            title={props.title}
+            src={BartabOpen}
+            type="video/mov"
+            autoPlay
+            loop
+            allowFullScreen
+            muted
+          />
+          <div className="column" style={{ width: "25%" }}>
+            <p>
+              I brought this React Native + React + Redux app from zero to
+              approved by Apple and in beta on TestFlight, and running
+              beautifully on Android!<br></br>
+              <br></br>Using Stripe, Estimote Bluetooth proximity beacons, and
+              our own REST API, you can walk into any Bartab location, open a
+              tab, and turn your phone off - we handle the rest!<br></br>
+              <br></br>I typed every single line of Front-End code here with my
+              bare hands - from creating every asynchronous API call and error
+              handling with Redux and having Bluetooth run in the background, to
+              creating every single UI element with concise Styled Components!
+              <br></br>
+              <br></br>
+              What you're seeing below is the web app component of Bartab,
+              created with React, Redux, Bootstrap, and SASS. It functions (so
+              far) as our own POS service so we can hold our own events for
+              testing purposes. It's been testing in LA and is looking for
+              funding! I'm really proud of everything I accomplished over the
+              course of seven months of work.
+            </p>
+          </div>
+          <video
+            style={{ width: "25%", height: "100%" }}
+            title={props.title}
+            src={BartabUpdate}
+            type="video/mp4"
+            autoPlay
+            loop
+            allowFullScreen
+            muted
+          />
+        </div>
         <video
-          style={{ width: "50%", height: "100%" }}
+          style={{ width: "100%", height: "30vh" }}
           title={props.title}
-          src={BartabOpen}
-          type="video/mov"
-          autoPlay
-          loop
-          className="giphy-embed"
-          allowFullScreen
-          muted
-        ></video>
-        <video
-          style={{ width: "50%", height: "100%" }}
-          title={props.title}
-          src={BartabUpdate}
+          src={Sidecar}
           type="video/mp4"
           autoPlay
           loop
-          className="giphy-embed"
           allowFullScreen
           muted
-        ></video>
+        />
       </div>
-      <video
-        style={{ width: "100%", height: "30vh" }}
-        title={props.title}
-        src={Sidecar}
-        type="video/mp4"
-        autoPlay
-        loop
-        className="giphy-embed"
-        allowFullScreen
-        muted
-      ></video>
 
-      {/* 
-        </div>
-        <div style={{ justifyContent: "center", alignItems: "center" }}>
-          <h1
-            style={{
-              marginBottom: "100px",
-            }}
-            className="scrollTitle"
-          >
-            PROJECTS
-          </h1>
-          
-          <Project
-            title="FOR ALL SEASONS"
-            deployed="https://for-all-seasons.herokuapp.com"
-            github="https://github.com/joshri/for-all-seasons"
-            gif={ForAllSeasons}
-            bullets={[
-              "Filters an artist's 50 most popular songs on Spotify using their API to create four playlists representing the four seasons that you can save to your Spotify account!",
-              "Functional use of a billion Spotify API endpoints, from authentication to changing user data",
-              "Built-in audio player in your browser using the Spotify Web Player SDK",
-              "Layered API calls with useEffect allow for any artist to be typed in - changing all the data",
-            ]}
-          />
-          <div id="funkysimon"></div>
-          <div className="between"></div>
-          <Project
-            title="FUNKY SIMON"
-            deployed="https://joshri.github.io/funky-simon"
-            github="https://github.com/joshri/funky-simon"
-            gif={FunkySimon}
-            bullets={[
-              "Fully functional Simon game website - Increasing difficulty with round number and high score",
-              "setTimeouts galore to add bonus rhythm element indicated by CSS along with funky animation",
-              "HTML audio element uses my stunning GarageBand work in game, along with a soundboard!",
-              "Hardcoded HTML and CSS animated background!",
-            ]}
-          />
-          <div className="between"></div>
-          <div id="isithot"></div>
-          <Project
-            title="IS IT HOT"
-            deployed="https://is-it-hot-daily.herokuapp.com"
-            github="https://github.com/joshri/is-it-hot"
-            gif={IsItHot}
-            bullets={[
-              "7 free APIs provide the data for my weather app/endless source of joy",
-              "Function and Class Components with State and React Hooks",
-              "Styled Components for a reusable button that refreshes the API call.",
-            ]}
-          />
-        </div> */}
+      <div className="column" style={{}}>
+        <Project
+          title="FOR ALL SEASONS"
+          deployed="https://for-all-seasons.herokuapp.com"
+          github="https://github.com/joshri/for-all-seasons"
+          gif={ForAllSeasons}
+          bullets={[
+            "Filters an artist's 50 most popular songs on Spotify using their API to create four playlists representing the four seasons that you can save to your Spotify account!",
+            "Functional use of a billion Spotify API endpoints, from authentication to changing user data",
+            "Built-in audio player in your browser using the Spotify Web Player SDK",
+            "Layered API calls with useEffect allow for any artist to be typed in - changing all the data",
+          ]}
+        />
+        <Project
+          title="FUNKY SIMON"
+          deployed="https://joshri.github.io/funky-simon"
+          github="https://github.com/joshri/funky-simon"
+          gif={FunkySimon}
+          bullets={[
+            "Fully functional Simon game website - Increasing difficulty with round number and high score",
+            "setTimeouts galore to add bonus rhythm element indicated by CSS along with funky animation",
+            "HTML audio element uses my stunning GarageBand work in game, along with a soundboard!",
+            "Hardcoded HTML and CSS animated background!",
+          ]}
+        />
+        <Project
+          title="IS IT HOT"
+          deployed="https://is-it-hot-daily.herokuapp.com"
+          github="https://github.com/joshri/is-it-hot"
+          gif={IsItHot}
+          bullets={[
+            "7 free APIs provide the data for my weather app/endless source of joy",
+            "Function and Class Components with State and React Hooks",
+            "Styled Components for a reusable button that refreshes the API call.",
+          ]}
+        />
+      </div>
     </div>
   );
 }

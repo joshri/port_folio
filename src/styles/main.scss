@@ -91,6 +91,12 @@ div {
     min-width: 10%;
     background: $highlight;
   }
+  //project
+  &.projectContainer {
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+    min-width: 100%;
+  }
 }
 
 button {
@@ -164,8 +170,8 @@ h1 {
     font-size: calc(5rem + 20vw);
   }
   &.resume {
-    font-size: calc(7.5rem + 3vw);
-    letter-spacing: -2rem;
+    font-size: calc(7.5rem + 10vw);
+    letter-spacing: -3rem;
   }
 }
 
@@ -181,4 +187,11 @@ p {
   &.about {
     font-size: calc(0.25rem + 2vw);
   }
+}
+
+ul {
+  @extend %flex-display;
+  height: 100%;
+  flex-direction: column;
+  text-align: left;
 }
