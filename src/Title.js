@@ -1,26 +1,28 @@
-import React, { useState, useRef } from "react";
-import title_photo from "./images/TitlePhoto2.jpg";
-import { motion } from "framer-motion";
+import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Button from "react-bootstrap/Button";
+import title_photo from "./assets/images/TitlePhoto2.jpg";
+import { motion } from "framer-motion";
+
+import { createNameLayer } from "./utils";
 
 function Title(props) {
   let [loaded, setLoaded] = useState(false);
-  let [finished, setFinished] = useState("none");
-  setTimeout(() => setFinished("flex"), 24000);
+  let [disabled, setDisabled] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => setDisabled(false), 25000);
+  });
 
   const audioTag = useRef(null);
 
+  const innerWidth = window.innerWidth;
+
   return (
-    <div
-      onLoad={window.scrollTo(0, 1)}
-      className="titleContainer"
-      style={{ height: props.adjustVh * 100 }}
-    >
+    <section style={{ minWidth: innerWidth }}>
       <audio
         id="audio"
         ref={audioTag}
-        preload
+        preload="auto"
         onCanPlay={() => {
           setLoaded(true);
           audioTag.current.play();
@@ -30,123 +32,263 @@ function Title(props) {
         }
       />
       {!loaded ? (
-        <div
-          style={{
-            width: "100%",
-            height: props.adjustVh * 100,
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            textAlign: "center",
-            margin: 0,
-          }}
-        >
+        <div style={{ height: "25%" }} className="column">
           <h1>LOADING</h1>
           <h6>Stuck? Give it a second.</h6>
           <h6>
-            On mobile? Try this?{" "}
-            <Button
-              variant="outline-dark"
-              size="sm"
+            On mobile? Try this:{" "}
+            <button
               onClick={() => {
                 setLoaded(true);
                 audioTag.current.play();
               }}
             >
               play?
-            </Button>
+            </button>
           </h6>
-          <h6 style={{ textDecoration: "underline" }}>
-            <Link to="/">back to the start</Link>
-          </h6>
-          <h6 style={{ textDecoration: "underline" }}>
-            <Link to="/home">onward to the portfolio</Link>
-          </h6>
+          <Link to="/"> back to the start</Link>
+          <Link to="/home">onward to the portfolio</Link>
         </div>
       ) : (
-        <div>
-          <motion.div
-            animate={{ borderColor: "black", opacity: 1 }}
-            transition={{ duration: 2 }}
-            className="row titleEdge"
-            style={{
-              borderBottom: "5px solid #ffcf3d",
-              opacity: 0,
-              height: props.adjustVh * 12.5,
-            }}
-          >
-            <h1 className="col zoom">MEET</h1>
-            <h1 className="col zoom forYour">YOUR</h1>
-            <h1 className="col zoom forNew">NEW</h1>
-          </motion.div>
-
-          <div
-            className="nameContainer"
-            style={{ height: props.adjustVh * 75 }}
-          >
-            <motion.div
-              animate={{ scale: 3, opacity: 0 }}
-              transition={{ delay: 17.5, duration: 0.5 }}
-              className="skillsContainer"
+        <div className="column">
+          {/* top */}
+          <div className="titleEdge" style={{ borderTop: "none" }}>
+            <motion.h1
+              className="titleHeaders"
+              animate={{ opacity: [0, 1], scale: [4, 1.25] }}
+              transition={{ delay: 2 }}
             >
-              <div className="row skillsRow">
-                <h3 className="col skillsItem g" style={{ fontSize: "3.5vw" }}>
-                  BOOTSTRAP
-                </h3>
-                <h3 className="col skillsItem c">HTML</h3>
-                <h3 className="col skillsItem d">CSS</h3>
-                <h3 className="col skillsItem h">SASS</h3>
-              </div>
-              <div className="row skillsRow">
-                <h3 className="col skillsItem a">JAVASCRIPT</h3>
-                <h3 className="col skillsItem b">REACT / NATIVE</h3>
-              </div>
-              <div className="row skillsRow">
-                <h3 className="col skillsItem e">NODE</h3>
-                <h3 className="col skillsItem i">PYTHON</h3>
-                <h3 className="col skillsItem f">AWS</h3>
-              </div>
-            </motion.div>
-            <motion.img
-              animate={{ width: "75%", height: "75%", opacity: 1 }}
-              transition={{ delay: 20, duration: 4 }}
-              alt={"a handsome image of Joshua Israel"}
-              src={title_photo}
-              className="image"
-            ></motion.img>
-            <Link className="link" to="/home">
-              <motion.Button
-                style={{ display: finished, fontSize: "175%" }}
-                className="link"
-                animate={{ opacity: [0, 1], display: "flex" }}
-                transition={{ duration: 2, delay: 24 }}
-                variant="danger"
-              >
-                ENTER
-              </motion.Button>
-            </Link>
-            <h1 className="title">JOSHUA</h1>
-            <h1 className="title" style={{ animationDelay: "18.5s" }}>
-              ISRAEL
-            </h1>
+              MEET
+            </motion.h1>
+            <motion.h1
+              className="titleHeaders"
+              animate={{ opacity: [0, 1], scale: [4, 1.25] }}
+              transition={{ delay: 4 }}
+            >
+              YOUR
+            </motion.h1>
+            <motion.h1
+              className="titleHeaders"
+              animate={{ opacity: [0, 1], scale: [4, 1.25] }}
+              transition={{ delay: 6 }}
+            >
+              NEW
+            </motion.h1>
           </div>
-          <motion.div
-            animate={{ borderColor: "black", opacity: 1 }}
-            transition={{ duration: 2 }}
-            style={{
-              borderTop: "5px solid #ffcf3d",
-              opacity: 0,
-              height: props.adjustVh * 12.5,
-            }}
-            className="row titleEdge"
+          {/* center */}
+          <div className="titleCenter">
+            {/* name layer */}
+            {createNameLayer().map((style, index) => {
+              return (
+                <motion.h1
+                  key={index}
+                  style={{
+                    position: "absolute",
+                    top: `${style.top}vh`,
+                    left: `${style.left}vh`,
+                    fontSize: style.fontSize,
+                    color: style.color,
+                    opacity: 0,
+                  }}
+                  animate={{
+                    scale: [0.75, 0.25],
+                    opacity: [0, 1, 0],
+                    rotate: style.rotate,
+                  }}
+                  transition={{
+                    delay: style.animationDelay,
+                    duration: style.animationDuration,
+                  }}
+                >
+                  JOSHUA ISRAEL
+                </motion.h1>
+              );
+            })}
+
+            <motion.h1
+              style={{
+                top: "12.5vh",
+                bottom: "12.5vh",
+              }}
+              animate={{
+                scale: [1, 1.25, 1.5, 1.75, 2, 3],
+                opacity: [0, 0.25, 0.5, 1, 0],
+              }}
+              transition={{ duration: 5.5, delay: 5, ease: "linear" }}
+            >
+              JOSHUA ISRAEL
+            </motion.h1>
+            <motion.h1
+              style={{
+                position: "absolute",
+                fontSize: "40vw",
+                width: window.innerWidth,
+                zIndex: 0,
+                whiteSpace: "nowrap",
+              }}
+              animate={{
+                translateX: [window.innerWidth, -(window.innerWidth * 4)],
+              }}
+              transition={{ duration: 4, delay: 18, ease: "linear" }}
+            >
+              JOSHUA ISRAEL
+            </motion.h1>
+            {/* skills layer */}
+            <div className="column skillsContainer">
+              <motion.h1
+                animate={{ translateX: ["100vw", "0vw", "-100vw"] }}
+                transition={{ duration: 2, delay: 9 }}
+                className="skills"
+              >
+                REACT
+              </motion.h1>
+              <motion.h1
+                animate={{ translateX: ["100vw", "0vw", "-100vw"] }}
+                transition={{ duration: 2, delay: 10 }}
+                className="skills"
+              >
+                REACT NATIVE
+              </motion.h1>
+              <motion.h1
+                animate={{ translateX: ["100vw", "0vw", "-100vw"] }}
+                transition={{ duration: 2, delay: 11 }}
+                className="skills"
+              >
+                REDUX
+              </motion.h1>
+              <motion.h1
+                animate={{ translateX: ["100vw", "0vw", "-100vw"] }}
+                transition={{ duration: 2, delay: 12 }}
+                className="skills"
+              >
+                JAVASCRIPT
+              </motion.h1>
+              <motion.h1
+                animate={{ translateX: ["100vw", "0vw", "-100vw"] }}
+                transition={{ duration: 2, delay: 13 }}
+                className="skills"
+              >
+                HTML
+              </motion.h1>
+              <motion.h1
+                animate={{ translateX: ["100vw", "0vw", "-100vw"] }}
+                transition={{ duration: 2, delay: 13.5 }}
+                className="skills"
+              >
+                CSS
+              </motion.h1>
+              <motion.h1
+                animate={{ translateX: ["100vw", "0vw", "-100vw"] }}
+                transition={{ duration: 2, delay: 14 }}
+                className="skills"
+              >
+                SASS
+              </motion.h1>
+              <motion.h1
+                animate={{ translateX: ["100vw", "0vw", "-100vw"] }}
+                transition={{ duration: 2, delay: 14.5 }}
+                className="skills"
+              >
+                STYLED COMPONENTS
+              </motion.h1>
+              <motion.h1
+                animate={{ translateX: ["100vw", "0vw", "-100vw"] }}
+                transition={{ duration: 2, delay: 15 }}
+                className="skills"
+              >
+                BOOTSTRAP
+              </motion.h1>
+              <motion.h1
+                animate={{ translateX: ["100vw", "0vw", "-100vw"] }}
+                transition={{ duration: 2, delay: 15.25 }}
+                className="skills"
+              >
+                GIT
+              </motion.h1>
+              <motion.h1
+                animate={{ translateX: ["100vw", "0vw", "-100vw"] }}
+                transition={{ duration: 2, delay: 15.75 }}
+                className="skills"
+              >
+                REST API
+              </motion.h1>
+              <motion.h1
+                animate={{ translateX: ["100vw", "0vw", "-100vw"] }}
+                transition={{ duration: 2, delay: 16 }}
+                className="skills"
+              >
+                NODE
+              </motion.h1>
+              <motion.h1
+                animate={{ translateX: ["100vw", "0vw", "-100vw"] }}
+                transition={{ duration: 2, delay: 16.25 }}
+                className="skills"
+              >
+                PYTHON
+              </motion.h1>
+              <motion.h1
+                animate={{ translateX: ["100vw", "0vw", "-100vw"] }}
+                transition={{ duration: 2, delay: 16.5 }}
+                className="skills"
+              >
+                XCODE
+              </motion.h1>
+              <motion.h1
+                animate={{ translateX: ["100vw", "0vw", "-100vw"] }}
+                transition={{ duration: 2, delay: 16.75 }}
+                className="skills"
+              >
+                ANDROID STUDIO
+              </motion.h1>
+              <motion.h1
+                animate={{ translateX: ["100vw", "0vw", "-100vw"] }}
+                transition={{ duration: 2, delay: 17 }}
+                className="skills"
+              >
+                PLUS HE'S COOL, FUN, AND OBJECTIVELY BEAUTIFUL!
+              </motion.h1>
+              <motion.img
+                style={{
+                  position: "absolute",
+                  width: "100%",
+                  maxWidth: "1500px",
+                  height: "75%",
+                  border: "5px solid black",
+                  borderRadius: "10%",
+                  animation: "colorChange 4s 18s linear infinite",
+                }}
+                src={title_photo}
+                animate={{ opacity: [0, 1, 1, 1], scale: [0.25, 0.5, 0.75, 1] }}
+                transition={{ duration: 4, delay: 22, ease: "linear" }}
+              />
+              <Link to="/home">
+                <motion.button
+                  className="bigButt titleButton"
+                  disabled={disabled}
+                  animate={{ opacity: [0, 1] }}
+                  transition={{ duration: 1, delay: 26 }}
+                >
+                  ENTER
+                </motion.button>
+              </Link>
+            </div>
+          </div>
+          {/* bottom */}
+          <div
+            className="titleEdge"
+            style={{ borderBottom: "none", top: "87.5vh" }}
           >
-            <h1 className="col zoom forBot">SOFTWARE</h1>
-            <h1 className="col zoom forBot"> ENGINEER</h1>
-          </motion.div>
+            <motion.h1
+              className="titleHeaders"
+              animate={{ opacity: [0, 1], scale: [4, 1.25] }}
+              transition={{ delay: 8 }}
+            >
+              FRONTEND ENGINEER
+            </motion.h1>
+          </div>
         </div>
       )}
-    </div>
+    </section>
   );
 }
 

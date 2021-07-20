@@ -1,73 +1,63 @@
 import React from "react";
 
 function Project(props) {
-  let pSize = 0;
-  let thumbnail = 0;
-  let projectTitle = 0;
-  let projectLink = 0;
-
-  if (window.screen.width > 812) {
-    pSize = "1vw";
-    thumbnail = "200px";
-    projectTitle = "200%";
-    projectLink = "100%";
-  } else {
-    pSize = "2vw";
-    thumbnail = "128px";
-    projectTitle = "100%";
-    projectLink = "50%";
-  }
-
   return (
-    <div className="scrollItem projectContainer">
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <h4 style={{ fontSize: projectTitle }} className="scrollTitle2 ">
+    <div
+      className="column"
+      style={{
+        justifyContent: "center",
+        minWidth: "100%",
+        margin: "5vh 0 5vh 0",
+      }}
+    >
+      <div style={{ width: "80%" }}>
+        <h3 style={{}} className="scrollTitle2 ">
           {props.title}
-        </h4>
+        </h3>
         <a
           target="_blank"
           rel="noopener noreferrer"
-          style={{ fontSize: projectLink }}
+          style={{}}
           href={props.deployed}
         >
-          joshri.github.io/funky-simon
+          {props.deployed}
         </a>
         <a
           target="_blank"
           rel="noopener noreferrer"
-          style={{ fontSize: projectLink }}
+          style={{}}
           href={props.github}
         >
           github repo
         </a>
-        <iframe
+      </div>
+      <div className="has-background projectContainer">
+        <video
           title={props.title}
-          style={{ width: thumbnail, height: thumbnail }}
+          style={{ width: "50%" }}
           src={props.gif}
-          frameBorder="0"
+          type="video/mp4"
+          autoPlay
+          loop
           className="giphy-embed"
           allowFullScreen
-        ></iframe>
+          muted
+        />
+        <ul
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-evenly",
+            alignItems: "flex-start",
+            width: "40%",
+            minHeight: "24vh",
+          }}
+        >
+          {props.bullets.map((bullet) => {
+            return <li key={props.bullets.indexOf(bullet)}>{bullet}</li>;
+          })}
+        </ul>
       </div>
-      <ul
-        style={{
-          justifyContent: "center",
-          alignItems: "center",
-          fontSize: pSize,
-        }}
-        className="project"
-      >
-        {props.bullets.map((bullet) => {
-          return <li key={props.bullets.indexOf(bullet)}>{bullet}</li>;
-        })}
-      </ul>
     </div>
   );
 }
