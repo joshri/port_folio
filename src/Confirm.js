@@ -8,7 +8,10 @@ function Confirm(props) {
     setTimeout(() => setDisabled(false), 5000);
   });
   return (
-    <section style={{ justifyContent: "center" }}>
+    <motion.section
+      style={{ justifyContent: "center", opacity: 0 }}
+      animate={{ opacity: 1 }}
+    >
       <motion.h1
         animate={{ fontSize: ["1vw", "15vw", "30vw"], opacity: [0, 1, 0] }}
         transition={{ duration: 3 }}
@@ -51,7 +54,7 @@ function Confirm(props) {
           <button disabled={disabled}>no party.</button>
         </Link>
       </motion.div>
-    </section>
+    </motion.section>
   );
 }
 
