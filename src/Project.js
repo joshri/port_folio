@@ -40,7 +40,7 @@ function Project(props) {
           autoPlay
           loop
           className="giphy-embed"
-          allowFullScreen
+          playsInline
           muted
         />
         <ul

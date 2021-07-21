@@ -32,7 +32,7 @@ function Title(props) {
         }
       />
       {!loaded ? (
-        <div style={{ height: "25%" }} className="column">
+        <div style={{ height: "40%" }} className="column">
           <h1>LOADING</h1>
           <h6>Stuck? Give it a second.</h6>
           <h6>
@@ -50,7 +50,7 @@ function Title(props) {
           <Link to="/home">onward to the portfolio</Link>
         </div>
       ) : (
-        <div className="column">
+        <div className="column" onLoad={window.scrollTo(0, 1)}>
           {/* top */}
           <div className="titleEdge" style={{ borderTop: "none" }}>
             <motion.h1

@@ -7,9 +7,10 @@ body,
   background: $white;
   font-family: $body;
   text-align: center;
-  overflow: hidden;
+  overflow: scroll;
   flex-wrap: nowrap;
   min-width: 450px;
+  animation: bgFadeIn 2s linear forwards;
 }
 
 //utils / overrides
@@ -55,6 +56,7 @@ div {
     top: 0;
   }
   &.titleCenter {
+    overflow: hidden;
     top: 12.5vh;
     height: 75vh;
     width: 100vw;
@@ -104,9 +106,8 @@ div {
     border: 3px solid black;
     border-radius: 20px;
     height: 80vh;
-
+    min-width: 300px;
     &.about {
-      min-width: 250px;
       width: 50%;
       margin-left: 20vw;
       position: relative;
@@ -161,7 +162,7 @@ img {
     background: $yurple;
   }
   &.resumeThumb {
-    width: calc(1rem + 40vw);
+    width: calc(1rem + 20vw);
     border: 3px solid black;
     border-radius: 20px;
     transition: border 0.25s;
@@ -195,14 +196,16 @@ h1 {
     margin-right: 70vw;
   }
   &.resume {
-    font-size: calc(7.5rem + 10vw);
-    letter-spacing: -3rem;
+    font-size: calc(5rem + 20vw);
+    letter-spacing: -4rem;
   }
   &.bartab {
-    font-size: calc(1rem + 10vw);
+    font-size: calc(1rem + 30vw);
+    line-height: 75%;
   }
   &.projects {
-    font-size: calc(1rem + 10vw);
+    font-size: calc(1rem + 15vw);
+    letter-spacing: -1rem;
     transform: rotate(10deg);
   }
 }
@@ -210,7 +213,7 @@ h1 {
 h6 {
   //home {
   &.about {
-    font-size: calc(0.66rem + 0.9vh);
+    font-size: calc(0.5rem + 1vh);
   }
 }
 

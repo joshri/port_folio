@@ -10,11 +10,10 @@ function ScrollContainer(props) {
     <div
       className="column min-width"
       style={{
-        minWidth: "90vw",
+        minWidth: "750px",
+        width: "90vw",
         minHeight: "90vh",
         marginTop: "10vh",
-        overflowY: "scroll",
-        overflowX: "hidden",
       }}
     >
       {/* resume modal TODO: link to Google Doc or Download */}
@@ -96,39 +95,41 @@ function ScrollContainer(props) {
           </h6>
         </div>
       </div>
-      <h1 className="resume" style={{}}>
-        RESUME
-      </h1>
-      <div>
-        <img
-          alt="resume thumbnail"
-          className="resumeThumb"
-          style={{ cursor: "pointer" }}
-          src={thumbnailPic}
-          onClick={() => setResFull("block")}
-        />
-        <svg
-          width="30vw"
-          height="30vh"
-          viewBox="0 0 16 16"
-          fill="black"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            fillRule="evenodd"
-            d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
+      <div className="column" style={{ width: "100%", alignItems: "center" }}>
+        <h1 className="resume" style={{}}>
+          RESUME
+        </h1>
+        <div style={{ width: "70vw", position: "relative", bottom: "5vh" }}>
+          <img
+            alt="resume thumbnail"
+            className="resumeThumb"
+            style={{ cursor: "pointer" }}
+            src={thumbnailPic}
+            onClick={() => setResFull("block")}
           />
-        </svg>
+          <svg
+            width="40vw"
+            viewBox="0 0 16 16"
+            fill="black"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fillRule="evenodd"
+              d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
+            />
+          </svg>
+        </div>
       </div>
-      <div className="spacer" />
-
-      <div
-        style={{
-          minWidth: "100%",
-          minHeight: "100vh",
-        }}
-      >
-        <div className="column" style={{ width: "40%", minHeight: "100vh" }}>
+      <div>
+        <div
+          className="column"
+          style={{
+            width: "40%",
+            position: "relative",
+            zIndex: 1,
+            left: "5vw",
+          }}
+        >
           <div className="has-background column homeText">
             <div className="column" style={{ height: "100%" }}>
               <h6 className="about">
@@ -156,21 +157,24 @@ function ScrollContainer(props) {
                 course of seven months of work.
               </h6>
             </div>
+            <video
+              style={{ width: "100%", marginTop: "20px" }}
+              title={props.title}
+              src={
+                "https://portfolio-bucket-7202021.s3.amazonaws.com/assets/video/SidecarDemoMovie.mp4"
+              }
+              type="video/mp4"
+              autoPlay
+              loop
+              playsInline
+              muted
+            />
           </div>
-          <video
-            style={{ width: "100%", marginTop: "20px" }}
-            title={props.title}
-            src={
-              "https://portfolio-bucket-7202021.s3.amazonaws.com/assets/video/SidecarDemoMovie.mp4"
-            }
-            type="video/mp4"
-            autoPlay
-            loop
-            allowFullScreen
-            muted
-          />
         </div>
-        <div className="column" style={{ width: "10vw" }}>
+        <div
+          className="column"
+          style={{ width: "20vw", position: "relative", zIndex: 0.5 }}
+        >
           <h1 className="bartab">B</h1>
           <h1 className="bartab">A</h1>
           <h1 className="bartab">R</h1>
@@ -178,7 +182,15 @@ function ScrollContainer(props) {
           <h1 className="bartab">A</h1>
           <h1 className="bartab">B</h1>
         </div>
-        <div className="column" style={{ width: "30%" }}>
+        <div
+          className="column"
+          style={{
+            width: "25%",
+            position: "relative",
+            zIndex: 0.5,
+            right: "5vw",
+          }}
+        >
           <video
             style={{ width: "90%" }}
             title={props.title}
@@ -188,10 +200,10 @@ function ScrollContainer(props) {
             type="video/mov"
             autoPlay
             loop
-            allowFullScreen
+            playsInline
             muted
           />
-          <div className="spacer" />
+          <div style={{ height: "20px" }}></div>
           <video
             style={{ width: "90%" }}
             title={props.title}
@@ -201,11 +213,12 @@ function ScrollContainer(props) {
             type="video/mp4"
             autoPlay
             loop
-            allowFullScreen
+            playsInline
             muted
           />
         </div>
       </div>
+      <div className="spacer" />
       <h1 className="projects">PROJECTS</h1>
       <div className="column" style={{ position: "relative" }}>
         <Project
