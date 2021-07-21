@@ -18,7 +18,10 @@ function Title(props) {
   const innerWidth = window.innerWidth;
 
   return (
-    <section style={{ minWidth: innerWidth }}>
+    <motion.section
+      style={{ minWidth: innerWidth, opacity: 0 }}
+      animate={{ opacity: 1 }}
+    >
       <audio
         id="audio"
         ref={audioTag}
@@ -288,7 +291,7 @@ function Title(props) {
           </div>
         </div>
       )}
-    </section>
+    </motion.section>
   );
 }
 

@@ -20,7 +20,7 @@ function ScrollContainer(props) {
       <div
         style={{
           display: resFull,
-          position: "absolute",
+          position: "fixed",
           background: "rgba(0, 0, 0, 0.5)",
           top: 0,
           left: 0,
@@ -36,18 +36,17 @@ function ScrollContainer(props) {
             alt="Full Resume"
             src={res}
             style={{
-              height: "80%",
-              width: "80%",
+              height: "90vh",
               marginTop: 20,
               borderRadius: 15,
             }}
           ></img>
 
           <button
-            style={{ position: "absolute", top: 30, right: "12.5%" }}
+            style={{ position: "relative", bottom: "5vh" }}
             onClick={() => setResFull("none")}
           >
-            X
+            CLOSE
           </button>
         </div>
       </div>
