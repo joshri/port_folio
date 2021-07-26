@@ -7,7 +7,7 @@ body,
   background: $white;
   font-family: $body;
   text-align: center;
-  overflow: scroll;
+  overflow: hidden;
   flex-wrap: nowrap;
   min-width: 450px;
   animation: bgFadeIn 2s linear forwards;
@@ -62,6 +62,17 @@ div {
     width: 100vw;
     background: transparent;
   }
+  &.confetti {
+    height: 10px;
+    width: 30px;
+    position: absolute;
+    left: -30px;
+    top: 87.5vh;
+
+    &.confetti2 {
+      left: 100vw;
+    }
+  }
   &.skillsContainer {
     position: absolute;
     min-width: 100vw;
@@ -71,6 +82,7 @@ div {
     top: 12.5vh;
     bottom: 12.5vh;
     background: transparent;
+    overflow: hidden;
   }
   //home
   &.homeContainer {

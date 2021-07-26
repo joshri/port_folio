@@ -9,6 +9,11 @@ $yurple: #bf2ed6;
 $lime: #99d62e;
 $orange: #d66b2e;
 
+//confetti
+$randomX: random(25) vw;
+$randomY: random(75) vh;
+$randomDeg: random(360) deg;
+
 %flex-display {
   display: flex;
   justify-content: space-evenly;

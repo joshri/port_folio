@@ -3,15 +3,10 @@ import { Link } from "react-router-dom";
 import title_photo from "./assets/images/TitlePhoto2.jpg";
 import { motion } from "framer-motion";
 
-import { createNameLayer } from "./utils";
+import { createConfetti, createNameLayer } from "./utils";
 
 function Title(props) {
   let [loaded, setLoaded] = useState(false);
-  let [disabled, setDisabled] = useState(true);
-
-  useEffect(() => {
-    setTimeout(() => setDisabled(false), 25000);
-  });
 
   const audioTag = useRef(null);
 
@@ -19,7 +14,11 @@ function Title(props) {
 
   return (
     <motion.section
-      style={{ minWidth: innerWidth, opacity: 0 }}
+      style={{
+        width: innerWidth,
+        opacity: 0,
+        overflow: "hidden",
+      }}
       animate={{ opacity: 1 }}
     >
       <audio
@@ -31,7 +30,7 @@ function Title(props) {
           audioTag.current.play();
         }}
         src={
-          "https://portfolio-bucket-7202021.s3.amazonaws.com/assets/audio/PortfolioThemeLowest.mp3"
+          "https://portfolio-bucket-7202021.s3.amazonaws.com/assets/audio/PortfolioTheme.m4a"
         }
       />
       {!loaded ? (
@@ -88,7 +87,7 @@ function Title(props) {
                   style={{
                     position: "absolute",
                     top: `${style.top}vh`,
-                    left: `${style.left}vh`,
+                    left: `${style.left}vw`,
                     fontSize: style.fontSize,
                     color: style.color,
                     opacity: 0,
@@ -258,7 +257,7 @@ function Title(props) {
                   height: "75%",
                   border: "5px solid black",
                   borderRadius: "10%",
-                  animation: "colorChange 4s 18s linear infinite",
+                  animation: "colorChange 3s 18s linear infinite",
                 }}
                 src={title_photo}
                 animate={{ opacity: [0, 1, 1, 1], scale: [0.25, 0.5, 0.75, 1] }}
@@ -267,9 +266,9 @@ function Title(props) {
               <Link to="/home">
                 <motion.button
                   className="bigButt titleButton"
-                  disabled={disabled}
                   animate={{ opacity: [0, 1] }}
                   transition={{ duration: 1, delay: 26 }}
+                  disabled={false}
                 >
                   ENTER
                 </motion.button>
@@ -291,6 +290,49 @@ function Title(props) {
           </div>
         </div>
       )}
+      {/* confetti */}
+      {createConfetti().map((style, index) => {
+        return (
+          <motion.div
+            className="confetti"
+            key={index}
+            animate={{
+              x: `${style.translateX}vw`,
+              y: `-${style.translateY}vh`,
+              rotate: style.rotate,
+            }}
+            transition={{
+              duration: 3,
+              delay: 26,
+              repeat: 0,
+            }}
+            style={{
+              background: style.background,
+            }}
+          />
+        );
+      })}
+      {createConfetti().map((style, index) => {
+        return (
+          <motion.div
+            className="confetti confetti2"
+            key={index}
+            animate={{
+              x: `-${style.translateX}vw`,
+              y: `-${style.translateY}vh`,
+              rotate: style.rotate,
+            }}
+            transition={{
+              duration: 3,
+              delay: 26,
+              repeat: 0,
+            }}
+            style={{
+              background: style.background,
+            }}
+          />
+        );
+      })}
     </motion.section>
   );
 }

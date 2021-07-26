@@ -33,3 +33,31 @@ export const createNameLayer = () => {
   }
   return nameArray;
 };
+
+export const createConfetti = () => {
+  let confettiArray = [];
+  const colorOptions = {
+    0: "#b48d18",
+    1: "#3daeff",
+    2: "#bf2ed6",
+    3: "#99d62e",
+    4: "#d66b2e",
+  };
+  for (let i = 0; i <= 40; i++) {
+    let style = {
+      background: 0,
+      translateX: null,
+      translateY: [],
+      rotate: 0,
+    };
+    let x = Math.floor(Math.random() * 40) + 105;
+    let y = Math.floor(Math.random() * 87.5) + 50;
+    let rotate = Math.floor(Math.random() * 360) + 360;
+    style.background = colorOptions[Math.floor(Math.random() * 5)];
+    style.translateX = x;
+    style.translateY = y;
+    style.rotate = rotate;
+    confettiArray.push(style);
+  }
+  return confettiArray;
+};
