@@ -1,11 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import thumbnailPic from "./assets/images/ResumeThumbnail.png";
-import res from "./assets/images/Resume.jpg";
 import Project from "./Project";
-
 function ScrollContainer(props) {
-  let [resFull, setResFull] = useState("none");
-
   return (
     <div
       className="column min-width"
@@ -16,40 +12,6 @@ function ScrollContainer(props) {
         marginTop: "10vh",
       }}
     >
-      {/* resume modal TODO: link to Google Doc or Download */}
-      <div
-        style={{
-          display: resFull,
-          position: "fixed",
-          background: "rgba(0, 0, 0, 0.5)",
-          top: 0,
-          left: 0,
-          height: "100%",
-          width: "100%",
-          border: "3px solid black",
-          zIndex: 5,
-          overflow: "scroll",
-        }}
-      >
-        <div className="column">
-          <img
-            alt="Full Resume"
-            src={res}
-            style={{
-              height: "90vh",
-              marginTop: 20,
-              borderRadius: 15,
-            }}
-          ></img>
-
-          <button
-            style={{ position: "relative", bottom: "5vh" }}
-            onClick={() => setResFull("none")}
-          >
-            CLOSE
-          </button>
-        </div>
-      </div>
       {/* content... */}
       <div className=" min-width " style={{ display: "block", width: "100%" }}>
         <h1 className="about">ABOUT</h1>
@@ -85,8 +47,9 @@ function ScrollContainer(props) {
           <h6 className="about">
             I've got React (Redux, Hooks), React Native (XCode, Android Studio),
             Javascript (ES6), CSS (SASS, Styled Components, Bootstrap), HTML,
-            and a dash of Python and Node in my toolbox...SO FAR. I used to be
-            an actor okay? I'm willing to learn something new!
+            and a dash of AWS (this website is deployed with Amplify, S3, and
+            Route 53), Python, and Node in my toolbox...SO FAR. I used to be an
+            actor okay? I'm willing to learn something new!
           </h6>
           <h6 className="about">
             I am, of course, happy to send a copy of the photo at the end of the
@@ -99,13 +62,18 @@ function ScrollContainer(props) {
           RESUME
         </h1>
         <div style={{ width: "70vw", position: "relative", bottom: "5vh" }}>
-          <img
-            alt="resume thumbnail"
-            className="resumeThumb"
-            style={{ cursor: "pointer" }}
-            src={thumbnailPic}
-            onClick={() => setResFull("block")}
-          />
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://docs.google.com/document/d/1VlifGaKeYVnlGnHbZA3XDlF_-iDN98dI_YoMU5hJCeA/edit?usp=sharing"
+          >
+            <img
+              alt="resume thumbnail"
+              className="resumeThumb"
+              style={{ cursor: "pointer" }}
+              src={thumbnailPic}
+            />
+          </a>
           <svg
             width="40vw"
             viewBox="0 0 16 16"
@@ -131,6 +99,13 @@ function ScrollContainer(props) {
         >
           <div className="has-background column homeText">
             <div className="column" style={{ height: "100%" }}>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://apps.apple.com/us/app/the-bartab/id1569243810"
+              >
+                Check it out on the App Store!!
+              </a>
               <h6 className="about">
                 I brought this React Native + React + Redux app from zero to
                 approved by Apple and in beta on TestFlight, and running
