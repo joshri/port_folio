@@ -142,3 +142,15 @@ li {
     transform: scale(1.25, 1.25);
   }
 }
+
+@keyframes rotateLeft {
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes rotateRight {
+  100% {
+    transform: rotate(360deg);
+  }
+}

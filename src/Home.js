@@ -1,10 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import liImage from "./assets/images/LI-In-Bug.png";
 import ScrollContainer from "./ScrollContainer";
+import head from "./assets/images/HeadshotHead.png";
 
 function Home(props) {
+  let [mouse, setMouse] = useState({ x: 0, y: 0 });
   return (
-    <section style={{ flexDirection: "row", background: "transparent" }}>
+    <section
+      style={{
+        flexDirection: "row",
+        background: "transparent",
+        cursor: "none",
+      }}
+      onMouseMove={(e) => {
+        setMouse({ x: e.clientY, y: e.clientX });
+      }}
+    >
+      <div
+        className="mouse-border"
+        style={{ top: mouse.x - 25, left: mouse.y - 25 }}
+      >
+        <div className="mouse-border layer-two">
+          <div className="mouse-border inner" style={{ width: 40, height: 40 }}>
+            <img alt="headshot-cursor" src={head} className="mouseHead" />
+          </div>
+        </div>
+      </div>
       {/* sidebar */}
       <div className="homeSidebar">
         <div
