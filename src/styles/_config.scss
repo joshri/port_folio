@@ -88,7 +88,7 @@ h6 {
 a,
 p,
 li {
-  font-size: calc(0.25rem + 1vw);
+  font-size: clamp(12px, calc(0.25rem + 1vw), 16px);
 }
 
 @keyframes bgFadeIn {

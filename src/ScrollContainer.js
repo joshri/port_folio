@@ -9,10 +9,10 @@ function ScrollContainer(props) {
         minWidth: "750px",
         width: "90vw",
         minHeight: "90vh",
-        marginTop: "10vh",
+        marginTop: "15vh",
       }}
     >
-      {/* content... */}
+      {/* content */}
       <div className=" min-width " style={{ display: "block", width: "100%" }}>
         <h1 className="about">ABOUT</h1>
       </div>
@@ -57,11 +57,22 @@ function ScrollContainer(props) {
           </h6>
         </div>
       </div>
-      <div className="column" style={{ width: "100%", alignItems: "center" }}>
-        <h1 className="resume" style={{}}>
-          RESUME
-        </h1>
-        <div style={{ width: "70vw", position: "relative", bottom: "5vh" }}>
+      <div
+        className="column"
+        style={{
+          width: "100%",
+          alignItems: "center",
+        }}
+      >
+        <h1 className="resume">RESUME</h1>
+        <div
+          style={{
+            width: "70vw",
+            minWidth: 500,
+            position: "relative",
+            bottom: "5vh",
+          }}
+        >
           <a
             target="_blank"
             rel="noopener noreferrer"
@@ -99,18 +110,17 @@ function ScrollContainer(props) {
         >
           <div className="has-background column homeText">
             <div className="column" style={{ height: "100%" }}>
+              <h6 className="about">
+                I took a React Native + React + Redux app from an empty repo to
+                deployed on both App Stores!
+              </h6>
               <a
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://apps.apple.com/us/app/the-bartab/id1569243810"
               >
-                Check it out on the App Store!!
+                CHECK IT OUT!
               </a>
-              <h6 className="about">
-                I brought this React Native + React + Redux app from zero to
-                approved by Apple and in beta on TestFlight, and running
-                beautifully on Android!
-              </h6>
               <h6 className="about">
                 Using Stripe, Estimote Bluetooth proximity beacons, and our own
                 REST API, you can walk into any Bartab location, open a tab, and
@@ -120,7 +130,7 @@ function ScrollContainer(props) {
                 I typed every single line of Front-End code here with my bare
                 hands - from creating every asynchronous API call and error
                 handling with Redux, to creating every single UI element with
-                concise Styled Components!
+                concise Styled Components based on a Figma doc!
               </h6>
               <h6 className="about">
                 What you're seeing below is the web app component of Bartab,

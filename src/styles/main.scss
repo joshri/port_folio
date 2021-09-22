@@ -117,7 +117,6 @@ div {
   }
   &.homeText {
     padding: 3%;
-    width: 100%;
     border: 3px solid black;
     border-radius: 20px;
     height: 85vh;
@@ -282,13 +281,14 @@ h1 {
   }
   //home
   &.about {
-    font-size: calc(5rem + 20vh);
+    font-size: calc(4rem + 20vh);
     transform: rotate(90deg);
-    margin-right: 70vw;
+    margin-right: 60vw;
   }
   &.resume {
-    font-size: calc(5rem + 20vw);
+    font-size: calc(3rem + 20vw);
     letter-spacing: -4rem;
+    min-width: 500;
   }
   &.bartab {
     font-size: calc(1rem + 30vw);
@@ -304,7 +304,7 @@ h1 {
 h6 {
   //home
   &.about {
-    font-size: calc(0.5rem + 1vh);
+    font-size: clamp(8px, calc(0.5rem + 1vh), 20px);
   }
 }
 
