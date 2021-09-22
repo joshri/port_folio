@@ -95,6 +95,7 @@ div {
   }
   &.headerContainer {
     position: absolute;
+    overflow: hidden;
     top: 0;
     background: $highlight;
     width: 90%;
@@ -104,9 +105,11 @@ div {
     border-bottom: 3px solid black;
   }
   &.homeSidebar {
+    overflow: hidden;
     border-right: 5px solid black;
     min-height: 100vh;
     min-width: 10%;
+    max-width: 10%;
     background: $highlight;
   }
   &.spacer {
@@ -145,8 +148,8 @@ div {
       height: 50px;
       animation: rotateRight 6s linear infinite;
       border: none;
-      border-right: 2px solid $oneColor;
-      border-bottom: 2px solid $oneColor;
+      border-right: 2px solid $lime;
+      border-bottom: 2px solid $lime;
       border-left: none;
       border-top: none;
     }
@@ -160,6 +163,39 @@ div {
     border-top: 3px solid black;
     border-bottom: 3px solid black;
     min-width: 100%;
+  }
+}
+
+//color shapes
+.shape {
+  background: $turquaz;
+  position: absolute;
+  z-index: -1;
+  transform: rotate(45deg);
+  &.yurple {
+    background: $yurple;
+  }
+  &.gold {
+    background: $oneColor;
+  }
+  &.lime {
+    background: $lime;
+  }
+  &.orange {
+    background: $orange;
+  }
+  &.rotate-left {
+    transform: rotate(-45deg);
+  }
+  &.header-stripe {
+    width: 5%;
+    height: 300%;
+  }
+  &.sidebar-stripe {
+    position: relative;
+    z-index: 1;
+    min-width: 900%;
+    min-height: 100px;
   }
 }
 

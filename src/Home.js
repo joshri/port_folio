@@ -16,6 +16,7 @@ function Home(props) {
         setMouse({ x: e.clientY, y: e.clientX });
       }}
     >
+      {/* mouse tracking icon */}
       <div
         className="mouse-border"
         style={{ top: mouse.x - 25, left: mouse.y - 25 }}
@@ -27,31 +28,63 @@ function Home(props) {
         </div>
       </div>
       {/* sidebar */}
-      <div className="homeSidebar">
+      <div className="homeSidebar column">
+        {/* background shapes */}
         <div
-          style={{
-            minWidth: "80%",
-            minHeight: "100vh",
-            borderRight: "2px solid black",
-          }}
-        ></div>
+          className="shape sidebar-stripe yurple rotate-left"
+          style={{ height: "30vh", width: "1000%" }}
+        />
         <div
-          style={{
-            minWidth: "5%",
-            minHeight: "100vh",
-            borderRight: "3.5px solid black",
-          }}
-        ></div>
+          className="shape sidebar-stripe gold"
+          style={{ bottom: "20vh", height: "15vh" }}
+        />
+        <div
+          className="shape sidebar-stripe orange "
+          style={{ bottom: "10vh" }}
+        />
+        <div
+          className="shape sidebar-stripe lime rotate-left"
+          style={{ width: "500%", height: "25vh" }}
+        />
+        <div
+          className="shape sidebar-stripe yurple"
+          style={{ bottom: "5vh", width: "500%" }}
+        />
+        <div className="shape sidebar-stripe rotate-left" />
       </div>
+
       {/* main */}
       <div className="homeContainer min-width">
         {/* header */}
         <div className="headerContainer min-width">
+          {/* background shapes */}
+          <div
+            className="shape header-stripe"
+            style={{ left: 0, width: "50%" }}
+          />
+          <div
+            className="shape header-stripe orange"
+            style={{ left: 0, width: "3%" }}
+          />
+          <div
+            className="shape header-stripe yurple rotate-left"
+            style={{ left: "50%" }}
+          />
+          <div
+            className="shape header-stripe orange rotate-left"
+            style={{ left: "85%", width: "15%", height: "500%" }}
+          />
+          <div className="shape header-stripe lime" style={{ left: "45%" }} />
+          <div
+            className="shape header-stripe gold"
+            style={{ left: "55%", width: "25%", height: "600%" }}
+          />
+          {/* actual header content */}
           <div className="column" style={{ width: "50%" }}>
             <h1 style={{ width: "100%" }}>JOSHUA ISRAEL</h1>
             <h6 style={{ width: "100%" }}>FRONT-END DEVELOPER</h6>
           </div>
-          <div style={{ width: "40%", justifyContent: "center" }}>
+          <div style={{ width: "35%", justifyContent: "center" }}>
             <svg
               width="2.5vw"
               height="50%"
@@ -69,19 +102,24 @@ function Home(props) {
           </div>
 
           <a
-            style={{ width: "20%" }}
+            style={{ width: "15%" }}
             target="_blank"
             rel="noopener noreferrer"
             href="https://www.linkedin.com/in/joshri"
           >
             <img
               alt="LinkedIn"
-              style={{ width: 50, height: 40 }}
+              style={{
+                width: "50%",
+                height: "100%",
+                maxHeight: 50,
+                maxWidth: 50,
+              }}
               src={liImage}
             />
           </a>
         </div>
-        {/* content */}
+        {/* portfolio content */}
         <ScrollContainer />
       </div>
     </section>
