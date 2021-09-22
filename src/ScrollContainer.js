@@ -12,7 +12,23 @@ function ScrollContainer(props) {
         marginTop: "15vh",
       }}
     >
+      {/* background stripes */}
+      <div style={{ position: "relative", zIndex: 0 }}>
+        <div
+          className="shape scroll-stripe orange"
+          style={{ height: "40vh" }}
+        />
+        <div
+          className="shape scroll-stripe gold rotate-left"
+          style={{ height: "40vh", top: "150vh" }}
+        />
+        <div
+          className="shape scroll-stripe"
+          style={{ height: "40vh", top: "350vh" }}
+        />
+      </div>
       {/* content */}
+
       <div className=" min-width " style={{ display: "block", width: "100%" }}>
         <h1 className="about">ABOUT</h1>
       </div>
@@ -25,16 +41,33 @@ function ScrollContainer(props) {
           }}
         >
           <h6 className="about">
-            Welcome to the #1 Website In The World For All Things Related To Me,
+            Welcome to the #1 Website In The World For All Things Related to Me,
             Joshua Israel!
           </h6>
           <h6 className="about">
-            Once, in an interview, I was asked, "Are you always this happy when
-            you code?"
+            I know what you're thinking: "Wow this guy can really use Wix". Well
+            think again. This is a handcrafted, artisanal, Javascript, React,
+            SCSS, and AWS Amplify website by Me, Joshua Israel! You can check
+            out the GitHub repo below.
           </h6>
-          <h6 className="about">I said, "Yes."</h6>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://github.com/joshri/port_folio"
+          >
+            CHECK OUT THE CODE!
+          </a>
           <h6 className="about">
-            I also said, "That's going right on my website."
+            TRUE ANECDOTE: Once, in an interview, I was asked, "Are you always
+            this happy when you code?" I said, "Yes". I also said, "That's going
+            right on my website".
+          </h6>
+          <h6 className="about">
+            I've put React (Redux, Hooks), React Native (XCode, Android Studio),
+            Javascript (ES6), CSS (SASS, Styled Components, Bootstrap), HTML,
+            and a dash of AWS (this website is deployed with Amplify, S3, and
+            Route 53), Python, and Node in my toolbox...SO FAR. I used to be an
+            actor okay? I'm willing to learn something new!
           </h6>
           <h6 className="about">
             From 2016-2020, I was paid to sing and dance live in front of
@@ -45,13 +78,6 @@ function ScrollContainer(props) {
             same.
           </h6>
           <h6 className="about">
-            I've got React (Redux, Hooks), React Native (XCode, Android Studio),
-            Javascript (ES6), CSS (SASS, Styled Components, Bootstrap), HTML,
-            and a dash of AWS (this website is deployed with Amplify, S3, and
-            Route 53), Python, and Node in my toolbox...SO FAR. I used to be an
-            actor okay? I'm willing to learn something new!
-          </h6>
-          <h6 className="about">
             I am, of course, happy to send a copy of the photo at the end of the
             party animation upon request.
           </h6>
@@ -60,6 +86,7 @@ function ScrollContainer(props) {
       <div
         className="column"
         style={{
+          position: "relative",
           width: "100%",
           alignItems: "center",
         }}
@@ -119,7 +146,7 @@ function ScrollContainer(props) {
                 rel="noopener noreferrer"
                 href="https://apps.apple.com/us/app/the-bartab/id1569243810"
               >
-                CHECK IT OUT!
+                CHECK IT OUT - FRESHLY REDESIGNED!
               </a>
               <h6 className="about">
                 Using Stripe, Estimote Bluetooth proximity beacons, and our own

@@ -99,18 +99,21 @@ div {
     top: 0;
     background: $highlight;
     width: 90%;
-    height: 10%;
+    min-height: 10%;
+    max-height: 10%;
     padding: 5px;
     z-index: 5;
     border-bottom: 3px solid black;
   }
   &.homeSidebar {
+    position: relative;
     overflow: hidden;
     border-right: 5px solid black;
     min-height: 100vh;
     min-width: 10%;
     max-width: 10%;
     background: $highlight;
+    z-index: 5;
   }
   &.spacer {
     height: 10vh;
@@ -121,6 +124,7 @@ div {
     border-radius: 20px;
     height: 85vh;
     min-width: 300px;
+    min-height: 500px;
     &.about {
       width: 50%;
       margin-left: 20vw;
@@ -195,6 +199,11 @@ div {
     z-index: 1;
     min-width: 900%;
     min-height: 100px;
+  }
+  &.scroll-stripe {
+    z-index: 0;
+    min-width: 200vw;
+    min-height: 10vh;
   }
 }
 
