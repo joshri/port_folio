@@ -1,7 +1,7 @@
 import React, { useState } from "react";
+import head from "./assets/images/HeadshotHead.png";
 import liImage from "./assets/images/LI-In-Bug.png";
 import ScrollContainer from "./ScrollContainer";
-import head from "./assets/images/HeadshotHead.png";
 
 function Home(props) {
   let [mouse, setMouse] = useState({ x: 0, y: 0 });
@@ -110,10 +110,9 @@ function Home(props) {
             <img
               alt="LinkedIn"
               style={{
-                width: "50%",
+                width: "2.5vw",
                 height: "100%",
-                maxHeight: 50,
-                maxWidth: 50,
+                minWidth: 50,
               }}
               src={liImage}
             />

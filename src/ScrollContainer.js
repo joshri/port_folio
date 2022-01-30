@@ -45,17 +45,25 @@ function ScrollContainer(props) {
             Joshua Israel!
           </h6>
           <h6 className="about">
-            I know what you're thinking: "Wow this guy can really use Wix". Well
-            think again. This is a handcrafted, artisanal, Javascript, React,
-            SCSS, and AWS Amplify website by Me, Joshua Israel! You can check
-            out the GitHub repo below.
+            I'm now working at Weaveworks on an{" "}
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://github.com/weaveworks/weave-gitops"
+            >
+              open-source GitOps GUI
+            </a>{" "}
+            and slowly morphing into the most lovely full-stack developer by
+            learning Go and absorbing the knowledge of some coding geniuses.
           </h6>
           <a
             target="_blank"
             rel="noopener noreferrer"
             href="https://github.com/joshri/port_folio"
           >
-            CHECK OUT THE CODE!
+            I also made the website you're looking at right now. Is it perfect?
+            No. But the most the most beautiful things never are. Think about
+            it.
           </a>
           <h6 className="about">
             TRUE ANECDOTE: Once, in an interview, I was asked, "Are you always
@@ -66,8 +74,9 @@ function ScrollContainer(props) {
             I've put React (Redux, Hooks), React Native (XCode, Android Studio),
             Javascript (ES6), CSS (SASS, Styled Components, Bootstrap), HTML,
             and a dash of AWS (this website is deployed with Amplify, S3, and
-            Route 53), Python, and Node in my toolbox...SO FAR. I used to be an
-            actor okay? I'm willing to learn something new!
+            Route 53), Python, and Node in my toolbox...SO FAR. Right now I'm
+            learning Typescript, Go, and Jest + React Testing Library
+            PROFESSIONALY at Weaveworks.
           </h6>
           <h6 className="about">
             From 2016-2020, I was paid to sing and dance live in front of
@@ -103,7 +112,7 @@ function ScrollContainer(props) {
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://docs.google.com/document/d/1VlifGaKeYVnlGnHbZA3XDlF_-iDN98dI_YoMU5hJCeA/edit?usp=sharing"
+            href="https://drive.google.com/file/d/16sLZOjmL9lmk8Mw9c1mEqQfWi0wODufC/view?usp=sharing"
           >
             <img
               alt="resume thumbnail"

@@ -1,5 +1,8 @@
 @import "./_config.scss";
 
+html {
+  min-height: 700px;
+}
 body,
 #root {
   margin: 0;
@@ -52,6 +55,7 @@ div {
   }
   //title
   &.titleEdge {
+    background: $white;
     min-height: 12.5vh;
     min-width: 100vw;
     border-bottom: 4px solid black;
@@ -59,6 +63,7 @@ div {
     animation: colorChange 4s 10s linear infinite;
     position: absolute;
     top: 0;
+    z-index: 2;
   }
   &.titleCenter {
     overflow: hidden;
@@ -66,6 +71,7 @@ div {
     height: 75vh;
     width: 100vw;
     background: transparent;
+    z-index: 1;
   }
   &.confetti {
     height: 10px;

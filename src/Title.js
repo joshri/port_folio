@@ -1,8 +1,7 @@
-import React, { useState, useRef, useEffect } from "react";
+import { motion } from "framer-motion";
+import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import title_photo from "./assets/images/TitlePhoto2.jpg";
-import { motion } from "framer-motion";
-
 import { createConfetti, createNameLayer } from "./utils";
 
 function Title(props) {
