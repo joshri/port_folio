@@ -1,6 +1,6 @@
 import React from "react";
-import thumbnailPic from "./assets/images/ResumeThumbnail.png";
 import Project from "./Project";
+import thumbnailPic from "./assets/images/ResumeThumbnail.png";
 function ScrollContainer(props) {
   return (
     <div
@@ -45,7 +45,8 @@ function ScrollContainer(props) {
             Joshua Israel!
           </h6>
           <h6 className="about">
-            I'm now working at Weaveworks on an{" "}
+            I've been at Weaveworks since Oct. 2021 as a Software Engineer,
+            working on an{" "}
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -53,30 +54,12 @@ function ScrollContainer(props) {
             >
               open-source GitOps GUI
             </a>{" "}
-            and slowly morphing into the most lovely full-stack developer by
-            learning Go and absorbing the knowledge of some coding geniuses.
-          </h6>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://github.com/joshri/port_folio"
-          >
-            I also made the website you're looking at right now. Is it perfect?
-            No. But the most the most beautiful things never are. Think about
-            it.
-          </a>
-          <h6 className="about">
-            TRUE ANECDOTE: Once, in an interview, I was asked, "Are you always
-            this happy when you code?" I said, "Yes". I also said, "That's going
-            right on my website".
-          </h6>
-          <h6 className="about">
-            I've put React (Redux, Hooks), React Native (XCode, Android Studio),
-            Javascript (ES6), CSS (SASS, Styled Components, Bootstrap), HTML,
-            and a dash of AWS (this website is deployed with Amplify, S3, and
-            Route 53), Python, and Node in my toolbox...SO FAR. Right now I'm
-            learning Typescript, Go, and Jest + React Testing Library
-            PROFESSIONALY at Weaveworks.
+            for Cloud Native developers and platform operators. It's the real
+            deal - owning issues from conception and AC to merge, giving
+            constructive code reviews, lots of asynchronous fully remote
+            communication around the world, and tackling complex technical
+            issues in the world of Kubernetes, all within the exciting chaos of
+            a startup!
           </h6>
           <h6 className="about">
             From 2016-2020, I was paid to sing and dance live in front of
@@ -112,7 +95,7 @@ function ScrollContainer(props) {
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://drive.google.com/file/d/16sLZOjmL9lmk8Mw9c1mEqQfWi0wODufC/view?usp=sharing"
+            href="https://docs.google.com/document/d/1Dw6gPNcTRa_0yJyf-DDf567JYG3buM3EuojG3wGZfrc/edit?usp=sharing"
           >
             <img
               alt="resume thumbnail"
@@ -150,13 +133,6 @@ function ScrollContainer(props) {
                 I took a React Native + React + Redux app from an empty repo to
                 deployed on both App Stores!
               </h6>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://apps.apple.com/us/app/the-bartab/id1569243810"
-              >
-                CHECK IT OUT - FRESHLY REDESIGNED!
-              </a>
               <h6 className="about">
                 Using Stripe, Estimote Bluetooth proximity beacons, and our own
                 REST API, you can walk into any Bartab location, open a tab, and
