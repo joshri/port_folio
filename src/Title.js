@@ -251,7 +251,7 @@ function Title(props) {
               <motion.img
                 style={{
                   position: "absolute",
-                  width: "100%",
+                  width: "75%",
                   maxWidth: "1500px",
                   height: "75%",
                   border: "5px solid black",
@@ -284,7 +284,7 @@ function Title(props) {
               animate={{ opacity: [0, 1], scale: [4, 1.25] }}
               transition={{ delay: 8 }}
             >
-              FRONTEND ENGINEER
+              SOFTWARE ENGINEER
             </motion.h1>
           </div>
         </div>

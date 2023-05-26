@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import ScrollContainer from "./ScrollContainer";
 import head from "./assets/images/HeadshotHead.png";
 import liImage from "./assets/images/LI-In-Bug.png";
-import ScrollContainer from "./ScrollContainer";
+import ghImage from "./assets/images/github-mark.png";
 
 function Home(props) {
   let [mouse, setMouse] = useState({ x: 0, y: 0 });
@@ -80,43 +81,45 @@ function Home(props) {
             style={{ left: "55%", width: "25%", height: "600%" }}
           />
           {/* actual header content */}
-          <div className="column" style={{ width: "50%" }}>
-            <h1 style={{ width: "100%" }}>JOSHUA ISRAEL</h1>
-            <h6 style={{ width: "100%" }}>FRONT-END DEVELOPER</h6>
-          </div>
-          <div style={{ width: "35%", justifyContent: "center" }}>
-            <svg
-              width="2.5vw"
-              height="50%"
-              viewBox="0 0 16 16"
-              className="bi bi-envelope"
-              fill="currentColor"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fillRule="evenodd"
-                d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383l-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"
-              />
-            </svg>
-            <h6 style={{ marginLeft: "5px" }}>joshisrael93@gmail.com</h6>
-          </div>
+          <div style={{ width: "100%", justifyContent: "start" }}>
+            <div className="column" style={{ paddingLeft: "5%" }}>
+              <h1 style={{ width: "100%" }}>JOSHUA ISRAEL</h1>
+              <h6 style={{ width: "100%" }}>SOFTWARE ENGINEER</h6>
+            </div>
 
-          <a
-            style={{ width: "15%" }}
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://www.linkedin.com/in/joshri"
-          >
-            <img
-              alt="LinkedIn"
-              style={{
-                width: "2.5vw",
-                height: "100%",
-                minWidth: 50,
-              }}
-              src={liImage}
-            />
-          </a>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.github.com/joshri"
+              style={{ marginLeft: "32px" }}
+            >
+              <img
+                alt="GitHub"
+                style={{
+                  width: "2.5vw",
+                  height: "100%",
+                  minWidth: 50,
+                }}
+                src={ghImage}
+              />
+            </a>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.linkedin.com/in/joshri"
+              style={{ marginLeft: "32px" }}
+            >
+              <img
+                alt="LinkedIn"
+                style={{
+                  width: "2.5vw",
+                  height: "100%",
+                  minWidth: 50,
+                }}
+                src={liImage}
+              />
+            </a>
+          </div>
         </div>
         {/* portfolio content */}
         <ScrollContainer />
