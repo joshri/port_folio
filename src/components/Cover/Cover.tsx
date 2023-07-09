@@ -1,10 +1,9 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import coverImg from "../assets/TitlePhoto.jpg";
-import { Container, createConfetti } from "../styles";
-
-const CoverImg = styled(motion.img)``;
+import coverImg from "../../assets/TitlePhoto.jpg";
+import { Container } from "../../styles";
+import Confetti from "./Confetti";
 
 const CoverButton = styled.button`
   background: transparent;
@@ -23,17 +22,6 @@ const CoverTitle = styled(motion.h1)`
   font-size: 150px;
   letter-spacing: 2px;
   position: absolute;
-`;
-
-const ConfettiContainer = styled(motion.div)`
-  height: 10px;
-  width: 30px;
-  position: absolute;
-  top: 100vh;
-  right: 100vw;
-  &.confetti-left {
-    right: 0vw;
-  }
 `;
 
 type Props = {
@@ -72,36 +60,17 @@ function Cover({ className }: Props) {
       >
         JOSHUA ISRAEL
       </CoverTitle>
-      <CoverImg
+      <motion.img
         src={coverImg}
         initial={{ height: 0, width: 0 }}
         animate={{ width: "100%", height: "100%" }}
         transition={{ duration: 6, type: "tween", ease: "easeIn" }}
+        alt="a beautiful picture of Joshua Israel"
       />
       <CoverButton>
         <Link to="/home">Enter</Link>
       </CoverButton>
-      {createConfetti().map((style, index) => {
-        return (
-          <ConfettiContainer
-            className={index > 40 ? "confetti-left" : ""}
-            key={index}
-            animate={{
-              x: `${index > 40 ? -style.translateX : style.translateX}vw`,
-              y: `-${style.translateY}vh`,
-              rotate: style.rotate,
-            }}
-            transition={{
-              duration: 3,
-              delay: 6,
-              repeat: 0,
-            }}
-            style={{
-              background: style.background,
-            }}
-          />
-        );
-      })}
+      <Confetti delay={6000} length={3000} />
     </Container>
   );
 }
