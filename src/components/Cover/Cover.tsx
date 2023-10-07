@@ -1,9 +1,8 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import coverImg from "../../assets/TitlePhoto.jpg";
+
 import { Container } from "../../styles";
-import Confetti from "./Confetti";
 
 const CoverButton = styled.button`
   background: transparent;
@@ -38,39 +37,43 @@ function Cover({ className }: Props) {
       }}
       transition={{ duration: 2 }}
     >
-      <CoverTitle
-        //flex centered spacing places the "0" position at dead center. Animate around "50" === "100"
-        initial={{ x: "-80vw", y: "-40vh" }}
-        animate={{ x: "-25vw" }}
-        transition={{ delay: 0.5, duration: 2 }}
+      <motion.h1
+        animate={{ fontSize: ["1vw", "15vw", "30vw"], opacity: [0, 1, 0] }}
+        transition={{ duration: 3 }}
+        className="welcome"
       >
-        THE ONE
-      </CoverTitle>
-      <CoverTitle
-        initial={{ x: "80vw", y: "-40vh" }}
-        animate={{ x: "25vw" }}
-        transition={{ delay: 2.5, duration: 2 }}
-      >
-        THE ONLY
-      </CoverTitle>
-      <CoverTitle
-        initial={{ rotate: "180deg", y: "60vh" }}
-        animate={{ rotate: "2160deg", y: "40vh" }}
-        transition={{ delay: 4.5, duration: 2, ease: "easeOut" }}
-      >
-        JOSHUA ISRAEL
-      </CoverTitle>
-      <motion.img
-        src={coverImg}
-        initial={{ height: 0, width: 0 }}
-        animate={{ width: "100%", height: "100%" }}
-        transition={{ duration: 6, type: "tween", ease: "easeIn" }}
-        alt="a beautiful picture of Joshua Israel"
-      />
+        WELCOME
+      </motion.h1>
+      <div className="confirmText column">
+        <motion.h6
+          animate={{ opacity: [0, 1] }}
+          transition={{ delay: 3.5, duration: 2 }}
+        >
+          the next page has an animated introduction with autoplaying audio and
+          is quite colorful.
+        </motion.h6>
+        <motion.h6
+          animate={{ opacity: [0, 1] }}
+          transition={{ delay: 4.5, duration: 2 }}
+        >
+          If you're scared, press no party.
+        </motion.h6>
+        <motion.h6
+          animate={{ opacity: [0, 1] }}
+          transition={{ delay: 5.5, duration: 2 }}
+        >
+          Otherwise, I'll see you in about thirty seconds.
+        </motion.h6>
+      </div>
+      <motion.div
+        className="confirmText column"
+        animate={{ opacity: [0, 1] }}
+        transition={{ delay: 6.5, duration: 2 }}
+      ></motion.div>
+
       <CoverButton>
-        <Link to="/home">Enter</Link>
+        <Link to="/home">NO PARTY</Link>
       </CoverButton>
-      <Confetti delay={6000} length={3000} />
     </Container>
   );
 }
