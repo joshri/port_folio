@@ -1,26 +1,30 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { Container, Flex, fadeIn } from "../../styles";
+import { useState } from "react";
+import Party from "./Party";
 
-import { Container } from "../../styles";
+const Welcome = styled(motion.h1)`
+  position: absolute;
+  z-index: -1;
+`;
 
 const CoverButton = styled.button`
   background: transparent;
-  position: absolute;
-  top: 50%;
-  left: 50%;
   padding: 10px;
   border: 3px solid white;
   border-radius: 10px;
-  letter-spacing: 5px;
-  font-size: 48px;
+  letter-spacing: 1px;
+  font-size: ${(props) => props.theme.fontSizes.medium};
   box-shadow: 0 0 2em 0.2em white;
 `;
 
-const CoverTitle = styled(motion.h1)`
-  font-size: 150px;
-  letter-spacing: 2px;
-  position: absolute;
+const Message = styled.section`
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 `;
 
 type Props = {
@@ -28,6 +32,7 @@ type Props = {
 };
 
 function Cover({ className }: Props) {
+  const [party, setParty] = useState(false);
   return (
     <Container
       className={className}
@@ -35,50 +40,59 @@ function Cover({ className }: Props) {
         scale: 4,
         opacity: 0,
       }}
+      animate={fadeIn}
       transition={{ duration: 2 }}
     >
-      <motion.h1
-        animate={{ fontSize: ["1vw", "15vw", "30vw"], opacity: [0, 1, 0] }}
+      <Welcome
+        animate={{
+          fontSize: ["10px", "200px", "400px"],
+          opacity: [0, 1, 0],
+          display: ["none", "flex", "none"],
+        }}
         transition={{ duration: 3 }}
-        className="welcome"
       >
         WELCOME
-      </motion.h1>
-      <div className="confirmText column">
-        <motion.h6
-          animate={{ opacity: [0, 1] }}
-          transition={{ delay: 3.5, duration: 2 }}
-        >
-          the next page has an animated introduction with autoplaying audio and
-          is quite colorful.
-        </motion.h6>
-        <motion.h6
-          animate={{ opacity: [0, 1] }}
-          transition={{ delay: 4.5, duration: 2 }}
-        >
-          If you're scared, press no party.
-        </motion.h6>
-        <motion.h6
-          animate={{ opacity: [0, 1] }}
-          transition={{ delay: 5.5, duration: 2 }}
-        >
-          Otherwise, I'll see you in about thirty seconds.
-        </motion.h6>
-      </div>
-      <motion.div
-        className="confirmText column"
-        animate={{ opacity: [0, 1] }}
-        transition={{ delay: 6.5, duration: 2 }}
-      ></motion.div>
-
-      <CoverButton>
-        <Link to="/home">NO PARTY</Link>
-      </CoverButton>
+      </Welcome>
+      {party ? (
+        <Party />
+      ) : (
+        <Message>
+          <div>
+            <motion.h2
+              animate={fadeIn}
+              transition={{ delay: 3.5, duration: 2 }}
+            >
+              the next page has an animated introduction with autoplaying audio
+              and is quite colorful.
+            </motion.h2>
+            <motion.h2
+              animate={fadeIn}
+              transition={{ delay: 4.5, duration: 2 }}
+            >
+              If you're scared, press no party.
+            </motion.h2>
+            <motion.h2
+              animate={fadeIn}
+              transition={{ delay: 5.5, duration: 2 }}
+            >
+              Otherwise, I'll see you in about thirty seconds.
+            </motion.h2>
+          </div>
+          <Flex animate={fadeIn} transition={{ delay: 6.5, duration: 2 }}>
+            <CoverButton onClick={() => setParty(true)}>PARTY</CoverButton>
+            <Link to="/home">
+              <CoverButton>NO PARTY</CoverButton>
+            </Link>
+          </Flex>
+        </Message>
+      )}
     </Container>
   );
 }
 
 export default styled(Cover).attrs({ className: Cover.name })`
+  width: 100%;
+  height: 100%;
   overflow: hidden;
   display: flex;
   justify-content: center;
