@@ -1,5 +1,9 @@
 import { motion } from "framer-motion";
-import styled, { DefaultTheme, createGlobalStyle } from "styled-components";
+import styled, {
+  DefaultTheme,
+  createGlobalStyle,
+  keyframes,
+} from "styled-components";
 
 export const theme: DefaultTheme = {
   spacing: {
@@ -14,12 +18,15 @@ export const theme: DefaultTheme = {
   },
   colors: {
     background: "#ffb7a1",
+    backgroundLight: "#ffded4",
     white: "#ffffff",
     black: "#212529",
-    oneColor: "#f5f064",
+    pink: "#ffa1ba",
+    yellow: "#ffe6a1",
     blue: "#3daeff",
-    purple: "#bf2ed6",
-    lime: "#99d62e",
+    lightBlue: "#a1ffe6",
+    purple: "#b7a1ff",
+    lime: "#a1ffb7",
     orange: "#ff8845",
   },
 };
@@ -30,6 +37,8 @@ export const GlobalStyles = createGlobalStyle`
       display: flex;
       flex-direction: column;
       height: 100vh;
+      //try dvh where supported
+      height: 100dvh;
       max-height: 100vh;
       min-height: 600px;
       width: 100vw;
@@ -46,10 +55,6 @@ export const GlobalStyles = createGlobalStyle`
     body, main {
       height: 100%;
       width: 100%;
-    }
-
-    main {
-      padding: ${(props) => props.theme.spacing.medium};
     }
 
     h1, h2, h3, h4, h5, h6, p, span {
@@ -69,19 +74,42 @@ export const GlobalStyles = createGlobalStyle`
 
 `;
 
-export const Container = styled(motion.div)`
-  width: 100%;
-  height: 100%;
+export const Flex = styled(motion.div)<{
+  column?: boolean;
+  tall?: boolean;
+  height?: string;
+  between?: boolean;
+  start?: boolean;
+  end?: boolean;
+}>`
   display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-export const Flex = styled(motion.div)`
-  display: flex;
+  flex-direction: ${(props) => (props.column ? "column" : "row")};
   width: 100%;
+  height: ${(props) => (props.tall ? "100%" : "auto")};
+  ${({ height }) => height && `height: ${height};`}
   justify-content: space-evenly;
+  ${({ between }) => between && "justify-content: space-between;"}
+  ${({ start }) => start && "justify-content: flex-start;"}
+  ${({ end }) => end && "justify-content: flex-end;"}
+  align-items: center;
 `;
 
 //framer motion animates
 export const fadeIn = { opacity: [0, 1] };
+
+export const partyColors = keyframes`
+  0% {background: ${theme.colors.background}}
+  20% {background: ${theme.colors.yellow}}
+  40% {background: ${theme.colors.lime}}
+  65% {background: ${theme.colors.lightBlue}}
+  80% {background: ${theme.colors.purple}}
+  100%: {background: ${theme.colors.background}}
+`;
+
+export const partyBorders = keyframes`
+  0% {border-color: ${theme.colors.black}}
+  25% {border-color: ${theme.colors.purple}}
+  50% {border-color: ${theme.colors.pink}}
+  75% {border-color: ${theme.colors.blue}}
+  100% {border-color: ${theme.colors.black}}
+`;

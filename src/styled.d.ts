@@ -14,10 +14,13 @@ declare module "styled-components" {
     };
     colors: {
       background: string;
+      backgroundLight: string;
       white: string;
       black: string;
-      oneColor: string;
+      pink: string;
+      yellow: string;
       blue: string;
+      lightBlue: string;
       purple: string;
       lime: string;
       orange: string;
