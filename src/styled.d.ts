@@ -11,6 +11,8 @@ declare module "styled-components" {
       small: string;
       medium: string;
       large: string;
+      partyLarge: string;
+      partyExtra: string;
     };
     colors: {
       background: string;

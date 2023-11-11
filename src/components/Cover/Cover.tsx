@@ -2,22 +2,12 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { Flex, fadeIn } from "../../styles";
+import { CoverButton, Flex, fadeIn } from "../../styles";
 import Party from "./Party";
 
 const Welcome = styled(motion.h1)`
   position: absolute;
   z-index: -1;
-`;
-
-const CoverButton = styled.button`
-  background: transparent;
-  padding: 10px;
-  border: 3px solid white;
-  border-radius: 10px;
-  letter-spacing: 1px;
-  font-size: ${(props) => props.theme.fontSizes.medium};
-  box-shadow: 0 0 2em 0.2em white;
 `;
 
 const Message = styled(motion.section)`
@@ -43,7 +33,7 @@ function Cover({ className }: Props) {
         opacity: 0,
       }}
       animate={fadeIn}
-      transition={{ duration: 2 }}
+      transition={{ duration: 1 }}
     >
       <Welcome
         animate={{
@@ -55,7 +45,7 @@ function Cover({ className }: Props) {
       >
         WELCOME
       </Welcome>
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         {party ? (
           <Party />
         ) : (
@@ -67,6 +57,7 @@ function Cover({ className }: Props) {
           >
             <div>
               <motion.h2
+                initial={{ opacity: 0 }}
                 animate={fadeIn}
                 transition={{ delay: 3.5, duration: 2 }}
               >
@@ -74,19 +65,25 @@ function Cover({ className }: Props) {
                 audio and is quite colorful.
               </motion.h2>
               <motion.h2
+                initial={{ opacity: 0 }}
                 animate={fadeIn}
                 transition={{ delay: 4.5, duration: 2 }}
               >
                 If you're scared, press no party.
               </motion.h2>
               <motion.h2
+                initial={{ opacity: 0 }}
                 animate={fadeIn}
                 transition={{ delay: 5.5, duration: 2 }}
               >
                 Otherwise, I'll see you in about thirty seconds.
               </motion.h2>
             </div>
-            <Flex animate={fadeIn} transition={{ delay: 6.5, duration: 2 }}>
+            <Flex
+              animate={fadeIn}
+              transition={{ delay: 6.5, duration: 2 }}
+              initial={{ opacity: 0 }}
+            >
               <CoverButton onClick={() => setParty(true)}>PARTY</CoverButton>
               <Link to="/home">
                 <CoverButton>NO PARTY</CoverButton>

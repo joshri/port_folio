@@ -15,6 +15,8 @@ export const theme: DefaultTheme = {
     small: "12px",
     medium: "24px",
     large: "48px",
+    partyLarge: "64px",
+    partyExtra: "96px",
   },
   colors: {
     background: "#ffb7a1",
@@ -46,6 +48,7 @@ export const GlobalStyles = createGlobalStyle`
       min-width: 600px;
       padding: 0;
       margin: 0;
+      overflow: hidden;
     }
 
     html {
@@ -94,8 +97,20 @@ export const Flex = styled(motion.div)<{
   align-items: center;
 `;
 
+export const CoverButton = styled.button`
+  background: transparent;
+  padding: ${(props) => props.theme.spacing.medium};
+  border: 3px solid white;
+  border-radius: 10px;
+  letter-spacing: 1px;
+  font-size: ${(props) => props.theme.fontSizes.medium};
+  box-shadow: 0 0 2em 0.2em white;
+`;
+
 //framer motion animates
 export const fadeIn = { opacity: [0, 1] };
+
+export const flyOut = { opacity: 0, scale: 5 };
 
 export const partyColors = keyframes`
   0% {background: ${theme.colors.background}}
@@ -104,12 +119,4 @@ export const partyColors = keyframes`
   65% {background: ${theme.colors.lightBlue}}
   80% {background: ${theme.colors.purple}}
   100%: {background: ${theme.colors.background}}
-`;
-
-export const partyBorders = keyframes`
-  0% {border-color: ${theme.colors.black}}
-  25% {border-color: ${theme.colors.purple}}
-  50% {border-color: ${theme.colors.pink}}
-  75% {border-color: ${theme.colors.blue}}
-  100% {border-color: ${theme.colors.black}}
 `;
