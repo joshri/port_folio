@@ -1,7 +1,7 @@
 import { AnimatePresence } from "framer-motion";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Cover from "./components/Cover/Cover";
-import MainContent from "./components/MainContent";
+import MainContent from "./components/MainContent/MainContent";
 import { Flex } from "./styles";
 
 function App() {
