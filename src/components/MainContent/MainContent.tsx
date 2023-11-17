@@ -13,10 +13,10 @@ type Props = {
 
 function MainContent({ className }: Props) {
   return (
-    <Flex tall className={className}>
+    <Flex tall column className={className}>
       <Background />
       <Header />
-      <SectionText>ABOUT</SectionText>
+      <SectionText>UNDER SERIOUS CONSTRUCTION</SectionText>
     </Flex>
   );
 }
