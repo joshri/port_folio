@@ -1,5 +1,11 @@
 import styled from "styled-components";
+import { Flex } from "../../styles";
+import Background from "./Background";
 import Header from "./Header";
+
+const SectionText = styled.h1`
+  font-size: ${(props) => props.theme.fontSizes.large};
+`;
 
 type Props = {
   className?: string;
@@ -7,9 +13,11 @@ type Props = {
 
 function MainContent({ className }: Props) {
   return (
-    <div className={className}>
+    <Flex tall className={className}>
+      <Background />
       <Header />
-    </div>
+      <SectionText>ABOUT</SectionText>
+    </Flex>
   );
 }
 

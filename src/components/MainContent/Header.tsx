@@ -17,7 +17,6 @@ const Name = styled.h1`
   position: absolute;
   font-size: 12.5vw;
   white-space: nowrap;
-  z-index: -1;
   transform: scale(1, 2);
 `;
 
@@ -60,6 +59,7 @@ function Header({ className }: Props) {
 }
 
 export default styled(Header).attrs({ className: Header.name })`
+  background: ${(props) => props.theme.colors.background};
   min-width: 500px;
   position: absolute;
   overflow: hidden;
@@ -67,6 +67,10 @@ export default styled(Header).attrs({ className: Header.name })`
   left: 0;
   border-bottom: 5px solid white;
   height: 200px;
+  p,
+  a {
+    z-index: 2;
+  }
   a {
     margin: 10px;
   }

@@ -15,8 +15,6 @@ export const theme: DefaultTheme = {
     small: "12px",
     medium: "24px",
     large: "48px",
-    partyLarge: "64px",
-    partyExtra: "96px",
   },
   colors: {
     background: "#ffb7a1",
@@ -80,21 +78,21 @@ export const GlobalStyles = createGlobalStyle`
 export const Flex = styled(motion.div)<{
   column?: boolean;
   tall?: boolean;
-  height?: string;
   between?: boolean;
   start?: boolean;
   end?: boolean;
+  alignEnd?: boolean;
 }>`
   display: flex;
   flex-direction: ${(props) => (props.column ? "column" : "row")};
   width: 100%;
   height: ${(props) => (props.tall ? "100%" : "auto")};
-  ${({ height }) => height && `height: ${height};`}
   justify-content: space-evenly;
   ${({ between }) => between && "justify-content: space-between;"}
   ${({ start }) => start && "justify-content: flex-start;"}
   ${({ end }) => end && "justify-content: flex-end;"}
   align-items: center;
+  ${({ alignEnd }) => alignEnd && "align-items: flex-end;"}
 `;
 
 export const CoverButton = styled.button`
