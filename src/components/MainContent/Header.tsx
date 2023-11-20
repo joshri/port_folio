@@ -2,7 +2,7 @@ import styled from "styled-components";
 import linkedin from "../../assets/LI-In-Bug.png";
 import resume from "../../assets/Resume.svg";
 import github from "../../assets/github-mark.png";
-import { Flex } from "../../styles";
+import { Flex, fadeIn } from "../../styles";
 
 const IconLink = styled.img`
   height: 100%;
@@ -15,7 +15,7 @@ const IconLink = styled.img`
 
 const Name = styled.h1`
   position: absolute;
-  font-size: 12.5vw;
+  font-size: 11vw;
   white-space: nowrap;
   transform: scale(1, 2);
 `;
@@ -26,7 +26,7 @@ type Props = {
 
 function Header({ className }: Props) {
   return (
-    <Flex className={className}>
+    <Flex className={className} animate={fadeIn} transition={{ duration: 1 }}>
       <Name>JOSHUA ISRAEL</Name>
       <Flex column end tall>
         <Flex end>

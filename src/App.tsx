@@ -8,7 +8,7 @@ function App() {
   const location = useLocation();
   return (
     <Flex tall>
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         <Routes key={location.pathname} location={location}>
           <Route path="/" element={<Cover />} />
           <Route path="/home" element={<MainContent />} />

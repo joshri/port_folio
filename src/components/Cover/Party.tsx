@@ -145,7 +145,14 @@ function Party({ className }: Props) {
   const navigate = useNavigate();
 
   return (
-    <Flex className={className} key="party" tall column animate={fadeIn}>
+    <Flex
+      className={className}
+      key="party"
+      tall
+      column
+      animate={fadeIn}
+      exit={{ opacity: 0 }}
+    >
       <audio
         id="audio"
         preload="auto"
@@ -204,13 +211,13 @@ function Party({ className }: Props) {
       </PersonText>
 
       {/* skills text */}
-      <SkillsFlex animate={flyOut} transition={{ delay: 17.5, duration: 1 }}>
+      <SkillsFlex animate={flyOut} transition={{ delay: 17.5, duration: 0.5 }}>
         <SkillsText size="large" text="HE DOES:" delay={9.5} />
       </SkillsFlex>
       <SkillsFlex
         top="15vh"
         animate={flyOut}
-        transition={{ delay: 17.5, duration: 1 }}
+        transition={{ delay: 17.5, duration: 0.5 }}
       >
         <SkillsText size="large" text="TYPESCRIPT" delay={10} />
         <SkillsText size="large" text="REACT" delay={10.5} />
@@ -220,7 +227,7 @@ function Party({ className }: Props) {
       <SkillsFlex
         top="25vh"
         animate={flyOut}
-        transition={{ delay: 17.5, duration: 1 }}
+        transition={{ delay: 17.5, duration: 0.5 }}
       >
         <SkillsText size="large" text="REDUX" delay={12} />
         <SkillsText size="large" text="GO" delay={12.5} />
@@ -230,7 +237,7 @@ function Party({ className }: Props) {
       <SkillsFlex
         top="35vh"
         animate={flyOut}
-        transition={{ delay: 17.5, duration: 1 }}
+        transition={{ delay: 17.5, duration: 0.5 }}
       >
         <SkillsText size="medium" text="PYTHON" delay={14} />
         <SkillsText size="medium" text="AWS" delay={14.25} />
@@ -242,7 +249,7 @@ function Party({ className }: Props) {
       <SkillsFlex
         top="45vh"
         animate={flyOut}
-        transition={{ delay: 17.5, duration: 1 }}
+        transition={{ delay: 17.5, duration: 0.5 }}
       >
         <SkillsText size="medium" text="REST" delay={15.5} />
         <SkillsText size="medium" text="GRPC" delay={15.75} />
@@ -254,21 +261,21 @@ function Party({ className }: Props) {
       <SkillsFlex
         top="55vh"
         animate={flyOut}
-        transition={{ delay: 17.5, duration: 1 }}
+        transition={{ delay: 17.5, duration: 0.5 }}
       >
         <SkillsText size="large" text="PLUS:" delay={17} />
       </SkillsFlex>
       <SkillsFlex
         top="65vh"
         animate={flyOut}
-        transition={{ delay: 17.5, duration: 1 }}
+        transition={{ delay: 17.5, duration: 0.5 }}
       >
         <SkillsText size="large" text="I don't make people mad" delay={17} />
       </SkillsFlex>
       <SkillsFlex
         top="75vh"
         animate={flyOut}
-        transition={{ delay: 17.5, duration: 1 }}
+        transition={{ delay: 17.5, duration: 0.5 }}
       >
         <SkillsText
           size="large"
