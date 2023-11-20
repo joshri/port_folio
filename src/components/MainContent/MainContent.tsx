@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { Flex } from "../../styles";
-import Background from "./Background";
 import Header from "./Header";
 
 const SectionText = styled.h1`
@@ -14,7 +13,7 @@ type Props = {
 function MainContent({ className }: Props) {
   return (
     <Flex tall column className={className}>
-      <Background />
+      {/* <Background /> */}
       <Header />
       <SectionText>UNDER SERIOUS CONSTRUCTION</SectionText>
     </Flex>
