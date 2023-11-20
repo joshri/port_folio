@@ -1,14 +1,13 @@
 # Welcome to the number one destination for all things Joshua Israel!
 
-### This is deployed at https://joshisrael.com through AWS Amplify
+### This is deployed at https://joshisrael.com through AWS Amplify, S3, and Route 53
 
 ### running npm install should set you up otherwise. 
 
 # Made with:
 #### React
-#### Javascript
+#### Typescript
 #### HTML
 #### CSS
-#### SASS
-#### Bootstrap
+#### Styled Components
 #### Framer Motion
