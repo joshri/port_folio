@@ -27,6 +27,4 @@ function MainContent({ className }: Props) {
   );
 }
 
-export default styled(MainContent).attrs({ className: MainContent.name })`
-  min-width: 500px;
-`;
+export default styled(MainContent).attrs({ className: MainContent.name })``;

@@ -6,18 +6,23 @@ import { Flex, fadeIn } from "../../styles";
 
 const IconLink = styled.img`
   height: 100%;
-  width: 50px;
+  width: 30px;
   transition: transform 0.2s ease-in-out;
   &:hover {
     transform: scale(1.1);
   }
 `;
 
+const IconFlex = styled(Flex)`
+  width: 10%;
+`;
+
 const Name = styled.h1`
-  position: absolute;
+  width: 85%;
   font-size: 11vw;
   white-space: nowrap;
   transform: scale(1, 2);
+  letter-spacing: 5px;
 `;
 
 type Props = {
@@ -28,32 +33,29 @@ function Header({ className }: Props) {
   return (
     <Flex className={className} animate={fadeIn} transition={{ duration: 1 }}>
       <Name>JOSHUA ISRAEL</Name>
-      <Flex column end tall>
-        <Flex end>
-          <p>joshisrael93@gmail.com</p>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://www.github.com/joshri"
-          >
-            <IconLink alt="GitHub" src={github} />
-          </a>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://docs.google.com/document/d/1Dw6gPNcTRa_0yJyf-DDf567JYG3buM3EuojG3wGZfrc/edit?usp=sharing"
-          >
-            <IconLink alt="Resume" src={resume} />
-          </a>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://www.linkedin.com/in/joshri"
-          >
-            <IconLink alt="LinkedIn" src={linkedin} />
-          </a>
-        </Flex>
-      </Flex>
+      <IconFlex column>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://www.github.com/joshri"
+        >
+          <IconLink alt="GitHub" src={github} />
+        </a>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://docs.google.com/document/d/1Dw6gPNcTRa_0yJyf-DDf567JYG3buM3EuojG3wGZfrc/edit?usp=sharing"
+        >
+          <IconLink alt="Resume" src={resume} />
+        </a>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://www.linkedin.com/in/joshri"
+        >
+          <IconLink alt="LinkedIn" src={linkedin} />
+        </a>
+      </IconFlex>
     </Flex>
   );
 }

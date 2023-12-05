@@ -36,14 +36,12 @@ export const GlobalStyles = createGlobalStyle`
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
-      height: 100vh;
-      //try dvh where supported
-      height: 100dvh;
       max-height: 100vh;
       min-height: 600px;
-      width: 100vw;
+      height: 100vh;
       max-width: 100vw;
-      min-width: 600px;
+      min-width: 375px;
+      width: 100vw;
       padding: 0;
       margin: 0;
       overflow: hidden;
@@ -61,6 +59,7 @@ export const GlobalStyles = createGlobalStyle`
     h1, h2, h3, h4, h5, h6, p, span {
       font-family: 'Lato', sans-serif;
       color: ${(props) => props.theme.colors.white};
+      text-align: center;
     }
 
     a {

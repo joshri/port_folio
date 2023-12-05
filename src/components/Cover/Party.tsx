@@ -49,7 +49,7 @@ const makeBg = () => {
 //intro text (0-10s)
 const IntroText = styled(motion.h1)<{ top?: string }>`
   position: absolute;
-  font-size: 200px;
+  font-size: 15vw;
   top: ${({ top }) => top || "-200px"};
 `;
 
@@ -111,7 +111,7 @@ function UnstyledSkillsText({
 
 const SkillsText = styled(UnstyledSkillsText)`
   opacity: 0;
-  font-size: ${(props) => (props.size === "large" ? "50px" : "30px")};
+  font-size: ${(props) => (props.size === "large" ? "5vw" : "2.5vw")};
 `;
 
 const opacityPlusScale = {
@@ -164,7 +164,7 @@ function Party({ className }: Props) {
 
       {/* background */}
       <Grid>{makeBg().map((el) => el)}</Grid>
-      <Screen animate={{ translateY: "100%" }} transition={{ duration: 2 }} />
+      <Screen animate={{ opacity: [1, 1, 0] }} transition={{ duration: 2 }} />
 
       {/* intro text (0 - 10s) */}
       <IntroText animate={scrollDown} transition={{ delay: 2, duration: 2 }}>
@@ -320,4 +320,7 @@ function Party({ className }: Props) {
 export default styled(Party).attrs({ className: Party.name })`
   height: calc(100%);
   width: 100%;
+  max-height: calc(100%);
+  max-width: 100%;
+  overflow: hidden;
 `;

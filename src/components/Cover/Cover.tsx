@@ -5,13 +5,10 @@ import styled from "styled-components";
 import { CoverButton, Flex, fadeIn } from "../../styles";
 import Party from "./Party";
 
-const Welcome = styled(motion.h1)`
-  position: absolute;
-  z-index: -1;
-`;
+const Welcome = styled(motion.h1)``;
 
 const Message = styled(motion.section)`
-  height: 50%;
+  height: 85%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -35,16 +32,6 @@ function Cover({ className }: Props) {
       animate={fadeIn}
       transition={{ duration: 1 }}
     >
-      <Welcome
-        animate={{
-          fontSize: ["10px", "200px", "400px"],
-          opacity: [0, 1, 0],
-          display: ["none", "flex", "none"],
-        }}
-        transition={{ duration: 3 }}
-      >
-        WELCOME
-      </Welcome>
       <AnimatePresence mode="wait">
         {party ? (
           <Party />
@@ -55,7 +42,18 @@ function Cover({ className }: Props) {
               opacity: 0,
             }}
           >
-            <div>
+            <Flex column>
+              <Welcome
+                initial={{ opacity: 0 }}
+                animate={{
+                  fontSize: ["1vw", "20vw", "15vw"],
+                  rotate: 360,
+                  opacity: [0, 1],
+                }}
+                transition={{ duration: 3 }}
+              >
+                HELLO!
+              </Welcome>
               <motion.h2
                 initial={{ opacity: 0 }}
                 animate={fadeIn}
@@ -78,7 +76,7 @@ function Cover({ className }: Props) {
               >
                 Otherwise, I'll see you in about thirty seconds.
               </motion.h2>
-            </div>
+            </Flex>
             <Flex
               animate={fadeIn}
               transition={{ delay: 6.5, duration: 2 }}
