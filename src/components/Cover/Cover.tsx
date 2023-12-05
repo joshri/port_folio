@@ -5,8 +5,6 @@ import styled from "styled-components";
 import { CoverButton, Flex, fadeIn } from "../../styles";
 import Party from "./Party";
 
-const Welcome = styled(motion.h1)``;
-
 const Message = styled(motion.section)`
   height: 85%;
   display: flex;
@@ -43,7 +41,7 @@ function Cover({ className }: Props) {
             }}
           >
             <Flex column>
-              <Welcome
+              <motion.h1
                 initial={{ opacity: 0 }}
                 animate={{
                   fontSize: ["1vw", "20vw", "15vw"],
@@ -53,7 +51,7 @@ function Cover({ className }: Props) {
                 transition={{ duration: 3 }}
               >
                 HELLO!
-              </Welcome>
+              </motion.h1>
               <motion.h2
                 initial={{ opacity: 0 }}
                 animate={fadeIn}
