@@ -117,3 +117,11 @@ export const partyColors = keyframes`
   80% {background: ${theme.colors.purple}}
   100%: {background: ${theme.colors.background}}
 `;
+
+export const rotate = keyframes`
+  100% {transform: rotate(360deg)}
+  `;
+
+export const rotateReverse = keyframes`
+  100% {transform: rotate(-360deg)}
+  `;
