@@ -5,13 +5,6 @@ import styled from "styled-components";
 import { CoverButton, Flex, fadeIn } from "../../styles";
 import Party from "./Party";
 
-const Message = styled(motion.section)`
-  height: 85%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-`;
-
 type Props = {
   className?: string;
 };
@@ -34,7 +27,9 @@ function Cover({ className }: Props) {
         {party ? (
           <Party />
         ) : (
-          <Message
+          <Flex
+            column
+            tall
             key="message"
             exit={{
               opacity: 0,
@@ -44,7 +39,7 @@ function Cover({ className }: Props) {
               <motion.h1
                 initial={{ opacity: 0 }}
                 animate={{
-                  fontSize: ["1vw", "20vw", "15vw"],
+                  fontSize: ["1vw", "20vw", "10vw"],
                   rotate: 360,
                   opacity: [0, 1],
                 }}
@@ -85,7 +80,7 @@ function Cover({ className }: Props) {
                 <CoverButton>NO PARTY</CoverButton>
               </Link>
             </Flex>
-          </Message>
+          </Flex>
         )}
       </AnimatePresence>
     </Flex>
