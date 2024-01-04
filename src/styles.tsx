@@ -81,6 +81,7 @@ export const Flex = styled(motion.div)<{
   start?: boolean;
   end?: boolean;
   alignEnd?: boolean;
+  margin?: string;
 }>`
   display: flex;
   flex-direction: ${(props) => (props.column ? "column" : "row")};
@@ -92,15 +93,18 @@ export const Flex = styled(motion.div)<{
   ${({ end }) => end && "justify-content: flex-end;"}
   align-items: center;
   ${({ alignEnd }) => alignEnd && "align-items: flex-end;"}
+  margin: ${(props) => props.margin || "0"};
 `;
 
-export const CoverButton = styled.button`
+export const CoverButton = styled.button<{
+  fontSize?: "small" | "medium" | "large";
+}>`
   background: transparent;
   padding: ${(props) => props.theme.spacing.medium};
   border: 3px solid white;
   border-radius: 10px;
   letter-spacing: 1px;
-  font-size: ${(props) => props.theme.fontSizes.medium};
+  font-size: ${(props) => props.theme.fontSizes[props.fontSize || "medium"]};
   box-shadow: 0 0 2em 0.2em white;
 `;
 

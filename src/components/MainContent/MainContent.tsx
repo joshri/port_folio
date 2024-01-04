@@ -3,11 +3,9 @@ import { useState } from "react";
 import styled from "styled-components";
 import head from "../../assets/HeadshotHead.png";
 import { Flex, fadeIn, rotate, rotateReverse } from "../../styles";
+import ActualContent from "./ActualContent";
+import Background from "./Background";
 import Header from "./Header";
-
-const SectionText = styled(motion.h1)`
-  font-size: ${(props) => props.theme.fontSizes.large};
-`;
 
 const MouseBorder = styled(Flex)<{ top?: number; left?: number }>`
   @media (max-width: 425px) {
@@ -30,8 +28,8 @@ const MouseBorder = styled(Flex)<{ top?: number; left?: number }>`
     width: 50px;
     height: 50px;
     border: none;
-    border-right: 4px solid ${(props) => props.theme.colors.purple};
-    border-bottom: 4px solid ${(props) => props.theme.colors.purple};
+    border-right: 4px solid ${(props) => props.theme.colors.orange};
+    border-bottom: 4px solid ${(props) => props.theme.colors.orange};
     border-left: none;
     border-top: none;
     animation: ${rotate} 8s linear infinite;
@@ -44,6 +42,15 @@ const MouseBorder = styled(Flex)<{ top?: number; left?: number }>`
       width: 40px;
     }
   }
+  &.layer-two:not(.inner)::before {
+    position: absolute;
+    content: " ";
+    left: 64px;
+    min-width: 12px;
+    min-height: 12px;
+    background: ${(props) => props.theme.colors.purple};
+    border-radius: 50%;
+  }
 `;
 
 type Props = {
@@ -53,9 +60,7 @@ type Props = {
 function MainContent({ className }: Props) {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   return (
-    <Flex
-      tall
-      column
+    <motion.div
       className={className}
       animate={fadeIn}
       transition={{ duration: 1 }}
@@ -71,10 +76,10 @@ function MainContent({ className }: Props) {
           </MouseBorder>
         </MouseBorder>
       </MouseBorder>
-      {/* <Background /> */}
+      <Background />
       <Header />
-      <SectionText>UNDER SERIOUS CONSTRUCTION</SectionText>
-    </Flex>
+      <ActualContent />
+    </motion.div>
   );
 }
 
@@ -82,4 +87,7 @@ export default styled(MainContent).attrs({ className: MainContent.name })`
   @media (min-width: 425px) {
     cursor: none;
   }
+  overflow: scroll;
+  height: 100%;
+  width: 100%;
 `;

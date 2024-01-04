@@ -75,7 +75,6 @@ function Confetti({ className, delay, length }: Props) {
               }}
               transition={{
                 duration: 3,
-                //   delay: 6,
                 repeat: 0,
               }}
               style={{
