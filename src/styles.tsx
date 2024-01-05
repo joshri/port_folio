@@ -76,6 +76,7 @@ export const GlobalStyles = createGlobalStyle`
 
 export const Flex = styled(motion.div)<{
   column?: boolean;
+  responsive?: boolean;
   tall?: boolean;
   between?: boolean;
   start?: boolean;
@@ -94,6 +95,9 @@ export const Flex = styled(motion.div)<{
   align-items: center;
   ${({ alignEnd }) => alignEnd && "align-items: flex-end;"}
   margin: ${(props) => props.margin || "0"};
+  @media (min-width: 425px) {
+    ${({ responsive }) => responsive && "flex-direction: row;"}
+  }
 `;
 
 export const CoverButton = styled.button<{
