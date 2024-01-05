@@ -78,7 +78,7 @@ const X = styled(motion.h1)`
 
 const scrollDown = { translateY: ["-30vh", "50vh", "150vh"] };
 const softwareEngineer = {
-  translateY: ["-20vh", "50vh", "50vh", "50vh"],
+  translateY: ["-30vh", "50vh", "50vh", "50vh"],
   opacity: [1, 1, 1, 0],
 };
 
