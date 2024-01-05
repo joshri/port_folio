@@ -4,7 +4,6 @@ import styled from "styled-components";
 import head from "../../assets/HeadshotHead.png";
 import { Flex, fadeIn, rotate, rotateReverse } from "../../styles";
 import ActualContent from "./ActualContent";
-import Background from "./Background";
 import Header from "./Header";
 
 const MouseBorder = styled(Flex)<{ top?: number; left?: number }>`
@@ -76,7 +75,6 @@ function MainContent({ className }: Props) {
           </MouseBorder>
         </MouseBorder>
       </MouseBorder>
-      <Background />
       <Header />
       <ActualContent />
     </motion.div>

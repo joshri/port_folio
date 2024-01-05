@@ -110,6 +110,10 @@ export const CoverButton = styled.button<{
   letter-spacing: 1px;
   font-size: ${(props) => props.theme.fontSizes[props.fontSize || "medium"]};
   box-shadow: 0 0 2em 0.2em white;
+  transition: transform 0.2s ease-in-out;
+  &:hover {
+    transform: scale(1.1);
+  }
 `;
 
 //framer motion animates

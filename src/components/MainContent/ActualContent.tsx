@@ -267,4 +267,7 @@ export default styled(ActualContent).attrs({ className: ActualContent.name })`
   max-width: 2000px;
   margin-top: 200px;
   padding: 0 5vw;
+  p {
+    font-size: clamp(12px, calc(0.25rem + 1vw), 24px);
+  }
 `;
